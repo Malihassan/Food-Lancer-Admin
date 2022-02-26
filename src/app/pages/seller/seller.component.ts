@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seller.component.scss']
 })
 export class SellerComponent implements OnInit {
-
+  tableHeader :string [] =['Name','Email','Coverage','Rate','Status','Action']
   constructor() { }
 
   ngOnInit(): void {
