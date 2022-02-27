@@ -7,13 +7,15 @@ import { SellerComponent } from './pages/seller/seller.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { TableComponent } from './shared/components/table/table.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavBarComponent } from './shared/components/table/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SellerComponent,
     ProductsComponent,
-    TableComponent
+    TableComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
