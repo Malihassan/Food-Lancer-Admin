@@ -9,6 +9,7 @@ import { TableComponent } from './shared/components/table/table.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
+import { NavBarComponent } from './shared/components/table/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
     SellerComponent,
     ProductsComponent,
     TableComponent,
-    SearchFilterTablePipe
+    SearchFilterTablePipe,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
