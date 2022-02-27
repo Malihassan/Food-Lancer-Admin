@@ -7,18 +7,23 @@ import { SellerComponent } from './pages/seller/seller.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { TableComponent } from './shared/components/table/table.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SellerComponent,
     ProductsComponent,
-    TableComponent
+    TableComponent,
+    SearchFilterTablePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
