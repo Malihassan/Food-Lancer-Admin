@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Seller } from '../components/table/table.component';
+import { Seller } from '../../interfaces/seller';
 
 @Pipe({
   name: 'searchFilterTable'

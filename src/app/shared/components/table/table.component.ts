@@ -1,17 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Seller } from 'src/app/interfaces/seller';
 import { SearchFilterTablePipe } from '../../pipes/search-filter-table.pipe';
-export interface Seller {
-  _id: string,
-  userName:string,
-  email: string,
-  rate: number,
-  status: string,
-  coverageArea: {
-    _id: string,
-    governorateName: string,
-    regionName: string
-  }
-}
+
 
 @Component({
   selector: 'app-table',
@@ -26,10 +16,11 @@ export class TableComponent implements OnInit {
   searchValue: string = '';
   @Input() tableHeader: string[] = [];
   @Input() sellersData: Seller[] = [];
+  @Input() countOfSellers:number =0
   @Output() paginationHandler = new EventEmitter<number>()
   page:number = 0;
-  pageSize = 8;
-  collectionSize = this.sellersData.length;
+  pageSize = 1;
+  collectionSize = this.countOfSellers;
   sellers = this.sellersData;
   constructor(private pipe:SearchFilterTablePipe) {    
     this.refreshCountries() 

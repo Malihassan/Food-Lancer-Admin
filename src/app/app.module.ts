@@ -10,7 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
 import { NavBarComponent } from './shared/components/table/nav-bar/nav-bar.component';
-
+import {HttpClientModule } from '@angular/common/http'
+import { SellerService } from './services/seller/seller.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +26,10 @@ import { NavBarComponent } from './shared/components/table/nav-bar/nav-bar.compo
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [SellerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
