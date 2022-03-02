@@ -7,9 +7,10 @@ import { SellerComponent } from './pages/seller/seller.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { TableComponent } from './shared/components/table/table.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
-import { NavBarComponent } from './shared/components/table/nav-bar/nav-bar.component';
 import {HttpClientModule } from '@angular/common/http'
 import { SellerService } from './services/seller/seller.service';
 import { BuyerComponent } from './pages/buyer/buyerTable/buyer.component';
