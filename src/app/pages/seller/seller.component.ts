@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Seller } from 'src/app/interfaces/seller';
+import { SellerService } from 'src/app/services/seller/seller.service';
 @Component({
   selector: 'app-seller',
   templateUrl: './seller.component.html',
