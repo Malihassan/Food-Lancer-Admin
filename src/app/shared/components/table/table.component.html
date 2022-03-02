@@ -1,12 +1,4 @@
 <div class="container">
-    <form>
-        <div class="mb-3 row d-flex justify-content-end">
-            <div class="col-xs-3 col-sm-auto">
-                <input id="table-filtering-search" placeholder="Search By User Name" name="searchInput" class="form-control"
-                    type="text" [(ngModel)]="searchValue" (ngModelChange)="onSearchChange($event)">
-            </div>
-        </div>
-    </form>
     <table class="table">
         <thead>
             <tr>
@@ -14,45 +6,56 @@
             </tr>
         </thead>
         <tbody>
-            <!-- <tr *ngFor="let seller of sellers |searchFilterTable:searchValue"> -->
-            <tr *ngFor="let seller of sellers">
+            <tr *ngFor="let row of tableData">
                 <td>
-                    {{seller.userName}}
+                    {{row.userName}}
                 </td>
                 <td>
-                    {{seller.email}}
+                    {{row.email}}
                 </td>
-                <td>
-                    {{seller.coverageArea.governorateName}}
-                </td>
-                <td>
-                    {{seller.coverageArea.regionName}}
-                </td>
-                <td>
-                    <span class=" rate badge" [ngClass]="{
-                        'bg-danger': seller.rate < 2.5,
-                        'bg-success' : seller.rate >= 4,
-                        'bg-primary' : seller.rate <= 3.9 && seller.rate >= 2.5 }">
-                        {{seller.rate}}</span>
-
-                </td>
+                <!-- this for  seller data-->
+                <ng-template [ngIf]="row.coverageArea">
+                    <td>
+                        {{row.coverageArea.governorateName}}
+                    </td>
+                    <td>
+                        {{row.coverageArea.regionName}}
+                    </td>
+                    <td>
+                        <span class=" rate badge" [ngClass]="{
+                            'bg-danger': row.rate < 2.5,
+                            'bg-success' : row.rate >= 4,
+                            'bg-primary' : row.rate <= 3.9 && row.rate >= 2.5 }">
+                            {{row.rate}}</span>
+                    </td>
+                </ng-template>
+                <!-- this for buyer data -->
+                <ng-template [ngIf]="row.address">
+                    <td>
+                        {{row.address}}
+                    </td>
+                    <td>
+                        {{row.phone}}
+                    </td>
+                </ng-template>
                 <td>
                     <span class="status badge"
-                        [ngClass]="{' bg-warning text-dark': seller.status == 'pending', ' bg-primary' : seller.status == 'active', ' bg-dark' : seller.status == 'blocked' }">
-                        {{seller.status}}</span>
+                        [ngClass]="{' bg-warning text-dark': row.status == 'pending', ' bg-primary' : row.status == 'active', ' bg-dark' : row.status == 'blocked' }">
+                        {{row.status}}</span>
                 </td>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [checked]="seller.status !== 'blocked'">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
+                            [checked]="row.status !== 'blocked'">
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
     <div class="pagination-container d-flex justify-content-between p-2">
-        <label>{{sellersData.length}} total</label>
-        <ngb-pagination [collectionSize]="sellersData.length" [(page)]="page" [pageSize]="pageSize"
-            (pageChange)="refreshCountries()">
+        <label>{{collectionSize}} total</label>
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+            (pageChange)="refreshPagination()">
         </ngb-pagination>
     </div>
 </div>
