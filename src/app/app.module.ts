@@ -12,6 +12,10 @@ import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
 import { NavBarComponent } from './shared/components/table/nav-bar/nav-bar.component';
 import {HttpClientModule } from '@angular/common/http'
 import { SellerService } from './services/seller/seller.service';
+import { OrdersPageComponent } from './pages/orders/orders-page/orders-page.component';
+import { OrderCardComponent } from './pages/orders/order-card/order-card.component';
+import { OrderInfoComponent } from './pages/orders/order-info/order-info.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +23,11 @@ import { SellerService } from './services/seller/seller.service';
     ProductsComponent,
     TableComponent,
     SearchFilterTablePipe,
-    NavBarComponent
+    NavBarComponent,
+    OrdersPageComponent,
+    OrderCardComponent,
+    OrderInfoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
