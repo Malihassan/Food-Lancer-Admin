@@ -1,3 +1,8 @@
+import { FilerBuyerComponent } from './Components/Buyer/filer-buyer/filer-buyer.component';
+import { BuyerComponent } from './Components/Buyer/buyerTable/buyer.component';
+import { OrdersPageComponent } from './Components/Order/orders-page/orders-page.component';
+import { OrderInfoComponent } from './Components/Order/order-info/order-info.component';
+import { OrderCardComponent } from './Components/Order/order-card/order-card.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,8 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
 import {HttpClientModule } from '@angular/common/http'
 import { SellerService } from './services/seller/seller.service';
-import { BuyerComponent } from './Components/Buyer/buyerTable/buyer.component';
-import { FilerBuyerComponent } from './Components/Buyer/filer-buyer/filer-buyer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +26,13 @@ import { FilerBuyerComponent } from './Components/Buyer/filer-buyer/filer-buyer.
     TableComponent,
     SearchFilterTablePipe,
     NavBarComponent,
+    NavBarComponent,
+    OrderCardComponent,
+    OrderInfoComponent,
+    OrdersPageComponent,
     BuyerComponent,
     FilerBuyerComponent
+
   ],
   imports: [
     BrowserModule,
