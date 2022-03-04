@@ -8,8 +8,8 @@ import { SellerService } from 'src/app/services/seller/seller.service';
 })
 export class SellerComponent implements OnInit {
   tableHeader: string[] = ['Name', 'Email', 'City', 'Region', 'Rate', 'Status', 'Action']
-  countOfSellers:number=0;
-  sellers:Seller[]=[]
+  countOfSellers: number = 0;
+  sellersData: Seller[] = []
   // tableData: any[] = [
   //   {
   //     _id: "620bbae6290ff65761f08bec",
@@ -205,16 +205,28 @@ export class SellerComponent implements OnInit {
   //   }
   // ]
   constructor(private sellerService: SellerService) { }
-  ngOnInit(): void {
-    this.sellerService.getAllUsersList().subscribe((res:any) => {
+  // ngOnInit(): void {
+  //   this.sellerService.getAllUsersList().subscribe((res:any) => {
+  //     this.countOfSellers = res.countOfSeller
+  //     this.sellers=res.allSellers      
+  //   this.subscribeForGetSeller(1)
+  // }
+
+  subscribeForGetSeller(page:number) {
+    console.log(page);
+    
+    this.sellerService.getSellersList(page).subscribe((res: any) => {
       this.countOfSellers = res.countOfSeller
-      this.sellers=res.allSellers      
+      this.sellersData = res.sellers
+      console.log(this.sellersData);
+      
     },
       (err) => {
         console.log(err);
       })
   }
+
   paginationHandler(page: number) {
-    console.log("page", page);
+    this.subscribeForGetSeller(page)
   }
 }
