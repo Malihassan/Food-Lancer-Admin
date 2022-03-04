@@ -205,12 +205,10 @@ export class SellerComponent implements OnInit {
   //   }
   // ]
   constructor(private sellerService: SellerService) { }
-
   ngOnInit(): void {
     this.sellerService.getAllUsersList().subscribe((res:any) => {
       this.countOfSellers = res.countOfSeller
       this.sellers=res.allSellers      
-
     },
       (err) => {
         console.log(err);
@@ -219,5 +217,4 @@ export class SellerComponent implements OnInit {
   paginationHandler(page: number) {
     console.log("page", page);
   }
-
 }
