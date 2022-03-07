@@ -1,55 +1,37 @@
-/* import { FilerBuyerComponent } from './Components/Buyer/filer-buyer/filer-buyer.component';
-import { BuyerComponent } from './Components/Buyer/buyerTable/buyer.component';
-import { OrdersPageComponent } from './Components/Order/orders-page/orders-page.component';
-import { OrderInfoComponent } from './Components/Order/order-info/order-info.component';
-import { OrderCardComponent } from './Components/Order/order-card/order-card.component'; */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-/* import { SellerComponent } from './Components/Seller/sellerTable/seller.component';\
-import { ProductsComponent } from './Components/Product/products/products.component'; */
-//import { TableComponent } from './shared/components/table/table.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProductCardComponent } from './shared/components/product-card/product-card.component';
-import { ProductListComponent } from './components/Product/product-list/product-list.component';
-import { ProductDetailesComponent } from './shared/components/product-detailes/product-detailes.component';
-import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 
-//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
-import {HttpClientModule } from '@angular/common/http'
-import { SellerService } from './services/seller/seller.service';
+import { ShareModule } from './shared/module/share/share.module';
+
+import { SellerModule } from './modules/seller/seller.module';
+import { OrderModule } from './modules/order/order.module';
+import { BuyerModule } from './modules/buyer/buyer.module';
+import { ProductModule } from './modules/product/product.module';
+import { ProfileModule } from './modules/profile/profile.module';
+import { CoverageAreaModule } from './modules/coverage-area/coverage-area.module';
+import { CategoryModule } from './modules/category/category.module';
+import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 @NgModule({
   declarations: [
- /*    AppComponent,
-    SellerComponent,
-    ProductsComponent,
-    TableComponent, */
-    NavBarComponent,
-    ProductCardComponent,
-    ProductListComponent,
-    ProductDetailesComponent
-   /*  SearchFilterTablePipe,
-
-    NavBarComponent,
-    OrderCardComponent,
-    OrderInfoComponent,
-    OrdersPageComponent,
-    BuyerComponent,
-    FilerBuyerComponent */
-
+    AppComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    /* FormsModule,
-    ReactiveFormsModule, */
-    HttpClientModule
+    ShareModule,
+    SellerModule,
+    OrderModule,
+    BuyerModule,
+    ProductModule,
+    ProfileModule,
+    CoverageAreaModule,
+    CategoryModule
   ],
-  providers: [SellerService],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
