@@ -15,7 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductCardComponent } from './shared/components/product-card/product-card.component';
 import { ProductListComponent } from './components/Product/product-list/product-list.component';
 import { ProductDetailesComponent } from './shared/components/product-detailes/product-detailes.component';
-//import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 
 //import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
@@ -27,11 +27,12 @@ import { SellerService } from './services/seller/seller.service';
     SellerComponent,
     ProductsComponent,
     TableComponent, */
+    NavBarComponent,
     ProductCardComponent,
     ProductListComponent,
     ProductDetailesComponent
    /*  SearchFilterTablePipe,
-    NavBarComponent,
+
     NavBarComponent,
     OrderCardComponent,
     OrderInfoComponent,
