@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Buyer } from 'src/app/interfaces/buyer';
 import { BuyerService } from 'src/app/services/buyer/buyer.service';
-
 @Component({
   selector: 'app-buyer',
   templateUrl: './buyer.component.html',
