@@ -1,0 +1,63 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-6">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper p-5">
+            <img [src]= "product.image[0].url" alt="Random first slide">
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title my-3">{{product.name}}</h5>
+          <div>
+            <ngb-rating></ngb-rating>
+          </div>
+          <div class="card-link my-3">Seller:<a href="" class=" mx-1 p-0 px-2">{{product.sellerId.userName}}</a></div>
+          <h5 class="card-subtitle mb-3 text-muted my-3 ">{{product.price|currency:"EGP":"symbol"}}</h5>
+          <p class="card-text my-3">{{product.Description}}</p>
+          <div class="card-link my-3">Category:<a href=""><button
+                class="btn btn-outline-dark mx-1 p-0 px-2">{{product.categoryId.name}}</button></a></div>
+          <div class="card-link ms-0">Status:
+              <button class="btn btn-outline-danger mx-1 p-0 px-2">Pending
+              </button>
+              <button (click)="changeStatusToAccepted()" class="btn btn-outline-info mx-1 p-0 px-2 " >Accepted
+              </button>
+          </div>
+          <div>
+            <label>Pending Message:</label>
+            <br>
+            <textarea (input)="onChangeValue($event)"  name="pendingMessage" id="" cols="30" rows="2"></textarea>
+            <div>
+              <button (click)="sendPendingMessage()"  class="btn btn-outline-warning mx-1 p-0 px-2">Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container my-4">
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <a ngbNavLink>
+        Description
+      </a>
+      <ng-template ngbNavContent>
+        *******This is a recipe for classic BBQ chicken pizza with tangy BBQ sauce, chicken, and red onion. Gouda cheese
+        gives the homemade pizza the most delicious smoky flavor and cilantro adds a touch of freshness. My pizza dough
+        recipe makes enough for two 12-inch pizzas, so you can freeze half for later. It’s an easy thick-style pizza
+        crust with unbeatable flavor
+      </ng-template>
+    </li>
+    <li ngbNavItem>
+      <a ngbNavLink>Reviews <span>(0)</span></a>
+      <ng-template ngbNavContent>Second content</ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+</div>

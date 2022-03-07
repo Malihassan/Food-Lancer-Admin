@@ -1,0 +1,30 @@
+.image-container{
+  height: 300px;
+  padding-top: 2rem;
+}
+h5{
+  font-size: 1em;
+}
+p{
+  font-size: .75em;
+}
+button{
+  font-size: small;
+  font-weight: 500;
+}
+span{
+  font-size: large;
+  font-weight: 500;
+}
+#productEdit{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: .5em;
+}
+#productEdit a{
+  text-decoration: none;
+}
+
