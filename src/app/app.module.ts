@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SellerComponent } from './Components/Seller/sellerTable/seller.component';\
+import { SellerComponent } from './Components/Seller/sellerTable/seller.component';
 import { ProductsComponent } from './Components/Product/products/products.component';
 import { TableComponent } from './shared/components/table/table.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
 import {HttpClientModule } from '@angular/common/http'
 import { SellerService } from './services/seller/seller.service';
+import { BuyerComponent } from './pages/buyer/buyerTable/buyer.component';
+import { FilerBuyerComponent } from './pages/buyer/filer-buyer/filer-buyer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +28,8 @@ import { SellerService } from './services/seller/seller.service';
     TableComponent,
     SearchFilterTablePipe,
     NavBarComponent,
-    NavBarComponent,
-    OrderCardComponent,
-    OrderInfoComponent,
-    OrdersPageComponent,
     BuyerComponent,
     FilerBuyerComponent
-
   ],
   imports: [
     BrowserModule,
