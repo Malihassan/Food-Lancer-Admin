@@ -1,32 +1,54 @@
+/* import { FilerBuyerComponent } from './Components/Buyer/filer-buyer/filer-buyer.component';
+import { BuyerComponent } from './Components/Buyer/buyerTable/buyer.component';
+import { OrdersPageComponent } from './Components/Order/orders-page/orders-page.component';
+import { OrderInfoComponent } from './Components/Order/order-info/order-info.component';
+import { OrderCardComponent } from './Components/Order/order-card/order-card.component'; */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SellerComponent } from './pages/seller/seller.component';
-import { ProductsComponent } from './pages/products/products.component';
-import { TableComponent } from './shared/components/table/table.component';
+/* import { SellerComponent } from './Components/Seller/sellerTable/seller.component';\
+import { ProductsComponent } from './Components/Product/products/products.component'; */
+//import { TableComponent } from './shared/components/table/table.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProductCardComponent } from './components/product-card/product-card.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductDetailesComponent } from './components/product-detailes/product-detailes.component';
+import { ProductCardComponent } from './shared/components/product-card/product-card.component';
+import { ProductListComponent } from './components/Product/product-list/product-list.component';
+import { ProductDetailesComponent } from './shared/components/product-detailes/product-detailes.component';
+//import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { SearchFilterTablePipe } from './shared/pipes/search-filter-table.pipe';
+import {HttpClientModule } from '@angular/common/http'
+import { SellerService } from './services/seller/seller.service';
 @NgModule({
   declarations: [
-    AppComponent,
+ /*    AppComponent,
     SellerComponent,
     ProductsComponent,
-    TableComponent,
+    TableComponent, */
     ProductCardComponent,
     ProductListComponent,
     ProductDetailesComponent
+   /*  SearchFilterTablePipe,
+    NavBarComponent,
+    NavBarComponent,
+    OrderCardComponent,
+    OrderInfoComponent,
+    OrdersPageComponent,
+    BuyerComponent,
+    FilerBuyerComponent */
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule,
+    /* FormsModule,
+    ReactiveFormsModule, */
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SellerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
