@@ -1,0 +1,15 @@
+<div class="position-relative">
+  <div class="image-container  ">
+    <img class="card-img-top p-3" id="productImage " [src]= "product.image[0].url"alt="...">
+  </div>
+</div>
+<div class="card-body ">
+  <div>
+    <ngb-rating> </ngb-rating>
+  </div>
+  <h5 id="productName" class="card-title">{{product.name}}</h5>
+  <h6 id="userName" class="card-title">{{product.sellerId.userName}}</h6>
+  <p id="productDescription" class="card-text  my-2">{{product.description}}</p>
+  <span class="productPrice text-danger ">{{product.price|currency:"EGP":"symbol"}}</span>
+  <button  (click)="goToDetailes()" class="card-link float-end btn btn-outline-dark">Detailes</button>
+</div>

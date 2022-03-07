@@ -6,26 +6,29 @@
         <p class="fw-bold pt-2"><i class="fa-solid fa-lock pe-1"></i> Bilal Ahmed</p>
       </div>
       <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-dark"><i class="fa-solid fa-house"></i></button>
-        <button type="button" class="btn btn-dark"><i class="fa-solid fa-user"></i></button>
-        <button type="button" class="btn btn-dark"><i class="fa-solid fa-right-from-bracket"></i></button>
+        <a routerLink="/"  class="btn btn-dark"><i class="fa-solid fa-house"></i></a>
+        <a routerLink="/profile"  class="btn btn-dark"><i class="fa-solid fa-user"></i></a>
+        <a routerLink="/f"  class="btn btn-dark"><i class="fa-solid fa-right-from-bracket"></i></a>
       </div>
       <div class="list-group bg-dark list-group-flush">
-        <a routerLink="" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-product-hunt pe-2"></i>Product</a>
-        <a routerLink="" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-sellcast pe-2"></i>Seller</a>
-        <a routerLink="" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-jedi-order pe-2"></i>Order</a>
-        <a routerLink="" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-person pe-2"></i>Buyer</a>
-        <a routerLink="" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-location-dot pe-1"></i> Coverage Area</a>
-        <a routerLink="" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-border-all pe-1"></i> Category</a>
+        <a routerLink="/seller"  routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-sellcast pe-2"></i>Seller</a>
+        <a routerLink="/buyer" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-person pe-2"></i>Buyer</a>
+        <a routerLink="/category" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-border-all pe-1"></i> Category</a>
+        <a routerLink="/product" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-product-hunt pe-2"></i>Product</a>
+        <a routerLink="/order" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-jedi-order pe-2"></i>Order</a>
+        <a routerLink="/coverageArea" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-location-dot pe-1"></i> Coverage Area</a>
   
       </div>
     </div>
-    <div id="page-content-wrapper">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="btn" (click)="clickEvent()"><span class="navbar-toggler-icon"></span></button>
-        </div>
-      </nav>
+    <div class="d-flex flex-column w-100">
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <button class="btn" (click)="clickEvent()"><span class="navbar-toggler-icon"></span></button>
+          </div>
+        </nav>
+      </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
   
