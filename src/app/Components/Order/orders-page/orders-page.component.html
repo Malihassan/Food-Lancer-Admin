@@ -1,1 +1,6 @@
-<p>orders-page works!</p>
+<div class="container" data-bs-spy="scroll" data-spy="scroll" data-offset="0">
+  <app-order-card
+    *ngFor="let order of orders"
+    [number]="order"
+  ></app-order-card>
+</div>
