@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ShareModule } from './shared/module/share/share.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SellerModule } from './modules/seller/seller.module';
 import { OrderModule } from './modules/order/order.module';
@@ -15,13 +16,9 @@ import { CoverageAreaModule } from './modules/coverage-area/coverage-area.module
 import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    NotFoundPageComponent,
-  ],
+  declarations: [AppComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ShareModule,
     SellerModule,
     OrderModule,
@@ -29,7 +26,9 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
     ProductModule,
     ProfileModule,
     CoverageAreaModule,
-    CategoryModule
+    CategoryModule,
+    NgbModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
