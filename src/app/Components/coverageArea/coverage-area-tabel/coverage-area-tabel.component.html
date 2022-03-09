@@ -1,0 +1,31 @@
+<div id="tabel" class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let colData of tableHeader" scope="col">{{ colData }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of coverageAreaData">
+        <td>
+          {{ row.governorateName |titlecase }}
+        </td>
+        <td>
+          {{ row.regionName|titlecase }}
+        </td>
+        <td>
+          <i (click)="deleteCoverageArea(row._id)" id="delete" class="text-danger fs-4 fa-solid fa-trash"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination-container d-flex justify-content-between p-2">
+    <label>{{ countOfCoveragesArea }} total</label>
+    <ngb-pagination
+      [collectionSize]="countOfCoveragesArea"
+      [(page)]="page"
+      (pageChange)="refreshPagination()"
+      [pageSize]="pageSize"
+    ></ngb-pagination>
+  </div>
+</div>
