@@ -1,33 +1,70 @@
-<div class="d-flex" id="wrapper">
-    <div class="bg-dark text-light border-right " id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
-      <div class="sidebar-heading"><i class="fa-solid fa-utensils pe-3"></i>Food Lancer</div>
-      <div class="d-flex flex-column align-items-center">
-        <img id="adminImg" src="../assets/elmaestro2.JPG" class="img-fluid rounded-circle "  alt="">
-        <p class="fw-bold pt-2"><i class="fa-solid fa-lock pe-1"></i> Bilal Ahmed</p>
-      </div>
-      <div class="d-flex justify-content-center">
-        <a routerLink="/"  class="btn btn-dark"><i class="fa-solid fa-house"></i></a>
-        <a routerLink="/profile"  class="btn btn-dark"><i class="fa-solid fa-user"></i></a>
-        <a routerLink="/f"  class="btn btn-dark"><i class="fa-solid fa-right-from-bracket"></i></a>
-      </div>
-      <div class="list-group bg-dark list-group-flush">
-        <a routerLink="/seller"  routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-sellcast pe-2"></i>Seller</a>
-        <a routerLink="/buyer" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-person pe-2"></i>Buyer</a>
-        <a routerLink="/category" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-border-all pe-1"></i> Category</a>
-        <a routerLink="/product" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-product-hunt pe-2"></i>Product</a>
-        <a routerLink="/order" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-brands fa-jedi-order pe-2"></i>Order</a>
-        <a routerLink="/coverageArea" routerLinkActive="active text-white" class="list-group-item list-group-item-action bg-dark text-secondary fw-bold fs-5 p-4"><i class="fa-solid fa-location-dot pe-1"></i> Coverage Area</a>
-
-      </div>
+<div #sideBar [ngClass]="status? 'active' : ''" class="sidebar sticky-top">
+  <div class="logo_content">
+    <div class="logo" [ngClass]="status? 'active_logo' : ''" >
+      <i class="fa-solid fa-utensils pe-3"></i>
+      <div class="logo_name">Food Lancer</div>
     </div>
-    <div class="d-flex flex-column w-100">
-      <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-            <button class="btn" (click)="clickEvent()"><span class="navbar-toggler-icon"></span></button>
-          </div>
-        </nav>
+    <i (click)="clickEvent()" [ngClass]="status? 'left_btn' : ''" class="fa-solid fa-bars" id="btn"></i>
+  </div>
+  <ul class="nav_list">
+    <li>
+      <a routerLink="/seller" routerLinkActive=""
+        ><i class="fa-brands fa-sellcast"></i
+        ><span  [ngClass]="status? 'active_links_name' : ''"  class="links_name">Seller</span></a
+      >
+      <span [ngClass]="status? 'active_tool' : ''" class="tool">Seller</span>
+    </li>
+    <li>
+      <a routerLink="/buyer" routerLinkActive=" "
+        ><i class="fa-solid fa-person"></i
+        ><span  [ngClass]="status? 'active_links_name' : ''" class="links_name">Buyer</span></a
+      >
+      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Buyer</span>
+    </li>
+    <li>
+      <a routerLink="/category" routerLinkActive=""
+        ><i class="fa-solid fa-border-all"></i>
+        <span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Category</span></a
+      >
+      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Category</span>
+    </li>
+    <li>
+      <a routerLink="/product" routerLinkActive=" "
+        ><i class="fa-brands fa-product-hunt"></i
+        ><span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Product</span></a
+      >
+      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Product</span>
+    </li>
+    <li>
+      <a routerLink="/order" routerLinkActive=" "
+        ><i class="fa-brands fa-jedi-order"></i
+        ><span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Order</span></a
+      >
+      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Order</span>
+    </li>
+    <li>
+      <a routerLink="/coverageArea" routerLinkActive=" "
+        ><i class="fa-solid fa-location-dot"></i>
+        <span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Coverage Area</span></a
+      >
+      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Coverage Area</span>
+    </li>
+  </ul>
+  <div class="profile_content">
+    <div class="profile">
+      <div [ngClass]="status? 'pofile_details_active' : ''" class="profile_details">
+        <img
+          id="adminImg"
+          src="../assets/elmaestro2.JPG"
+          class="img-fluid rounded-circle"
+          alt=""
+        />
+        <div class="name_jop">
+          <div class="name">Bilal A Mohammed</div>
+          <div class="jop">Developer</div>
+        </div>
       </div>
-      <router-outlet></router-outlet>
+      <i [ngClass]="status? 'logout_active' : ''" class="fa-solid fa-right-from-bracket" id="logout"></i>
     </div>
   </div>
+</div>
