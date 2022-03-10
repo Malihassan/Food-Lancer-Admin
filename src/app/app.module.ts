@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,11 +16,13 @@ import { ProfileModule } from './modules/profile/profile.module';
 import { CoverageAreaModule } from './modules/coverage-area/coverage-area.module';
 import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
+import { RequestInterceptor } from './Interceptor/request.interceptor';
 @NgModule({
   declarations: [AppComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
     ShareModule,
+    HttpClientModule,
     SellerModule,
     OrderModule,
     BuyerModule,
@@ -30,7 +33,13 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
     NgbModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    {
+    provide:HTTP_INTERCEPTORS,
+    useClass:RequestInterceptor,
+    multi:true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

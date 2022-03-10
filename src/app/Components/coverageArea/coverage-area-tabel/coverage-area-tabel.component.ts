@@ -9,14 +9,14 @@ import { CoverageArea } from '../../../interfaces/coverage-area';
 })
 export class CoverageAreaTabelComponent implements OnInit {
   constructor(private coverageAreaService: CoverageAreaService) {}
-  tableHeader: string[] = ['Governorate Name', 'Region Name', 'Action'];
+  tableHeader: string[] = ['#','Governorate Name', 'Region Name', 'Action'];
   countOfCoveragesArea: number = 0;
   coverageAreaData: CoverageArea[] = [];
   ngOnInit(): void {
     this.subscribeForGetCoverageArea(1);
   }
   page: number = 1;
-  pageSize: number = 4;
+  pageSize: number = 6;
   subscribeForGetCoverageArea(page: number) {
     this.coverageAreaService.getCoverageAreaList(page).subscribe(
       (res: any) => {

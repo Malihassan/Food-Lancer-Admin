@@ -1,12 +1,15 @@
-<div id="tabel" class="container">
-  <table class="table">
+<div id="tabel" class="container-fluid">
+  <table class="table table-dark table-striped">
     <thead>
       <tr>
         <th *ngFor="let colData of tableHeader" scope="col">{{ colData }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of coverageAreaData">
+      <tr *ngFor="let row of coverageAreaData;let number=index;">
+        <td>
+          {{ coverageAreaData.indexOf(row)+1 }}
+        </td>
         <td>
           {{ row.governorateName |titlecase }}
         </td>

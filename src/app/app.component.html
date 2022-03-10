@@ -4,5 +4,6 @@
 <app-nav-bar (newItemEvent)="addItem($event)"></app-nav-bar>
 <div [ngClass]="status ? 'home_active' : ''" class="home">
   <router-outlet></router-outlet>
+  <app-loader></app-loader>
   <!-- <app-footer></app-footer> -->
 </div>
