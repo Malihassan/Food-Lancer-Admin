@@ -7,13 +7,13 @@ import { HttpClient } from '@angular/common/http';
 export class CoverageAreaService {
   constructor(private http: HttpClient) {}
   getCoverageAreaList(pageNum: number) {
-    return this.http.get(`http://localhost:3000/coverageArea?page=${pageNum}`);
+    return this.http.get(`http://localhost:3000/admin/coverageArea?page=${pageNum}`);
   }
   insertCoverageAreaList(data: any) {
     console.log('Service Insert');
-    return this.http.post(`http://localhost:3000/coverageArea`, data);
+    return this.http.post(`http://localhost:3000/admin/coverageArea`, data);
   }
   deleteCoverageArea(id: any) {
-    return this.http.delete(`http://localhost:3000/coverageArea/${id}`);
+    return this.http.delete(`http://localhost:3000/admin/coverageArea/${id}`);
   }
 }
