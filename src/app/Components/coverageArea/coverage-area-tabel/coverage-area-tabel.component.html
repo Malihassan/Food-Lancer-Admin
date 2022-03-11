@@ -6,10 +6,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of coverageAreaData;let number=index;">
-        <td>
-          {{ coverageAreaData.indexOf(row)+1 }}
-        </td>
+      <tr *ngFor="let row of coverageAreaData; let number=index;">
+        <!-- <td>
+          {{ number+1 }}
+        </td> -->
         <td>
           {{ row.governorateName |titlecase }}
         </td>

@@ -14,8 +14,8 @@ export class RootCoverageAreaPageComponent implements OnInit {
   ngOnInit(): void {
   }
   handelClickInsert(event:any){
-    console.log(this.child.coverageAreaData);
+    // console.log(this.child.coverageAreaData);
     this.child.subscribeForGetCoverageArea(this.child.page);
-    console.log(this.child.coverageAreaData);
+    // console.log(this.child.coverageAreaData);
   }
 }
