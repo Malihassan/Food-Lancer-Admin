@@ -51,7 +51,6 @@ export class OrdersPageComponent implements OnInit {
 
   scrollToTop() {
     this.div.nativeElement.scrollTop = 0;
-    console.log('done');
   }
 
   ngOnInit(): void {}

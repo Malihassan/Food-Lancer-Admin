@@ -3,11 +3,12 @@
     *ngFor="let order of orders"
     [number]="order"
   ></app-order-card>
-  <!-- <div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
-    <button (click)="scrollToTop()">
-      <i class="fa fa-chevron-up"></i>
-    </button>
-  </div> -->
+
+  <!-- 
+    https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
+    https://mdbootstrap.com/docs/standard/extended/back-to-top/
+    to make it disappear
+  -->
 
   <button
     (click)="scrollToTop()"
