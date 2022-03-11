@@ -1,21 +1,27 @@
 <section class="container">
-    <label class="filter-label">Filter</label>
-    <input type="text" class="form-control" placeholder="Search By Email" >
-    <div class="status-filter">
-        <label class="title mx-3">Status</label>
-        <div class="list-group">
-            <label class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="pending">
-                Pending
-            </label>
-            <label class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="active">
-                Active
-            </label>
-            <label class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="blocked">
-                Blocked
-            </label>
+    <form [formGroup]="buyerFilterFormGroup" (ngSubmit)="submitBuyerFilterForm()">
+        <div class="email-filter mb-4">
+            <input type="text" class="form-control" formControlName="email" placeholder="Search By Email">
+            <small class="text-danger" *ngIf="formControls['email'].errors?.['email']">Inavlid Email</small>
         </div>
-    </div>
+        <div class="status-filter">
+            <label class="title mt-2">Status</label>
+            <div class="list-group">
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeSelection($event)" type="checkbox" value="pending">
+                    Pending
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeSelection($event)" type="checkbox" value="active">
+                    Active
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeSelection($event)" type="checkbox" value="blocked">
+                    Blocked
+                </label>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!formValid()"
+            class="w-100 btn btn-dark btn-md mt-5">Search</button>
+    </form>
 </section>

@@ -1,4 +1,9 @@
 <div class="container">
+    <ng-template [ngIf]="tableData.length ==0">
+        <p class="notFoundData col-12 text-danger">
+         Query not match any data
+        </p>
+     </ng-template>
     <table class="table">
         <thead>
             <tr>
@@ -6,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of tableData">
+            <tr *ngFor="let row of tableData" (click)="toDirect(row._id)">
                 <td>
                     {{row.userName}}
                 </td>

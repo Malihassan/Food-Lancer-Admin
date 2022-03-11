@@ -22,7 +22,7 @@ export class SellerComponent implements OnInit {
   subscribeForGetSeller(page:number) {
     console.log(page);
     
-    this.sellerService.getSellersList(page).subscribe((res: any) => {
+    this.sellerService.getSellersList(page,{}).subscribe((res: any) => {
       this.countOfSellers = res.countOfSeller
       this.sellersData = res.sellers
       console.log(this.sellersData);

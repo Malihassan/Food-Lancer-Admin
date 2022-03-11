@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Buyer } from 'src/app/interfaces/buyer';
 import { BuyerService } from 'src/app/services/buyer/buyer.service';
 @Component({
-  selector: 'app-buyer',
-  templateUrl: './buyer.component.html',
-  styleUrls: ['./buyer.component.scss']
+  selector: 'app-buyer-table',
+  templateUrl: './buyer-table.component.html',
+  styleUrls: ['./buyer-table.component.scss']
 })
-export class BuyerComponent implements OnInit {
+export class BuyerTableComponent implements OnInit {
   tableHeader: string[] = ['Name', 'Email', 'Address', 'Phone', 'Status', 'Action']
   countOfBuyers: number = 0;
+  limit:number=0
   buyersData: Buyer[] = []
+  @Input() query :any;
   constructor(private buyerService: BuyerService) {
 
   }
@@ -20,15 +22,17 @@ export class BuyerComponent implements OnInit {
   subscribeForGetBuyer(page: number) {
 
     this.buyerService.getBuyerList(page).subscribe((res: any) => {
-      this.countOfBuyers = res.countOfBuyer
-      this.buyersData = res.buyers
-      console.log(this.buyersData);
+      console.log('==>',this.query);
+      
+      this.countOfBuyers = res.totalDocs
+      this.limit = res.limit
+      this.buyersData = res.docs
     },
       (err) => {
         console.log(err);
       })
   }
   paginationHandler(page: number) {
-    this.subscribeForGetBuyer(page)
+    this.subscribeForGetBuyer(page)    
   }
 }

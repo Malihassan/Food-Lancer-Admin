@@ -23,12 +23,15 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     NgbModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
+    // FormsModule,
+    // HttpClientModule,
+    // ReactiveFormsModule,
     ShareRoutingModule
   ],
   exports:[
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     NavBarComponent,
     TableComponent,
     ProductCardComponent,
