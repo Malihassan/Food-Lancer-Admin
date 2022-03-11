@@ -1,1 +1,26 @@
-<p>order-card works!</p>
+<div class="card ms-2 my-5 shadow-lg rounded-3" style="width: 80vw">
+  <div class="card-body">
+    <h5 class="card-title">Order #{{ number }}</h5>
+    <h6 class="card-subtitle mb-2 text-success">Delivered</h6>
+    <p class="card-text">03 january 2022 16:35</p>
+    <p class="card-text">Seller : userName</p>
+    <p class="card-text">Buyer : userName</p>
+    <p class="card-text">Total Price : 50 EGP</p>
+    <ul>
+      <!-- <img src="http://placekitten.com/200/300" class="m-2" alt=".." /> -->
+      <li class="card-text">productName</li>
+      <!-- <img src="http://placekitten.com/200/301" class="m-2" alt=".." /> -->
+      <li class="card-text">productName</li>
+      <!-- <img src="http://placekitten.com/201/301" class="m-2" alt=".." /> -->
+      <li class="card-text">productName</li>
+    </ul>
+    <!-- list of imgs -->
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+    <button type="button" routerLink="info" class="btn btn-primary">
+      See Details
+    </button>
+
+    <!-- <a href="#" class="card-link">Another link</a> -->
+  </div>
+</div>

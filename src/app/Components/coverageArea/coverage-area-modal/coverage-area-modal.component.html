@@ -1,0 +1,107 @@
+<div id="modal" class="container-fluid">
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    style="background-color: #1D1B31;"
+    data-bs-target="#exampleModal2"
+  >
+    Insert Coverage Area
+  </button>
+  <div
+    class="modal fade"
+    id="exampleModal2"
+    tabindex="-1"
+    aria-labelledby="exampleModal2Label"
+    data-bs-keyboard="false"
+    data-bs-backdrop="static"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-danger" id="exampleModal2Label">
+            Insert Coverage Area
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="registerForm" (ngSubmit)="submitloginForm(governorate.value,region.value)">
+            <div class="mb-3">
+              <label for="governorateName" class="form-label"
+                >Governorate Name</label
+              >
+              <input
+                type="text"
+                formControlName="governorateName"
+                class="form-control"
+                id="governorateName"
+                #governorate
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  registerForm.controls['governorateName'].touched &&
+                  !registerForm.controls['governorateName'].valid
+                "
+              >
+                <small
+                  *ngIf="formControls['governorateName'].errors?.['required']"
+                >
+                  this field is required
+                </small>
+                <small
+                  *ngIf="formControls['governorateName'].errors?.['minlength']"
+                >
+                  this minimum length must be 5
+                </small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="regionName" class="form-label">Region Name</label>
+              <input
+                type="text"
+                formControlName="regionName"
+                class="form-control"
+                id="regionName"
+                #region
+              />
+              <div
+                class="text-danger"
+                *ngIf="
+                  registerForm.controls['regionName'].touched &&
+                  !registerForm.controls['regionName'].valid
+                "
+              >
+                <small *ngIf="formControls['regionName'].errors?.['required']">
+                  this field is required
+                </small>
+                <small *ngIf="formControls['regionName'].errors?.['minlength']">
+                  this minimum length must be 5
+                </small>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              [disabled]="registerForm.invalid"
+              class="btn btn-primary"
+            >
+              Insert
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
