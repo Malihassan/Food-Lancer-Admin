@@ -10,14 +10,20 @@ import { RootSellerPageComponent } from './modules/seller/root-seller-page/root-
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 const routes: Routes = [
   // { path: "",component:AppComponent },
-  { path: 'profile', component: RootProfilePageComponent },
-  { path: 'buyer', component: RootBuyerPageComponent },
-  { path: 'seller', component: RootSellerPageComponent },
-  { path: 'category', component: RootCategoryPageComponent },
-  { path: 'product', component: RootProductPageComponent },
-  { path: 'order', component: RootOrderPageComponent },
-  { path: 'coverageArea', component: RootCoverageAreaPageComponent },
-  { path: '**', component: NotFoundPageComponent },
+  { path: 'profile',component:RootProfilePageComponent},
+  { path: 'buyer' ,children:[
+    {path:'',component:RootBuyerPageComponent},
+    {path:':id',component:RootBuyerPageComponent}
+  ]},
+  { path: 'seller' ,children:[
+    {path:'',component:RootSellerPageComponent},
+    {path:'',component:RootSellerPageComponent}
+  ]},
+  { path: 'category',component:RootCategoryPageComponent },
+  { path: "product" ,component:RootProductPageComponent},
+  { path: 'order' ,component:RootOrderPageComponent},
+  { path: 'coverageArea' ,component:RootCoverageAreaPageComponent},
+  { path: '**',component:NotFoundPageComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BuyerComponent } from '../../components/buyer/buyerTable/buyer.component';
+import { BuyerTableComponent } from '../../components/buyer/buyerTable/buyer-table.component';
 import { FilerBuyerComponent } from '../../components/buyer/filer-buyer/filer-buyer.component';
 import { BuyerRoutingModule } from './buyer-routing.module';
 import { ShareModule } from 'src/app/shared/module/share/share.module';
@@ -8,12 +8,12 @@ import { RootBuyerPageComponent } from './root-buyer-page/root-buyer-page.compon
 
 
 @NgModule({
-  declarations: [BuyerComponent,FilerBuyerComponent, RootBuyerPageComponent],
+  declarations: [BuyerTableComponent,FilerBuyerComponent, RootBuyerPageComponent],
   imports: [
     ShareModule,
     CommonModule,
     BuyerRoutingModule
   ],
-  exports:[BuyerComponent,FilerBuyerComponent]
+  exports:[BuyerTableComponent,FilerBuyerComponent]
 })
 export class BuyerModule { }

@@ -4,11 +4,13 @@ import { SellerComponent } from '../../components/seller/sellerTable/seller.comp
 import { SellerRoutingModule } from './seller-routing.module';
 import { ShareModule } from 'src/app/shared/module/share/share.module';
 import { RootSellerPageComponent } from './root-seller-page/root-seller-page.component';
+import { FilterSellerComponent } from 'src/app/components/seller/filter-seller/filter-seller.component';
 
 @NgModule({
   declarations: [
     SellerComponent,
     RootSellerPageComponent,
+    FilterSellerComponent
   ],
   imports: [
     ShareModule,
