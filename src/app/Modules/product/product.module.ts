@@ -13,6 +13,6 @@ import { RootProductPageComponent } from './root-product-page/root-product-page.
     CommonModule,
     ProductRoutingModule
   ],
-  exports:[ProductListComponent]
+  exports:[ProductListComponent] 
 })
 export class ProductModule { }

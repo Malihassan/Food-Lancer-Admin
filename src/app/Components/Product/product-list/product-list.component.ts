@@ -34,7 +34,4 @@ products:[] =[]
     console.log(this.page);
     this.productsDisplay(this.page)
       }
-
-
-
 }

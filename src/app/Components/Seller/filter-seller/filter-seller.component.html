@@ -1,0 +1,44 @@
+<section class="container">
+    <form [formGroup]="sellerFilterFormGroup" (ngSubmit)="submitSellerFilterForm()">
+        <div class="email-filter mb-4">
+            <input type="text" class="form-control" formControlName="email" placeholder="Search By Email">
+            <small class="text-danger" *ngIf="formControls['email'].errors?.['email']">Inavlid Email</small>
+        </div>
+        <div class="container-filter">
+            <label class="title mt-2">Status</label>
+            <div class="list-group">
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeStatusSelection($event)" type="checkbox" value="pending">
+                    Pending
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeStatusSelection($event)" type="checkbox" value="active">
+                    Active
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeStatusSelection($event)" type="checkbox" value="blocked">
+                    Blocked
+                </label>
+            </div>
+        </div>
+        <div class="container-filter">
+            <label class="title mt-2">Rate</label>
+            <div class="list-group">
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeRateSelection($event)" type="checkbox" value=">=2">
+                    Less than 2
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeRateSelection($event)" type="checkbox" value="2<=4">
+                    2 - 4
+                </label>
+                <label class="list-group-item">
+                    <input class="form-check-input me-1" (change)="changeRateSelection($event)" type="checkbox" value="4<=5">
+                    4 - 5
+                </label>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!formValid()"
+            class="w-100 btn btn-dark btn-md mt-5">Search</button>
+    </form>
+</section>

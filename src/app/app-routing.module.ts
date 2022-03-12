@@ -11,8 +11,14 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
 const routes: Routes = [
   // { path: "",component:AppComponent },
   { path: 'profile',component:RootProfilePageComponent},
-  { path: 'buyer' ,component:RootBuyerPageComponent},
-  { path: 'seller' ,component:RootSellerPageComponent},
+  { path: 'buyer' ,children:[
+    {path:'',component:RootBuyerPageComponent},
+    {path:':id',component:RootBuyerPageComponent}
+  ]},
+  { path: 'seller' ,children:[
+    {path:'',component:RootSellerPageComponent},
+    {path:'',component:RootSellerPageComponent}
+  ]},
   { path: 'category',component:RootCategoryPageComponent },
   { path: "product" ,component:RootProductPageComponent},
   { path: 'order' ,component:RootOrderPageComponent},
@@ -21,6 +27,6 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

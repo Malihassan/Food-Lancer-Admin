@@ -1,0 +1,28 @@
+<div class="card m-5" style="width: 25rem;">
+    <p class="card-header display-3 mb-5 text-center">Login Form</p>
+    <form class="card-body rounded-2 p-4" #loginForm="ngForm" (ngSubmit)="submitForm(loginForm)">
+      <p class="card-text h5 mb-5">You need to enter both your email and password.</p>
+        <div class="my-4">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="text" ngModel name="email" #email="ngModel" class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          <div class="text-danger" *ngIf="email.invalid && email.touched">
+              <small *ngIf="email.errors?.['required']">
+                  This field is required
+              </small>
+              <small *ngIf="email.errors?.['pattern']">
+                  Enter a valid email
+            </small>
+          </div>
+        </div>
+        <div class="my-4">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" ngModel name="password" #password="ngModel" class="form-control" id="exampleInputPassword1" required>
+          <div class="text-danger" *ngIf="password.invalid && password.touched">
+            <small *ngIf="password.errors?.['required']">
+                  This field is required
+            </small>
+          </div>
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary mt-5">Submit</button>
+    </form>
+  </div>  

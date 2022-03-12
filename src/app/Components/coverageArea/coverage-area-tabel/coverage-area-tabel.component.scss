@@ -1,0 +1,44 @@
+// .table{
+//     thead {
+//         border-bottom: 2px solid #d6d6d6;
+//         background-color: #f9f9f9;
+//         th{
+//             border-top: none;
+//             font-size: 0.8rem;
+//             font-weight: 500;
+//             color: #596677;
+//         }
+//     }
+//     tbody{
+//         tr{
+//             &:hover{
+//                 background-color: #bebebe;
+//             }
+//             td{
+//                 font-size: 0.8rem;
+//                 .rate{
+//                     width: 25px;
+//                 }
+//                 .status{
+//                     width: 50px;
+//                 }
+//             }
+//         }
+//     }
+    
+// }
+.pagination-container{
+    border-top: 1px solid #596677;
+    color: #596677;
+    margin-top: 4%;
+    label{
+        align-self: center;
+    }
+}
+#delete:hover{
+    cursor: pointer;
+}
+#tabel{
+    width: 100%;
+    padding: 1% 2% 1% 2% !important;
+}

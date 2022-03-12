@@ -1,1 +1,6 @@
-<p>root-buyer-page works!</p>
+<section class="container-page mt-5">
+    <app-filer-buyer  (getBuyersAfterFilter)="getBuyersAfterFilter($event)"></app-filer-buyer>
+    <!-- <app-buyer-table [query]="query" class="col-9"></app-buyer-table> -->
+    <app-table class="col-9" (updateStatus)="updateSellerStatus($event)" (paginationHandler)="paginationHandler($event)" [pageSize]="limit"  [collectionSize]="countOfBuyers" [tableHeader]="tableHeader" [tableData]="buyersData"></app-table>
+
+</section>
