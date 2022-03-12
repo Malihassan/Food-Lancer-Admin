@@ -1,9 +1,9 @@
 <div class="container">
     <ng-template [ngIf]="tableData.length ==0">
         <p class="notFoundData col-12 text-danger">
-         Query not match any data
+            Query not match any data
         </p>
-     </ng-template>
+    </ng-template>
     <table class="table">
         <thead>
             <tr>
@@ -11,7 +11,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of tableData" (click)="toDirect(row._id)">
+
+            <tr *ngFor="let row of tableData">
+
                 <td>
                     {{row.userName}}
                 </td>
@@ -46,13 +48,16 @@
                 <td>
                     <span class="status badge"
                         [ngClass]="{' bg-warning text-dark': row.status == 'pending', ' bg-primary' : row.status == 'active', ' bg-dark' : row.status == 'blocked' }">
-                        {{row.status}}</span>
+                        {{ row.status}}</span>
                 </td>
                 <td>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
-                            [checked]="row.status !== 'blocked'">
+                            [checked]="row.status !== 'blocked'" (change)="changeStatus($event,row._id)" value={{row.status}}>
                     </div>
+                </td>
+                <td  (click)="toDirect(row._id)">
+                    <i class="prof-icon fa-solid fa-user"></i>
                 </td>
             </tr>
         </tbody>

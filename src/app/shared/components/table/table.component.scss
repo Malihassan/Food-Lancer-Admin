@@ -22,7 +22,6 @@
     tbody{
         
         tr{
-            cursor: pointer;
             &:hover{
                 background-color: #bebebe;
             }
@@ -33,6 +32,12 @@
                 }
                 .status{
                     width: 60px;
+                }
+                .prof-icon{
+                    text-align: right;
+                    font-size: 25px;
+                    cursor: pointer;
+
                 }
             }
         }

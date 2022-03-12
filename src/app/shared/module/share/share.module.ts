@@ -35,6 +35,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   exports:[
     HttpClientModule,
+    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     NavBarComponent,
