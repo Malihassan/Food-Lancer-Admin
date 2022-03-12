@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 @Injectable({
   providedIn: 'root',
 })
 export class CoverageAreaService {
   constructor(private http: HttpClient) {}
-  getCoverageAreaList(pageNum: number) {
-    return this.http.get(`http://localhost:3000/admin/coverageArea?page=${pageNum}`);
+  getCoverageAreaList(pageNum: number,query:string) {
+    return this.http.get(
+      `http://localhost:3000/admin/coverageArea?page=${pageNum}&searchValue=${query}`,
+    );
   }
   insertCoverageAreaList(data: any) {
     console.log('Service Insert');
