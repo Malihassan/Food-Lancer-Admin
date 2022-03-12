@@ -13,9 +13,15 @@ export class RootCoverageAreaPageComponent implements OnInit {
   @ViewChild(CoverageAreaTabelComponent) child :any;
   ngOnInit(): void {
   }
+  querySearch:string="";
+  handelSearchValue(valSearch:string){
+    const valLowerCase=valSearch.toLowerCase();
+    this.querySearch=valLowerCase;
+    this.child.subscribeForGetCoverageArea(this.child.page,valLowerCase)
+  }
   handelClickInsert(event:any){
     // console.log(this.child.coverageAreaData);
-    this.child.subscribeForGetCoverageArea(this.child.page);
+    this.child.subscribeForGetCoverageArea(this.child.page,"");
     // console.log(this.child.coverageAreaData);
   }
 }

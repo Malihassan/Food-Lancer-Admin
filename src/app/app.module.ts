@@ -1,7 +1,7 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {CookieService} from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -17,8 +17,11 @@ import { CoverageAreaModule } from './modules/coverage-area/coverage-area.module
 import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { RequestInterceptor } from './Interceptor/request.interceptor';
+import { LoginFormComponent } from './components/account/login-form/login-form.component';
+import { RegisterFormComponent } from './components/account/register-form/register-form.component';
+
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent],
+  declarations: [AppComponent, NotFoundPageComponent, LoginFormComponent, RegisterFormComponent],
   imports: [
     BrowserModule,
     ShareModule,
@@ -38,7 +41,8 @@ import { RequestInterceptor } from './Interceptor/request.interceptor';
     provide:HTTP_INTERCEPTORS,
     useClass:RequestInterceptor,
     multi:true
-    }
+    },
+    CookieService
   ],
   bootstrap: [AppComponent],
 })
