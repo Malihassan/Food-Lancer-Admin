@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import {CookieService} from 'ngx-cookie-service';
 
 import {
   HttpRequest,
@@ -13,14 +14,15 @@ import { finalize, Observable } from 'rxjs';
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
 
-  constructor(private spinnerService: NgxSpinnerService) { }
+  constructor(private spinnerService: NgxSpinnerService, private cookieService:CookieService) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    const token = this.cookieService.get('token');
     const authReq = request.clone(
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
-          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik5ld0FkbWluMi0xIiwiaWQiOiI2MjEyOGM1NzU1ZmM1ODE1MjMwYjg5NDYiLCJpYXQiOjE2NDcwMTMxMjgsImV4cCI6MTY0NzA5OTUyOH0.zWeRIBKQv7tNJvT1DnBvjoefGbIm6X41lhQfSs15AW0',
+          token
         }),
       }
     )
