@@ -1,2 +1,2 @@
-<app-coverage-area-modal (clicked)="handelClickInsert($event)"></app-coverage-area-modal>
-<app-coverage-area-tabel ></app-coverage-area-tabel>
+<app-coverage-area-modal (valueSearch)="handelSearchValue($event)" (clicked)="handelClickInsert($event)"></app-coverage-area-modal>
+<app-coverage-area-tabel [valueOfSearch]="querySearch" ></app-coverage-area-tabel>
