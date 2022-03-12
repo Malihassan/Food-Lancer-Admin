@@ -13,9 +13,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class TableComponent implements OnInit {
   @Input() tableHeader?: string[];
   @Input() tableData: any =[];
-  
+
   @Output() paginationHandler = new EventEmitter<number>()
-  
+
   page: number = 1;
   pageSize = 4;
   @Input() collectionSize: number=0;
@@ -24,9 +24,8 @@ export class TableComponent implements OnInit {
     this.refreshPagination()
   }
 
-
   ngOnInit(): void {
-    
+
   }
 
 

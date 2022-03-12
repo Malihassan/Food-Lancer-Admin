@@ -4,7 +4,6 @@ import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { ProductDetailesComponent } from '../../components/product-detailes/product-detailes.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-
 import { TableComponent } from '../../components/table/table.component';
 import { ShareRoutingModule } from './share-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -33,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     TableComponent,
     ProductCardComponent,
     ProductDetailesComponent,
-    FooterComponent
+    FooterComponent,
+    NgbModule
   ]
 })
 export class ShareModule { }
