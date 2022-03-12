@@ -20,7 +20,7 @@ export class RequestInterceptor implements HttpInterceptor {
       {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
-          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik5ld0FkbWluMi0xIiwiaWQiOiI2MjEyOGM1NzU1ZmM1ODE1MjMwYjg5NDYiLCJpYXQiOjE2NDcwMTMxMjgsImV4cCI6MTY0NzA5OTUyOH0.zWeRIBKQv7tNJvT1DnBvjoefGbIm6X41lhQfSs15AW0',
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Ik5ld0FkbWluMi0xIiwiaWQiOiI2MjEyOGM1NzU1ZmM1ODE1MjMwYjg5NDYiLCJpYXQiOjE2NDcwNzI1ODUsImV4cCI6MTY0NzE1ODk4NX0.SA1A0Tz4jSWuEtPLtKnJvq3Ek1CTnBhVtjbF3k2N0iA',
         }),
       }
     )

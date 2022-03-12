@@ -10,6 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CoverageAreaModalComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
+  isExisted=false;
+  isDisabled=true;
   data:any={governorateName:"",regionName:""};
   constructor(private FB:FormBuilder,private coverageAreaService:CoverageAreaService) {
     this.registerForm = this.FB.group({
@@ -24,14 +26,32 @@ export class CoverageAreaModalComponent implements OnInit {
     return this.registerForm.controls;
   }
   @Output() clicked = new EventEmitter<any>();
+  @Output() valueSearch = new EventEmitter<any>();
   isClicked:boolean=true;
+  searchByRegionORGovernonateName(val:any){
+    this.valueSearch.emit(val);
+  }
   submitloginForm(governorate:string,region:string) {
     this.data.governorateName=governorate;
     this.data.regionName=region;
     this.clicked.emit(this.isClicked);
     this.coverageAreaService.insertCoverageAreaList(this.data).subscribe((res)=>{
-    });
-    
+    },
+      err=>{
+        if (err.status==400)
+          this.isExisted=true;
+      }
+    );
+  }
+  handelBtnStatus(val:string)
+  {
+    if (val.length===0)
+    {
+      this.isDisabled=true;
+      return;
+    }
+    this.isDisabled=false;
+
   }
   ngOnInit(): void {
 
