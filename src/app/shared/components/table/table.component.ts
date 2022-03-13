@@ -13,33 +13,22 @@ import { Router } from '@angular/router';
 })
 export class TableComponent implements OnInit {
   @Input() tableHeader?: string[];
-<<<<<<< HEAD
   @Input() tableData: any =[];
-
-  @Output() paginationHandler = new EventEmitter<number>()
-
-=======
-  @Input() tableData: any = [];
   @Input() pageSize: number = 0
   @Output() paginationHandler = new EventEmitter<number>()
   @Output() updateStatus = new EventEmitter<{id:string,status:string}>()
   @Input() collectionSize: number = 0;
->>>>>>> 76f3647811fdef0d0f65fdd96845fdf9854c92aa
   page: number = 1;
   constructor(private router:Router) {
     this.refreshPagination()
   }
-<<<<<<< HEAD
 
   ngOnInit(): void {
 
   }
 
-=======
-  ngOnInit(): void {
->>>>>>> 76f3647811fdef0d0f65fdd96845fdf9854c92aa
 
-  }
+  
   refreshPagination() {
     this.paginationHandler.emit(this.page)
   }

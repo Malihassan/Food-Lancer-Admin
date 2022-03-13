@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-// import { CoverageAreaService } from 'src/app/services/coverageArea/coverage-area.service';
 import { CoverageAreaTabelComponent } from '../../../components/coverageArea/coverage-area-tabel/coverage-area-tabel.component';
 
 @Component({
@@ -10,18 +9,17 @@ import { CoverageAreaTabelComponent } from '../../../components/coverageArea/cov
 export class RootCoverageAreaPageComponent implements OnInit {
 
   constructor() { }
-  @ViewChild(CoverageAreaTabelComponent) child :any;
+  @ViewChild(CoverageAreaTabelComponent,{static: false}) child :any;
   ngOnInit(): void {
   }
   querySearch:string="";
   handelSearchValue(valSearch:string){
     const valLowerCase=valSearch.toLowerCase();
     this.querySearch=valLowerCase;
-    this.child.subscribeForGetCoverageArea(this.child.page,valLowerCase)
+    this.child.subscribeForGetCoverageArea(this.child.page,this.querySearch);
+
   }
   handelClickInsert(event:any){
-    // console.log(this.child.coverageAreaData);
-    this.child.subscribeForGetCoverageArea(this.child.page,"");
-    // console.log(this.child.coverageAreaData);
+    this.child.subscribeForGetCoverageArea(this.child.page,this.querySearch);
   }
 }
