@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,12 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'food-lancer-admin';
-  status:boolean=false;
+  status: boolean = false;
+  authenticated: boolean = this.cookieService.get('token') ? true : false
+  constructor(private cookieService: CookieService) {
+    // this.authenticated = 
+  }
   addItem(newItem: boolean) {
-    this.status=newItem;
+    this.status = newItem;
   }
 }
