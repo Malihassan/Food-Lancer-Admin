@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './Components/account/home/home.component';
+import { LoginFormComponent } from './Components/account/login-form/login-form.component';
+import { RegisterFormComponent } from './Components/account/register-form/register-form.component';
+import { RootAccountPageComponent } from './Modules/account/root-account-page/root-account-page.component';
 import { RootBuyerPageComponent } from './modules/buyer/root-buyer-page/root-buyer-page.component';
 import { RootCategoryPageComponent } from './modules/category/root-category-page/root-category-page.component';
 import { RootCoverageAreaPageComponent } from './modules/coverage-area/root-coverage-area-page/root-coverage-area-page.component';
@@ -10,6 +14,20 @@ import { RootSellerPageComponent } from './modules/seller/root-seller-page/root-
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 const routes: Routes = [
   // { path: "",component:AppComponent },
+  { path: 'account', component: RootAccountPageComponent, children:[
+    {
+      path: '',
+      component: HomeComponent
+    },
+    {
+      path: 'login',
+      component: LoginFormComponent
+    },
+    {
+      path: 'register',
+      component: RegisterFormComponent
+    }
+  ]},
   { path: 'profile',component:RootProfilePageComponent},
   { path: 'buyer' ,children:[
     {path:'',component:RootBuyerPageComponent},
