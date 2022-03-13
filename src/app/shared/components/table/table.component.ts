@@ -13,13 +13,13 @@ import { Router } from '@angular/router';
 })
 export class TableComponent implements OnInit {
   @Input() tableHeader?: string[];
-  @Input() tableData: any =[];
+  @Input() tableData: any = [];
   @Input() pageSize: number = 0
   @Output() paginationHandler = new EventEmitter<number>()
-  @Output() updateStatus = new EventEmitter<{id:string,status:string}>()
+  @Output() updateStatus = new EventEmitter<{ id: string, status: string }>()
   @Input() collectionSize: number = 0;
   page: number = 1;
-  constructor(private router:Router) {
+  constructor(private router: Router) {
     this.refreshPagination()
   }
 
@@ -27,19 +27,17 @@ export class TableComponent implements OnInit {
 
   }
 
-
-  
   refreshPagination() {
     this.paginationHandler.emit(this.page)
   }
-  toDirect(id:string){    
-    this.router.navigate(['/buyer',id])
+  toDirect(id: string) {
+    this.router.navigate(['/buyer', id])
   }
-  changeStatus($event:any,id:string){
+  changeStatus($event: any, id: string) {
     let checkedValue = $event.target.value
     const ischecked = $event.target.checked
-    checkedValue = ischecked ? 'active':'blocked'
-    console.log(checkedValue,ischecked,id);
-    this.updateStatus.emit({id,status:checkedValue})
+    checkedValue = ischecked ? 'active' : 'blocked'
+    console.log(checkedValue, ischecked, id);
+    this.updateStatus.emit({ id, status: checkedValue })
   }
 }

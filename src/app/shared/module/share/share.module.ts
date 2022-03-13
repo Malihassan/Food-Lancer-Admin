@@ -35,7 +35,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   exports:[
     HttpClientModule,
-    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     NavBarComponent,
@@ -43,8 +42,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ProductCardComponent,
     ProductDetailesComponent,
     FooterComponent,
-    NgbModule,
-    LoaderComponent
+    LoaderComponent,
+    NgbModule
   ]
 })
 export class ShareModule { }

@@ -6,32 +6,32 @@ import { ProductServiceService } from '../../../services/product/product-service
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-   page: number = 1;
-   //newPage:number = 1
+  page: number = 1;
+  //newPage:number = 1
   pageSize = 12;
-  collectionSize: number=0;
-products:[] =[]
-  constructor(private productService:ProductServiceService) {
+  collectionSize: number = 0;
+  products: [] = []
+  constructor(private productService: ProductServiceService) {
   }
   ngOnInit(): void {
     this.productsDisplay(1)
   }
-  productsDisplay(page:number){
+  productsDisplay(page: number) {
     console.log(page);
-    this.productService.getAllProduct(page).subscribe((res:any)=>{
-      this.products=res.docs
-      this.collectionSize=res.totalDocs
-      this.pageSize=res.limit
+    this.productService.getAllProduct(page).subscribe((res: any) => {
+      this.products = res.docs
+      this.collectionSize = res.totalDocs
+      this.pageSize = res.limit
       console.log(res);
 
     },
-    (err) => {
-      console.log(err);
-    })
+      (err) => {
+        console.log(err);
+      })
   }
-  newPageNumber(page: number){
-    this.page =page
+  newPageNumber(page: number) {
+    this.page = page
     console.log(this.page);
     this.productsDisplay(this.page)
-      }
+  }
 }
