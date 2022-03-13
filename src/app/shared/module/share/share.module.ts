@@ -5,10 +5,7 @@ import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
 import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { ProductDetailesComponent } from '../../components/product-detailes/product-detailes.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-<<<<<<< HEAD
-=======
 import { LoaderComponent } from '../../components/loader/loader.component';
->>>>>>> 76f3647811fdef0d0f65fdd96845fdf9854c92aa
 import { TableComponent } from '../../components/table/table.component';
 import { ShareRoutingModule } from './share-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -38,7 +35,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   exports:[
     HttpClientModule,
-    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     NavBarComponent,
@@ -46,11 +42,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ProductCardComponent,
     ProductDetailesComponent,
     FooterComponent,
-<<<<<<< HEAD
+    LoaderComponent,
     NgbModule
-=======
-    LoaderComponent
->>>>>>> 76f3647811fdef0d0f65fdd96845fdf9854c92aa
   ]
 })
 export class ShareModule { }

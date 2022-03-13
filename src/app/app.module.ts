@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ShareModule } from './shared/module/share/share.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SellerModule } from './modules/seller/seller.module';
 import { OrderModule } from './modules/order/order.module';
@@ -33,7 +33,7 @@ import { RegisterFormComponent } from './components/account/register-form/regist
     ProfileModule,
     CoverageAreaModule,
     CategoryModule,
-    NgbModule,
+    // NgbModule,
     AppRoutingModule,
   ],
   providers: [
