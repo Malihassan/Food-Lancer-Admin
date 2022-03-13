@@ -7,6 +7,8 @@ import {
 } from '@angular/core';
 // import { DOCUMENT } from '@angular/common';
 
+import { OrderService } from '../../../services/order/order.service';
+
 @Component({
   selector: 'app-orders-page',
   templateUrl: './orders-page.component.html',
@@ -17,41 +19,22 @@ export class OrdersPageComponent implements OnInit {
   ngAfterViewInit() {
     console.log(this.div.nativeElement);
   }
-  // windowScrolled: any;
-  orders: any = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-  // constructor(@Inject(DOCUMENT) private document: Document) {}
-  constructor() {}
-  // @HostListener('window:scroll', [])
-  // onWindowScroll() {
-  //   if (
-  //     window.pageYOffset ||
-  //     document.documentElement.scrollTop ||
-  //     document.body.scrollTop > 100
-  //   ) {
-  //     this.windowScrolled = true;
-  //   } else if (
-  //     (this.windowScrolled && window.pageYOffset) ||
-  //     document.documentElement.scrollTop ||
-  //     document.body.scrollTop < 10
-  //   ) {
-  //     this.windowScrolled = false;
-  //   }
-  // }
-  // scrollToTop() {
-  //   (function smoothscroll() {
-  //     var currentScroll =
-  //       document.documentElement.scrollTop || document.body.scrollTop;
-  //     if (currentScroll > 0) {
-  //       window.requestAnimationFrame(smoothscroll);
-  //       window.scrollTo(0, currentScroll - currentScroll / 8);
-  //     }
-  //   })();
-  // }
+  orders: any = 0;
+
+  constructor(private orderService: OrderService) {}
+
+  onSearch(query: any) {
+    this.orderService.search(query).subscribe((res: any) => {
+      this.orders = res;
+    });
+  }
 
   scrollToTop() {
     this.div.nativeElement.scrollTop = 0;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.onSearch({ minPrice: 10 });
+  }
 }

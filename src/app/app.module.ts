@@ -17,6 +17,7 @@ import { CoverageAreaModule } from './modules/coverage-area/coverage-area.module
 import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { RequestInterceptor } from './Interceptor/request.interceptor';
+
 @NgModule({
   declarations: [AppComponent, NotFoundPageComponent],
   imports: [
@@ -35,10 +36,10 @@ import { RequestInterceptor } from './Interceptor/request.interceptor';
   ],
   providers: [
     {
-    provide:HTTP_INTERCEPTORS,
-    useClass:RequestInterceptor,
-    multi:true
-    }
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
