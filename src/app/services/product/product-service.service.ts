@@ -8,12 +8,13 @@ export class ProductServiceService {
   private productID = new BehaviorSubject(0);
   constructor(private http: HttpClient) {}
   getAllProduct(page:number) {
-    console.log(page);
-    const x = this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`);
-    console.log(x);
-    return x
+
+   return this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`);
+
   }
   getProductById(productID: any) {
+    console.log(productID);
+
     return this.http.get(`http://localhost:3000/admin/product/${productID}`);
   }
   updateProductStatusToAccepted(newProductID: any) {
