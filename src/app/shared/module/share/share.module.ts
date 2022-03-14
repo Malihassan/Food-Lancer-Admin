@@ -42,7 +42,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ProductCardComponent,
     ProductDetailesComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    NgbModule
   ]
 })
 export class ShareModule { }

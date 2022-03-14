@@ -1,7 +1,9 @@
 <div class="productLists container">
-  <div class="row justify-content-center">
-    <div *ngFor="let product of products" class="card col-4 py-3  ">
+  <div class="row justify-content-center ">
+    <div  *ngFor="let product of products" class="card col-4 py-3  ">
       <app-product-card [product] = "product"></app-product-card>
     </div>
+      <label>{{collectionSize}} total</label>
+       <ngb-pagination (pageChange)="newPageNumber($event)" [collectionSize]="collectionSize" [page]="page" [pageSize]="pageSize" ></ngb-pagination>
   </div>
 </div>

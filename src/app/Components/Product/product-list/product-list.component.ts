@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-//import {ProductServiceService}
 import { ProductServiceService } from '../../../services/product/product-service.service';
 @Component({
   selector: 'app-product-list',
@@ -7,13 +6,32 @@ import { ProductServiceService } from '../../../services/product/product-service
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-products:any
-  constructor(private productService:ProductServiceService) { }
+  page: number = 1;
+  //newPage:number = 1
+  pageSize = 12;
+  collectionSize: number = 0;
+  products: [] = []
+  constructor(private productService: ProductServiceService) {
+  }
   ngOnInit(): void {
-    console.log("before res");
- this.productService.getAllProduct().subscribe(res=>{
-  this.products=res
-  console.log(this.products);
-})
+    this.productsDisplay(1)
+  }
+  productsDisplay(page: number) {
+    console.log(page);
+    this.productService.getAllProduct(page).subscribe((res: any) => {
+      this.products = res.docs
+      this.collectionSize = res.totalDocs
+      this.pageSize = res.limit
+      console.log(res);
+
+    },
+      (err) => {
+        console.log(err);
+      })
+  }
+  newPageNumber(page: number) {
+    this.page = page
+    console.log(this.page);
+    this.productsDisplay(this.page)
   }
 }

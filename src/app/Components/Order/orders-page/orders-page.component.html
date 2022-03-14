@@ -1,5 +1,9 @@
 <div class="d-flex flex-row justify-content-start align-items-stretch">
-  <app-order-search class="col-3"></app-order-search>
+  <app-order-search
+    class="col-3"
+    (submitted)="onNewSearch($event)"
+    [count]="count"
+  ></app-order-search>
 
   <div
     class="container overflow-auto overflowScss col-9 flex-grow-1"

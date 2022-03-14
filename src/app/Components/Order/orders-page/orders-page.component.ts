@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 // import { DOCUMENT } from '@angular/common';
 
+import { Order } from '../../../interfaces/order';
 import { OrderService } from '../../../services/order/order.service';
 
 @Component({
@@ -16,17 +17,17 @@ import { OrderService } from '../../../services/order/order.service';
 })
 export class OrdersPageComponent implements OnInit {
   @ViewChild('ordersPage') div: any;
-  ngAfterViewInit() {
-    console.log(this.div.nativeElement);
-  }
+  ngAfterViewInit() {}
 
-  orders: any = 0;
+  orders: Order[] = [];
+  count: number = 0;
 
   constructor(private orderService: OrderService) {}
 
   onSearch(query: any) {
     this.orderService.search(query).subscribe((res: any) => {
-      this.orders = res;
+      this.orders = res.data;
+      this.count = res.countOfOrders;
     });
   }
 
@@ -34,7 +35,12 @@ export class OrdersPageComponent implements OnInit {
     this.div.nativeElement.scrollTop = 0;
   }
 
+  onNewSearch(e: any) {
+    // console.log(e, "it's me");
+    this.orders = e;
+  }
+
   ngOnInit(): void {
-    this.onSearch({ minPrice: 10 });
+    this.onSearch({});
   }
 }

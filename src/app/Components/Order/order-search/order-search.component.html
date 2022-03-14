@@ -12,7 +12,7 @@
             class="form-control"
             ngModel
             name="maxPrice"
-            [(ngModel)]="query.max"
+            [(ngModel)]="query.maxPrice"
             min="0"
             aria-describedby="emailHelp"
           />
@@ -25,7 +25,7 @@
             type="number"
             class="form-control"
             ngModel
-            [(ngModel)]="query.min"
+            [(ngModel)]="query.minPrice"
             name="minPrice"
             min="0"
             id="exampleInputPassword1"
@@ -38,14 +38,14 @@
           <select
             class="form-select"
             ngModel="0"
-            [(ngModel)]="query.status"
+            [(ngModel)]="query.orderStatus"
             name="status"
             aria-label="Select"
           >
             <option value="0">All</option>
-            <option value="1">in progress</option>
-            <option value="2">done</option>
-            <option value="3">cancel</option>
+            <option value="in progress">in progress</option>
+            <option value="done">done</option>
+            <option value="cancel">cancel</option>
           </select>
         </div>
       </div>
@@ -58,5 +58,15 @@
         Search
       </button>
     </form>
+  </div>
+
+  <div class="pagination-container d-flex justify-content-between p-2">
+    <label>{{ count }} total</label>
+    <ngb-pagination
+      [collectionSize]="count"
+      [(page)]="page"
+      (pageChange)="refreshPagination()"
+      [pageSize]="pageSize"
+    ></ngb-pagination>
   </div>
 </div>

@@ -6,11 +6,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ProductServiceService {
   private productID = new BehaviorSubject(0);
-  //private productId = new BehaviorSubject(0)
   constructor(private http: HttpClient) {}
-
-  getAllProduct() {
-    return this.http.get('http://localhost:3000/admin/product/allProducts');
+  getAllProduct(page:number) {
+    console.log(page);
+    const x = this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`);
+    console.log(x);
+    return x
   }
   getProductById(productID: any) {
     return this.http.get(`http://localhost:3000/admin/product/${productID}`);
