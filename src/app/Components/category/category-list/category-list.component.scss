@@ -9,6 +9,12 @@
     margin-bottom: 0.5rem;
     .card {
       border: 0px;
+      .editCategory {
+        @extend .list-group-item;
+        display: flex;
+        flex-direction: column;
+
+      }
       .list-group-item {
         cursor: pointer;
         border: none;
@@ -18,16 +24,12 @@
         justify-content: space-between;
         .icon {
           color: gray;
-          padding: 10px;
+          padding: 8px;
           &:hover {
             border-radius: 5px;
             background-color: black;
             color: white;
           }
-        }
-        &:hover {
-          padding-left: 1rem;
-          background-color: rgb(189, 189, 189);
         }
       }
       form {
