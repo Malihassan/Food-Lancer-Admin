@@ -18,16 +18,18 @@ import { OrderService } from '../../../services/order/order.service';
 export class OrdersPageComponent implements OnInit {
   @ViewChild('ordersPage') div: any;
   ngAfterViewInit() {}
-
+  page:number=1;
   orders: Order[] = [];
   count: number = 0;
 
   constructor(private orderService: OrderService) {}
 
   onSearch(query: any) {
-    this.orderService.search(query).subscribe((res: any) => {
-      this.orders = res.data;
-      this.count = res.countOfOrders;
+    this.orderService.search(this.page,query).subscribe((res: any) => {
+      this.orders = res.docs;
+      this.count = res.totalPages;
+      console.log(res);
+      console.log("data",this.orders);
     });
   }
 
@@ -36,8 +38,10 @@ export class OrdersPageComponent implements OnInit {
   }
 
   onNewSearch(e: any) {
-    // console.log(e, "it's me");
     this.orders = e;
+  }
+  onPageChange(e:any){
+    this.page=e;
   }
 
   ngOnInit(): void {

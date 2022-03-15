@@ -1,11 +1,11 @@
 <div class="card ms-2 my-5 shadow-lg rounded-3" style="width: 100%">
   <div class="card-body">
-    <h5 class="card-title">Order #{{ number }}</h5>
+    <h5 class="card-title">Order #{{ order._id }}</h5>
     <h6 class="card-subtitle mb-2 text-success">Delivered</h6>
     <p class="card-text">03 january 2022 16:35</p>
-    <p class="card-text">Seller : userName</p>
-    <p class="card-text">Buyer : userName</p>
-    <p class="card-text">Total Price : 50 EGP</p>
+    <p class="card-text">Seller : {{order.sellerId}}</p>
+    <p class="card-text">Buyer : {{order.buyerId}}</p>
+    <p class="card-text">Total Price : {{order.totalPrice | currency:'EGP'}}</p>
     <ul>
       <!-- <img src="http://placekitten.com/200/300" class="m-2" alt=".." /> -->
       <li class="card-text">productName</li>

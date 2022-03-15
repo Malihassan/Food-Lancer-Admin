@@ -2,6 +2,7 @@
   <app-order-search
     class="col-3"
     (submitted)="onNewSearch($event)"
+    (pageCount)="onPageChange($event)"
     [count]="count"
   ></app-order-search>
 
@@ -11,7 +12,7 @@
   >
     <app-order-card
       *ngFor="let order of orders"
-      [number]="order._id"
+      [order]="order"
     ></app-order-card>
 
     <!-- 

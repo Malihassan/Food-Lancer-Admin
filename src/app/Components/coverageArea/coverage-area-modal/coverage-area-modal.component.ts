@@ -39,6 +39,8 @@ export class CoverageAreaModalComponent implements OnInit {
     },
       err=>{
         if (err.status==400)
+        console.log(err);
+        console.log(this.isExisted);
           this.isExisted=true;
       }
     );

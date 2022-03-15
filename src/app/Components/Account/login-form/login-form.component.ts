@@ -16,7 +16,9 @@ export class LoginFormComponent implements OnInit {
 
   submitForm(form: any){
     this.loginService.adminLogin(form.value).subscribe((message:any) =>{
+      // console.log("test");
       this.token = message.token
+      console.log(this.token);
       this.cookieService.set('token', this.token, { expires: new Date(new Date().getTime() +  1000 * 60 * 60 * 24) });
     });
   }
