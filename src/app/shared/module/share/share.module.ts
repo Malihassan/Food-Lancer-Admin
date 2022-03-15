@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
+// import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ProductCardComponent,
     ProductDetailesComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -31,11 +32,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     ReactiveFormsModule,
     ShareRoutingModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
   ],
   exports:[
     HttpClientModule,
-    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     NavBarComponent,
@@ -43,8 +43,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ProductCardComponent,
     ProductDetailesComponent,
     FooterComponent,
+    LoaderComponent,
     NgbModule,
-    LoaderComponent
   ]
 })
 export class ShareModule { }

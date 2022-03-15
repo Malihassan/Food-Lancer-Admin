@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ShareModule } from './shared/module/share/share.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SellerModule } from './modules/seller/seller.module';
 import { OrderModule } from './modules/order/order.module';
@@ -17,11 +17,10 @@ import { CoverageAreaModule } from './modules/coverage-area/coverage-area.module
 import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { RequestInterceptor } from './Interceptor/request.interceptor';
-import { LoginFormComponent } from './components/account/login-form/login-form.component';
-import { RegisterFormComponent } from './components/account/register-form/register-form.component';
+import { AccountModule } from './modules/account/account.module';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent, LoginFormComponent, RegisterFormComponent],
+  declarations: [AppComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
     ShareModule,
@@ -33,8 +32,9 @@ import { RegisterFormComponent } from './components/account/register-form/regist
     ProfileModule,
     CoverageAreaModule,
     CategoryModule,
-    NgbModule,
+    // NgbModule,
     AppRoutingModule,
+    AccountModule
   ],
   providers: [
     {

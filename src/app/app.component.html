@@ -1,10 +1,15 @@
 <!-- <app-seller></app-seller>
     <app-filer-buyer></app-filer-buyer>
     <app-buyer></app-buyer> -->
-<app-nav-bar (newItemEvent)="addItem($event)"></app-nav-bar>
-<div [ngClass]="status ? 'home_active' : ''" class="home">
-  <router-outlet></router-outlet>
-  <app-loader></app-loader>
-  <app-footer></app-footer>
-</div>
-<!-- <app-login-form></app-login-form> -->
+
+<ng-template [ngIf]="!authenticated">
+  <app-login-form></app-login-form>
+</ng-template>
+<ng-template [ngIf]="authenticated">
+  <app-nav-bar (newItemEvent)="addItem($event)"></app-nav-bar>
+  <div [ngClass]="status ? 'home_active' : ''" class="home">
+    <router-outlet></router-outlet>
+    <app-loader></app-loader>
+    <app-footer></app-footer>
+  </div>
+</ng-template>
