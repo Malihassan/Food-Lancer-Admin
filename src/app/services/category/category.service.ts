@@ -16,4 +16,10 @@ export class CategoryService {
   addCategory(name:string){
     return this.http.post(`/admin/category`,{name})
   }
+  deleteCategory(id:string){
+    return this.http.delete(`/admin/category/${id}`)
+  }
+  updateCategory(id:string,name:string){
+    return this.http.patch(`/admin/category/${id}`,{name})
+  }
 }
