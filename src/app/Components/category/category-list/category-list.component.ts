@@ -111,7 +111,6 @@ export class CategoryListComponent implements OnInit {
     this.statusArray.push(checkedValue);
     //this.productsByStatus.emit(this.statusArray);
     console.log(this.statusArray);
-
     this.productService.getStatus(this.statusArray);
   }
 }

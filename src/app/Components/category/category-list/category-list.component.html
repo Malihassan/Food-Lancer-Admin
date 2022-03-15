@@ -12,7 +12,7 @@
       <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
         <div class="card">
           <div class="card-body px-2 py-0">
-            <ul class="list-group" *ngFor="let category of categoryList  let indexOfelement=index;">
+            <ul class="list-group" *ngFor="let category of categoryList; let indexOfelement = index">
               <li class="editCategory px-1">
                 <div class="d-flex justify-content-between">
                   <label> {{ category.name }}</label>
@@ -26,23 +26,26 @@
                 <div #editCategory="ngbCollapse" [(ngbCollapse)]="category.toggle">
                   <div class="card">
                     <div class="card-body px-2 py-0">
-                      <form [formGroup]="editCategoryForm" (submit)="SubmitEditCategoryForm(category._id,name.value)">
-                        <input type="text" formControlName="editCategoryName" placeholder={{category.name}}
-                          class="form-control" #name aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-                        <small class="text-danger" *ngIf="resError">
-                          {{ resError }}
-                        </small>
-                        <small class="text-danger"
-                          *ngIf="editCategoryFormControl['editCategoryName'].errors?.['minlength']">minLength is 5
-                        </small>
-                        <small class="text-danger"
-                          *ngIf="editCategoryFormControl['editCategoryName'].errors?.['pattern']">not allow number or
-                          spectial char
-                        </small>
-                        <button class="btn btn-dark my-2 px-3" type="submit" [disabled]="editCategoryForm.invalid">
-                          Update
-                        </button>
-                      </form>
+                        <form [formGroup]="editCategoryForm" (submit)="
+                          SubmitEditCategoryForm(category._id, name.value)
+                        ">
+                          <input type="text" formControlName="editCategoryName" placeholder="{{ category.name }}"
+                            class="form-control" #name aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
+
+                          <small class="text-danger" *ngIf="resError">
+                            {{ resError }}
+                          </small>
+                          <small class="text-danger"
+                            *ngIf="editCategoryFormControl['editCategoryName'].errors?.['minlength']">minLength is 5
+                          </small>
+                          <small class="text-danger"
+                            *ngIf="editCategoryFormControl['editCategoryName'].errors?.['pattern']">not allow number or
+                            spectial char
+                          </small>
+                          <button class="btn btn-dark my-2 px-3" type="submit" [disabled]="editCategoryForm.invalid">
+                            Update
+                          </button>
+                        </form>
                     </div>
                   </div>
                 </div>
@@ -81,31 +84,37 @@
         </div>
       </div>
     </div>
-    <div class="category-wrapper shadow-lg">
-      <!--  for statuse -->
-      <p class="categ-list" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-        aria-controls="collapseExample">
-        Status
-        <label>
-          <i class="fa-solid fa-chevron-down"></i>
-        </label>
-      </p>
-      <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-        <div class="card">
-          <div class="card-body px-2 py-0">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="pending" />
-                Pending
-              </li>
-              <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="pending" />
-                Blocked
-              </li>
-            </ul>
-          </div>
+
+  </div>
+
+  <div class="category-wrapper shadow-lg">
+    <!--  for statuse -->
+    <p class="categ-list" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample">
+      Status
+      <label>
+        <i class="fa-solid fa-chevron-down"></i>
+      </label>
+    </p>
+    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+      <div class="card">
+        <div class="card-body px-2 py-0">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="pending" (onChange)="onCheckboxChange($event)" />
+              Pending
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="blocked" (onChange)="onCheckboxChange($event)"/>
+              Blocked
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="active" (onChange)="onCheckboxChange($event)"/>
+              Active
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </section>
