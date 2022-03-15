@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-<div  class="container-page">
-    <app-category-list (productsByStatus)="fwdMsgToProduct($event)"></app-category-list>
-    <app-product-list [currentMsgFromCategoryToProduct]="currentMsgFromCategoryToProduct"></app-product-list>
-</div>
-=======
 <div class="container-page">
-    <app-category-list class="px-3"></app-category-list>
-    <app-product-list></app-product-list>
+  <app-category-list
+    class="px-3"
+    (productsByStatus)="fwdMsgToProduct($event)"
+  ></app-category-list>
+  <app-product-list
+    [currentMsgFromCategoryToProduct]="currentMsgFromCategoryToProduct"
+  ></app-product-list>
 </div>
->>>>>>> 9f1d6b14176cb94ead24cbc5841ffa3f1956d3ec
