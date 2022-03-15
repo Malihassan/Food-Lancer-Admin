@@ -24,6 +24,9 @@ export class OrderSearchComponent implements OnInit {
     maxPrice: 0,
     minPrice: 0,
     orderStatus: 0,
+    id: 0,
+    buyerId: 0,
+    sellerId: 0,
   };
 
   searchSubmit() {
@@ -41,11 +44,16 @@ export class OrderSearchComponent implements OnInit {
 
   neutralizeQuery(query: any) {
     let newQuery: any = {};
-    query.orderStatus === 0 ? '' : (newQuery.orderStatus = query.orderStatus);
+    query.orderStatus == (0 || null)
+      ? ''
+      : (newQuery.orderStatus = query.orderStatus);
 
-    query.maxPrice === 0 ? '' : (newQuery.maxPrice = query.maxPrice);
+    query.maxPrice == 0 ? '' : (newQuery.maxPrice = query.maxPrice);
 
-    query.minPrice === 0 ? '' : (newQuery.minPrice = query.minPrice);
+    query.minPrice == 0 ? '' : (newQuery.minPrice = query.minPrice);
+    query.id == 0 ? '' : (newQuery.id = query.id);
+    query.buyerId == 0 ? '' : (newQuery.buyerId = query.buyerId);
+    query.sellerId == 0 ? '' : (newQuery.sellerId = query.sellerId);
 
     return newQuery;
   }

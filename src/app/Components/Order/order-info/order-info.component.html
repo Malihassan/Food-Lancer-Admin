@@ -1,11 +1,15 @@
-<!-- <div class="card my-5 shadow-lg rounded-3" style="width: 100%">
+<div class="card my-5 shadow-lg rounded-3" style="width: 100%">
   <div class="card-body">
-    <h5 class="card-title">Order #1</h5>
-    <h6 class="card-subtitle mb-2 text-success">Delivered</h6>
-    <p class="card-text">03 january 2022 16:35</p>
-    <p class="card-text">Seller : userName</p>
-    <p class="card-text">Buyer : userName</p>
-    <p class="card-text">Total Price : 50 EGP</p>
+    <h5 class="card-title">Order #{{ id }}</h5>
+
+    <h6 [class]="'card-subtitle mb-2 ' + textColor">{{ order?.status }}</h6>
+    <p class="card-text">{{ order?.createdAt | date: "long" }}</p>
+    <p class="card-text">
+      Seller userName: {{ order?.sellerId.userName }} with Phone number of :
+      {{ order?.sellerId.phone }}
+    </p>
+    <p class="card-text">Buyer userName: {{ order?.buyerId.userName }}</p>
+    <p class="card-text">Total Price : {{ order?.totalPrice }}</p>
     <ul>
       <li class="card-text">productName</li>
       <img src="http://placekitten.com/200/300" class="m-2" alt=".." />
@@ -91,6 +95,6 @@
   <div [ngbNavOutlet]="nav" class="ms-4"></div>
 </div>
 
-<pre>Active: {{ active }}</pre> -->
+<pre>Active: {{ active }}</pre>
 
 <h1>Order Info</h1>

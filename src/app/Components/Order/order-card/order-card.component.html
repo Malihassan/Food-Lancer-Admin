@@ -1,25 +1,53 @@
 <div class="card ms-2 my-5 shadow-lg rounded-3" style="width: 100%">
+  <div class="d-flex flex-row ms-3 mt-3 justify-content-between">
+    <div>
+      <h5 class="card-title">Order #{{ order._id }}</h5>
+      <h6 [class]="'card-subtitle mb-2 ' + textColor">{{ order?.status }}</h6>
+      <p class="card-text">{{ order?.createdAt | date: "long" }}</p>
+    </div>
+    <div class="me-3">
+      <p class="card-text">Seller : {{ order?.sellerId.userName }}</p>
+      <p class="card-text">Buyer : {{ order?.buyerId.userName }}</p>
+    </div>
+  </div>
   <div class="card-body">
-    <h5 class="card-title">Order #{{ number }}</h5>
-    <h6 class="card-subtitle mb-2 text-success">Delivered</h6>
-    <p class="card-text">03 january 2022 16:35</p>
-    <p class="card-text">Seller : userName</p>
-    <p class="card-text">Buyer : userName</p>
-    <p class="card-text">Total Price : 50 EGP</p>
     <ul>
-      <!-- <img src="http://placekitten.com/200/300" class="m-2" alt=".." /> -->
-      <li class="card-text">productName</li>
-      <!-- <img src="http://placekitten.com/200/301" class="m-2" alt=".." /> -->
-      <li class="card-text">productName</li>
-      <!-- <img src="http://placekitten.com/201/301" class="m-2" alt=".." /> -->
-      <li class="card-text">productName</li>
+      <li *ngFor="let product of order?.products">
+        <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-start">
+            <p>
+              <img
+                src="{{ product?._id?.image[0].url }}"
+                class="m-2 round-img"
+                alt=".."
+              />
+            </p>
+            <span class="h5 mt-2">{{ product?._id?.name }}</span>
+          </div>
+          <p class="h5">{{ product?._id?.price | currency: "EGP " }}</p>
+        </div>
+      </li>
     </ul>
+    <!-- <img src="http://placekitten.com/200/300" class="m-2" alt=".." /> 
+        <li class="card-text">productName</li>
+        <img src="http://placekitten.com/200/301" class="m-2" alt=".." /> 
+        <li class="card-text">productName</li>
+        <img src="http://placekitten.com/201/301" class="m-2" alt=".." /> 
+        <li class="card-text">productName</li> -->
     <!-- list of imgs -->
     <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <hr />
 
-    <button type="button" routerLink="info" class="btn btn-primary">
-      See Details
-    </button>
+    <div class="d-flex flex-row ms-5 mt-3 justify-content-between">
+      <p class="h3">Total Price : {{ order?.totalPrice }}</p>
+      <button
+        type="button"
+        [routerLink]="['info', order._id]"
+        class="btn btn-primary"
+      >
+        See Details
+      </button>
+    </div>
 
     <!-- <a href="#" class="card-link">Another link</a> -->
   </div>
