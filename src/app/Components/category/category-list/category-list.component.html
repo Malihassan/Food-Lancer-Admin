@@ -2,12 +2,8 @@
   <div class="category-wrapper">
     <div>
       <!--  for categories -->
-      <p
-        class="categ-list"
-        (click)="collapse.toggle()"
-        [attr.aria-expanded]="!isCollapsed"
-        aria-controls="collapseExample"
-      >
+      <p class="categ-list" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+        aria-controls="collapseExample">
         Category
         <label>
           <i class="fa-solid fa-chevron-down"></i>
@@ -25,16 +21,9 @@
                   <label> {{ category.name }}</label>
                   <div>
                     <!-- for update category -->
-                    <i
-                      class="fa-solid fa-pen icon"
-                      (click)="editCategory.toggle(category.toggle)"
-                      [attr.aria-expanded]="!category.toggle"
-                      aria-controls="editCategoryCollapsed"
-                    ></i>
-                    <i
-                      class="fa-solid fa-trash-can icon"
-                      (click)="deleteCategoryHandler(category._id)"
-                    ></i>
+                    <i class="fa-solid fa-pen icon" (click)="editCategory.toggle(category.toggle)"
+                      [attr.aria-expanded]="!category.toggle" aria-controls="editCategoryCollapsed"></i>
+                    <i class="fa-solid fa-trash-can icon" (click)="deleteCategoryHandler(category._id)"></i>
                   </div>
                 </div>
                 <div
@@ -91,12 +80,8 @@
     <div class="d-flex flex-column justify-content-center">
       <!--  for adding new category -->
       <p class="py-2">
-        <i
-          class="fa-solid fa-plus add-icon"
-          (click)="AddCetcollapse.toggle()"
-          [attr.aria-expanded]="!addCategoryCollapsed"
-          aria-controls="addCategoryCollapsed"
-        ></i>
+        <i class="fa-solid fa-plus add-icon" (click)="AddCetcollapse.toggle()"
+          [attr.aria-expanded]="!addCategoryCollapsed" aria-controls="addCategoryCollapsed"></i>
       </p>
       <div #AddCetcollapse="ngbCollapse" [(ngbCollapse)]="addCategoryCollapsed">
         <div class="card col-11">
@@ -117,21 +102,13 @@
               <small class="text-danger" *ngIf="resError">
                 {{ resError }}
               </small>
-              <small
-                class="text-danger"
-                *ngIf="newCategoryFormControl['newCategoryName'].errors?.['minlength']"
-                >minLength is 5
+              <small class="text-danger"
+                *ngIf="newCategoryFormControl['newCategoryName'].errors?.['minlength']">minLength is 5
               </small>
-              <small
-                class="text-danger"
-                *ngIf="newCategoryFormControl['newCategoryName'].errors?.['pattern']"
-                >not allow number or spectial char
+              <small class="text-danger" *ngIf="newCategoryFormControl['newCategoryName'].errors?.['pattern']">not allow
+                number or spectial char
               </small>
-              <button
-                class="btn btn-dark my-2 px-3"
-                type="submit"
-                [disabled]="newCategoryForm.invalid"
-              >
+              <button class="btn btn-dark my-2 px-3" type="submit" [disabled]="newCategoryForm.invalid">
                 Add
               </button>
             </form>
@@ -143,12 +120,8 @@
 
   <div class="category-wrapper shadow-lg">
     <!--  for statuse -->
-    <p
-      class="categ-list"
-      (click)="collapse.toggle()"
-      [attr.aria-expanded]="!isCollapsed"
-      aria-controls="collapseExample"
-    >
+    <p class="categ-list" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample">
       Status
       <label>
         <i class="fa-solid fa-chevron-down"></i>
@@ -159,20 +132,16 @@
         <div class="card-body px-2 py-0">
           <ul class="list-group">
             <li class="list-group-item">
-              <input
-                class="form-check-input me-1"
-                type="checkbox"
-                value="pending"
-              />
+              <input class="form-check-input me-1" type="checkbox" value="pending" (onChange)="onCheckboxChange($event)" />
               Pending
             </li>
             <li class="list-group-item">
-              <input
-                class="form-check-input me-1"
-                type="checkbox"
-                value="pending"
-              />
+              <input class="form-check-input me-1" type="checkbox" value="blocked" (onChange)="onCheckboxChange($event)"/>
               Blocked
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" type="checkbox" value="active" (onChange)="onCheckboxChange($event)"/>
+              Active
             </li>
           </ul>
         </div>

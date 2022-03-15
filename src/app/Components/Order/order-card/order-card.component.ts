@@ -7,7 +7,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./order-card.component.scss'],
 })
 export class OrderCardComponent implements OnInit {
-  @Input() order:any;
+  @Input() order: any;
+  @Input() number = '';
   constructor() {}
-  ngOnInit(): void {}
+  textColor: any;
+  src: any;
+
+  ngOnInit(): void {
+    console.log(this.order);
+
+    this.textColor =
+      this.order.status === 'in progress'
+        ? 'text-warning'
+        : this.order.status === 'done'
+        ? 'text-success'
+        : 'text-danger';
+  }
 }

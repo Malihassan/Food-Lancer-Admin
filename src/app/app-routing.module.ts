@@ -11,6 +11,7 @@ import { HomePageComponent } from './modules/home/home-page/home-page.component'
 import { RootOrderPageComponent } from './modules/order/root-order-page/root-order-page.component';
 import { RootProductPageComponent } from './modules/product/root-product-page/root-product-page.component';
 import { RootProfilePageComponent } from './modules/profile/root-profile-page/root-profile-page.component';
+import { RootSellerDetailsPageComponent } from './modules/seller/root-seller-details-page/root-seller-details-page.component';
 import { RootSellerPageComponent } from './modules/seller/root-seller-page/root-seller-page.component';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { ProductDetailesComponent } from './shared/components/product-detailes/product-detailes.component';
@@ -37,7 +38,7 @@ const routes: Routes = [
   ]},
   { path: 'seller' ,children:[
     {path:'',component:RootSellerPageComponent},
-    {path:'',component:RootSellerPageComponent}
+    {path:'details',component:RootSellerDetailsPageComponent}
   ]},
   { path: 'category',component:RootCategoryPageComponent },
   { path: "product" ,children:[
