@@ -1,12 +1,12 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {CookieService} from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ShareModule } from './shared/module/share/share.module';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SellerModule } from './modules/seller/seller.module';
 import { OrderModule } from './modules/order/order.module';
@@ -33,17 +33,17 @@ import { CategoryDestailsComponent } from './components/category/category-destai
     ProfileModule,
     CoverageAreaModule,
     CategoryModule,
-    // NgbModule,
+    NgbModule,
     AppRoutingModule,
-    AccountModule
+    AccountModule,
   ],
   providers: [
     {
-    provide:HTTP_INTERCEPTORS,
-    useClass:RequestInterceptor,
-    multi:true
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
     },
-    CookieService
+    CookieService,
   ],
   bootstrap: [AppComponent],
 })

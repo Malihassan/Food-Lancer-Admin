@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./order-card.component.scss'],
 })
 export class OrderCardComponent implements OnInit {
-  @Input() number = 0;
+  @Input() number = '';
   constructor() {}
 
   ngOnInit(): void {}
