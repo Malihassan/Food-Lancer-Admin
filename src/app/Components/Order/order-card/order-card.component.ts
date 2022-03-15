@@ -1,3 +1,4 @@
+import { Order } from './../../../interfaces/order';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./order-card.component.scss'],
 })
 export class OrderCardComponent implements OnInit {
-  @Input() order: any = '';
+  @Input() order: any;
+  @Input() number = '';
   constructor() {}
   textColor: any;
   src: any;

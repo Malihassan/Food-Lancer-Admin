@@ -1,3 +1,4 @@
+import { Order } from './../../../interfaces/order';
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 import { OrderService } from '../../../services/order/order.service';
@@ -8,15 +9,14 @@ import { OrderService } from '../../../services/order/order.service';
   styleUrls: ['./order-search.component.scss'],
 })
 export class OrderSearchComponent implements OnInit {
-  // @Output() orders: any = this.orderService.orders;
-
   @Input() count = 0;
-  orders: any = [];
+  orders: Order[] = [];
 
   page: number = 1;
   pageSize: number = 1;
 
-  @Output() submitted = new EventEmitter<string>();
+  @Output() submitted = new EventEmitter<Order[]>();
+  @Output() pageCount = new EventEmitter<number>();
 
   constructor(private orderService: OrderService) {}
 
@@ -30,14 +30,13 @@ export class OrderSearchComponent implements OnInit {
   };
 
   searchSubmit() {
-    console.log(this.neutralizeQuery(this.query));
-
     this.orderService
-      .search(this.neutralizeQuery(this.query))
+      .search(this.page, this.neutralizeQuery(this.query))
       .subscribe((res: any) => {
-        console.log(res.data);
+        console.log(res);
+        console.log(res.docs, 'docs');
         this.orders = res.data;
-        this.count = res.countOfOrders;
+        this.count = res.totalPages;
         this.submitted.emit(this.orders);
       });
   }
@@ -61,12 +60,13 @@ export class OrderSearchComponent implements OnInit {
   ngOnInit(): void {}
 
   refreshPagination() {
-    this.orderService.search({ page: this.page }).subscribe((res: any) => {
-      console.log(this.page);
-      console.log(res);
-      this.orders = res.data;
-
-      this.submitted.emit(this.orders);
-    });
+    this.orderService
+      .search(this.page, this.neutralizeQuery(this.query))
+      .subscribe((res: any) => {
+        this.orders = res.docs;
+        console.log('data', this.orders);
+        this.pageCount.emit(this.page);
+        this.submitted.emit(this.orders);
+      });
   }
 }

@@ -41,12 +41,12 @@ export class RequestInterceptor implements HttpInterceptor {
           return res;
         }),
         catchError((error: HttpErrorResponse) => {
-          let errorMsg = '';
+          let errorMsg = '';          
           if (error.status == 401) {
             errorMsg = error.message;
             this._router.navigate(['/account/login']);
           }
-          return throwError(errorMsg);
+          return throwError(error);
         })
       )
       .pipe(

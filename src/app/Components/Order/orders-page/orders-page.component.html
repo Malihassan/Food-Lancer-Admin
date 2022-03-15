@@ -2,6 +2,7 @@
   <app-order-search
     class="col-3"
     (submitted)="onNewSearch($event)"
+    (pageCount)="onPageChange($event)"
     [count]="count"
   ></app-order-search>
 

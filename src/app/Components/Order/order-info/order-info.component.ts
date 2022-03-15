@@ -24,7 +24,7 @@ export class OrderInfoComponent implements OnInit {
       this.id = params.get('id');
       console.log(this.id);
     });
-    this.orderService.search({ id: this.id }).subscribe((res: any) => {
+    this.orderService.search(1, { id: this.id }).subscribe((res: any) => {
       this.order = res.data[0];
       console.log(this.order);
       this.textColor =
