@@ -45,6 +45,7 @@ export class RequestInterceptor implements HttpInterceptor {
           if (error.status == 401) {
             errorMsg = error.message;
             this._router.navigate(['/account/login']);
+            console.log(token)
           }
           return throwError(error);
         })

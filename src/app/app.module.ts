@@ -20,6 +20,7 @@ import { RequestInterceptor } from './Interceptor/request.interceptor';
 import { AccountModule } from './modules/account/account.module';
 import { CategoryDestailsComponent } from './components/category/category-destails/category-destails.component';
 
+
 @NgModule({
   declarations: [AppComponent, NotFoundPageComponent, CategoryDestailsComponent],
   imports: [
