@@ -18,9 +18,10 @@ import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { RequestInterceptor } from './Interceptor/request.interceptor';
 import { AccountModule } from './modules/account/account.module';
+import { CategoryDestailsComponent } from './components/category/category-destails/category-destails.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent],
+  declarations: [AppComponent, NotFoundPageComponent, CategoryDestailsComponent],
   imports: [
     BrowserModule,
     ShareModule,

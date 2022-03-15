@@ -6,6 +6,7 @@
 
   .category-wrapper {
     padding: 7px;
+    margin-bottom: 0.5rem;
     .card {
       border: 0px;
       .list-group-item {
@@ -17,15 +18,38 @@
         justify-content: space-between;
         .icon {
           color: gray;
+          padding: 10px;
+          &:hover {
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+          }
         }
         &:hover {
           padding-left: 1rem;
           background-color: rgb(189, 189, 189);
         }
       }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .add-icon {
+      float: right;
+      color: black;
+      font-size: 1.1rem;
+      margin-right: 1.25rem;
+      padding: 5px;
+      &:hover {
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+      }
     }
   }
   .categ-list {
+    width: 90%;
     display: flex;
     justify-content: space-between;
     font-size: 1.2rem;
