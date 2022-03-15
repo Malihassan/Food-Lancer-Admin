@@ -10,9 +10,9 @@ import { OrderService } from '../../../services/order/order.service';
 })
 export class OrderSearchComponent implements OnInit {
   @Input() count = 0;
+  @Input() page = 1;
   orders: Order[] = [];
 
-  page: number = 1;
   pageSize: number = 1;
 
   @Output() submitted = new EventEmitter<Order[]>();
@@ -21,21 +21,24 @@ export class OrderSearchComponent implements OnInit {
   constructor(private orderService: OrderService) {}
 
   query = {
-    maxPrice: 0,
-    minPrice: 0,
+    maxPrice: null,
+    minPrice: null,
     orderStatus: 0,
-    id: 0,
-    buyerId: 0,
-    sellerId: 0,
+    id: null,
+    buyerId: null,
+    sellerId: null,
   };
 
   searchSubmit() {
+    console.log(this.query, 'query');
+    console.log(this.neutralizeQuery(this.query), 'noQQ');
     this.orderService
       .search(this.page, this.neutralizeQuery(this.query))
       .subscribe((res: any) => {
         console.log(res);
         console.log(res.docs, 'docs');
-        this.orders = res.data;
+
+        this.orders = res.docs;
         this.count = res.totalPages;
         this.submitted.emit(this.orders);
       });
@@ -43,16 +46,16 @@ export class OrderSearchComponent implements OnInit {
 
   neutralizeQuery(query: any) {
     let newQuery: any = {};
-    query.orderStatus == (0 || null)
-      ? ''
+    query.orderStatus == 0
+      ? newQuery
       : (newQuery.orderStatus = query.orderStatus);
 
-    query.maxPrice == 0 ? '' : (newQuery.maxPrice = query.maxPrice);
+    query.maxPrice == null ? newQuery : (newQuery.maxPrice = query.maxPrice);
 
-    query.minPrice == 0 ? '' : (newQuery.minPrice = query.minPrice);
-    query.id == 0 ? '' : (newQuery.id = query.id);
-    query.buyerId == 0 ? '' : (newQuery.buyerId = query.buyerId);
-    query.sellerId == 0 ? '' : (newQuery.sellerId = query.sellerId);
+    query.minPrice == null ? newQuery : (newQuery.minPrice = query.minPrice);
+    query.id == null ? newQuery : (newQuery.id = query.id);
+    query.buyerId == null ? newQuery : (newQuery.buyerId = query.buyerId);
+    query.sellerId == null ? newQuery : (newQuery.sellerId = query.sellerId);
 
     return newQuery;
   }
@@ -63,8 +66,11 @@ export class OrderSearchComponent implements OnInit {
     this.orderService
       .search(this.page, this.neutralizeQuery(this.query))
       .subscribe((res: any) => {
+        console.log(this.page);
+        console.log(this.neutralizeQuery(this.query));
+        console.log(res, 'res');
         this.orders = res.docs;
-        console.log('data', this.orders);
+        console.log('docs', this.orders);
         this.pageCount.emit(this.page);
         this.submitted.emit(this.orders);
       });
