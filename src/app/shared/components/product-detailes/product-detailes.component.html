@@ -4,7 +4,7 @@
       <ngb-carousel>
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper p-5">
-            <img [src]= "product.image[0].url" alt="Random first slide">
+            <img [src]="product.image[0].url" alt="Random first slide">
           </div>
         </ng-template>
       </ngb-carousel>
@@ -19,20 +19,20 @@
           <div class="card-link my-3">Seller:<a href="" class=" mx-1 p-0 px-2">{{product.sellerId.userName}}</a></div>
           <h5 class="card-subtitle mb-3 text-muted my-3 ">{{product.price|currency:"EGP":"symbol"}}</h5>
           <p class="card-text my-3">{{product.Description}}</p>
-          <div class="card-link my-3">Category:<a href=""><button
-                class="btn btn-outline-dark mx-1 p-0 px-2">{{product.categoryId.name}}</button></a></div>
-          <div class="card-link ms-0">Status:
-              <button class="btn btn-outline-danger mx-1 p-0 px-2">Pending
-              </button>
+          <div class="card-link my-3">Category:<a href=""
+              class="btn btn-outline-dark mx-1 p-0 px-2">{{product.categoryId.name}}</a></div>
+          <div class="card-link ms-0">Status: {{product.status}}
+             <!--   <button class="btn btn-outline-danger mx-1 p-0 px-2">Pending
+              </button> -->
               <button (click)="changeStatusToAccepted()" class="btn btn-outline-info mx-1 p-0 px-2 " >Accepted
               </button>
           </div>
           <div>
             <label>Pending Message:</label>
             <br>
-            <textarea (input)="onChangeValue($event)"  name="pendingMessage" id="" cols="30" rows="2"></textarea>
+            <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
             <div>
-              <button (click)="sendPendingMessage()"  class="btn btn-outline-warning mx-1 p-0 px-2">Send
+              <button (click)="sendPendingMessage()" class="btn btn-outline-warning mx-1 p-0 px-2">Send
               </button>
             </div>
           </div>

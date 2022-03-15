@@ -1,4 +1,9 @@
 <div class="container-page">
-    <app-category-list class="px-3"></app-category-list>
-    <app-product-list></app-product-list>
+  <app-category-list
+    class="px-3"
+    (productsByStatus)="fwdMsgToProduct($event)"
+  ></app-category-list>
+  <app-product-list
+    [currentMsgFromCategoryToProduct]="currentMsgFromCategoryToProduct"
+  ></app-product-list>
 </div>

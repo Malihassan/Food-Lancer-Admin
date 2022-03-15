@@ -6,14 +6,21 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ProductServiceService {
   private productID = new BehaviorSubject(0);
+  private newStatus = new BehaviorSubject("");
   constructor(private http: HttpClient) {}
-  getAllProduct(page:number) {
-    console.log(page);
-    const x = this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`);
-    console.log(x);
-    return x
+  getAllProduct(page:number,status:any) {
+    console.log(this.newStatus);
+    console.log("tt",status);
+   // status=["active","blocked"]
+   return this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`,
+   {
+    params: {status},
+  }
+   );
   }
   getProductById(productID: any) {
+    console.log(productID);
+
     return this.http.get(`http://localhost:3000/admin/product/${productID}`);
   }
   updateProductStatusToAccepted(newProductID: any) {
@@ -54,4 +61,10 @@ export class ProductServiceService {
         }
       );
   }
+  getStatus(status:any){
+    console.log(this.newStatus);
+   return this.newStatus=status
+
+  }
+
 }

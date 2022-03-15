@@ -28,7 +28,7 @@ export class ProductCardComponent implements OnInit {
   }
   goToDetailes(){
     console.log(this.product._id);
-    this.router.navigate(["",this.product._id]);
+    this.router.navigate(["product/",this.product._id]);
     this.productservice.getProductById(this.product._id)
   }
 }
