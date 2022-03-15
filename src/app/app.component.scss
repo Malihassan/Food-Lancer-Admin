@@ -1,13 +1,14 @@
 $width1: calc(100% - 78px);
 $width2: calc(100% - 240px);
-.home{
-    position: absolute;
-    height: 100%;
-    width: $width2;
-    left: 240px;
-    transition: all 0.5s ease;
+.home {
+  position: absolute;
+  height: 100%;
+  width: $width2;
+  left: 240px;
+  transition: all 0.5s ease;
 }
-.home_active{
-    width: $width1 !important;
-    left: 78px !important;   
+.home_active {
+  width: $width1 !important;
+  left: 78px !important;
 }
+
