@@ -131,7 +131,34 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+    <div class="category-wrapper shadow-lg">
+        <p class="categ-list" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample">
+            Status
+            <label>
+                <i class="fa-solid fa-chevron-down"></i>
+            </label>
+        </p>
+        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div class="card">
+                <div class="card-body px-2 py-0">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="pending" (change)="onCheckboxChange($event)">
+                            Pending
+                        </li>
+                        <li class="list-group-item">
+                            <input class="form-check-input me-1" type="checkbox" value="Blocked" (change)="onCheckboxChange($event)">
+                            Blocked
+                        </li>
+                        <li class="list-group-item">
+                          <input class="form-check-input me-1" type="checkbox" value="Active" (change)="onCheckboxChange($event)">
+                          Active
+                      </li>
+=======
   </div>
+>>>>>>> 9f1d6b14176cb94ead24cbc5841ffa3f1956d3ec
 
   <div class="category-wrapper shadow-lg">
     <!--  for statuse -->
@@ -170,5 +197,8 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+=======
   </div>
+>>>>>>> 9f1d6b14176cb94ead24cbc5841ffa3f1956d3ec
 </section>

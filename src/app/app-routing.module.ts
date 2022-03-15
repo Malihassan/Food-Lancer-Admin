@@ -12,6 +12,7 @@ import { RootProductPageComponent } from './modules/product/root-product-page/ro
 import { RootProfilePageComponent } from './modules/profile/root-profile-page/root-profile-page.component';
 import { RootSellerPageComponent } from './modules/seller/root-seller-page/root-seller-page.component';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
+import { ProductDetailesComponent } from './shared/components/product-detailes/product-detailes.component';
 const routes: Routes = [
   // { path: "",component:AppComponent },
   { path: 'account', component: RootAccountPageComponent, children:[
@@ -38,13 +39,17 @@ const routes: Routes = [
     {path:'',component:RootSellerPageComponent}
   ]},
   { path: 'category',component:RootCategoryPageComponent },
-  { path: "product" ,component:RootProductPageComponent},
+  { path: "product" ,children:[
+    {path:'',component:RootProductPageComponent},
+    {path:':id',component:ProductDetailesComponent}
+  ]},
   { path: 'order' ,component:RootOrderPageComponent},
   { path: 'coverageArea' ,component:RootCoverageAreaPageComponent},
   { path: '**',component:NotFoundPageComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  //import { ProductDetailesComponent } from './shared/components/product-detailes/product-detailes.component';
+exports: [RouterModule],
 })
 export class AppRoutingModule {}

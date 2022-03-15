@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+import { ProductServiceService } from './../../../services/product/product-service.service';
+=======
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoryService } from 'src/app/services/category/category.service';
+>>>>>>> 9f1d6b14176cb94ead24cbc5841ffa3f1956d3ec
 
 @Component({
   selector: 'app-category-list',
@@ -8,7 +13,14 @@ import { CategoryService } from 'src/app/services/category/category.service';
   styleUrls: ['./category-list.component.scss']
 })
 export class CategoryListComponent implements OnInit {
+  @Output() productsByStatus: EventEmitter<string[]> = new EventEmitter<string[]>();
+   statusArray:any=[]
   public isCollapsed = false;
+<<<<<<< HEAD
+  constructor(private productService:ProductServiceService) {}
+  ngOnInit(): void {
+
+=======
   public addCategoryCollapsed = true
   public editCategoryCollapsed = true
   categoryList: any = []
@@ -69,6 +81,22 @@ export class CategoryListComponent implements OnInit {
     this.categoryServices.updateCategory(id,name).subscribe(res=>{
       this.getCategories()
     })
+>>>>>>> 9f1d6b14176cb94ead24cbc5841ffa3f1956d3ec
   }
+  onCheckboxChange(e:any){
+    const checkedValue = e.target.value
+    const isChecked = e.target.checked
+    if (!isChecked) {
+      this.statusArray = this.statusArray.filter((item: string) => item !== checkedValue)
+      //this.productsByStatus.emit(this.statusArray);
+      return
+    }
+    this.statusArray.push(checkedValue)
+    //this.productsByStatus.emit(this.statusArray);
+    console.log(this.statusArray);
+
+    this.productService.getStatus(this.statusArray)
+  }
+
 
 }

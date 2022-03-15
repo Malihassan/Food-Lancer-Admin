@@ -12,11 +12,15 @@ export class ProductDetailesComponent implements OnInit {
   inputValue = ""
   constructor(private router : ActivatedRoute,private productservice:ProductServiceService) {
     this.productID = this.router.snapshot.params['id'];
+    console.log(this.productID);
+
    }
   ngOnInit(): void {
     this.productservice.getProductById(this.productID).subscribe((res)=>{
+      console.log(res);
+
       this.product = res
-      console.log(this.product.name);
+      console.log(this.product);
     })
   }
   changeStatusToAccepted(){

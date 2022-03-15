@@ -26,11 +26,11 @@ export class FilterSellerComponent implements OnInit {
     let query: any = {}
     let formData = this.sellerFilterFormGroup.value
     formData.email ? query.email = formData.email : ""
-    this.status.length > 0 ? query.status = this.status : ""    
+    this.status.length > 0 ? query.status = this.status : ""
     this.rate.length > 0 ? query.rate =JSON.stringify(this.rate ) : ''
 
     console.log(query);
-      
+
     this.getSellersAfterFilter.emit(query)
   }
   changeStatusSelection($event: any) {
