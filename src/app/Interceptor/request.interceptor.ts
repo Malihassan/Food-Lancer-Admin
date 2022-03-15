@@ -9,44 +9,50 @@ import {
   HttpInterceptor,
   HttpHeaders,
   HttpErrorResponse,
-
 } from '@angular/common/http';
 import { catchError, empty, finalize, map, Observable, throwError } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
+  constructor(
+    private spinnerService: NgxSpinnerService,
+    private cookieService: CookieService,
+    private _router: Router
+  ) {}
 
-  constructor(private spinnerService: NgxSpinnerService, private cookieService: CookieService, private _router: Router) { }
-
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(
+    request: HttpRequest<unknown>,
+    next: HttpHandler
+  ): Observable<HttpEvent<unknown>> {
     const token = this.cookieService.get('token');
 
-    const authReq = request.clone(
-      {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          token
-        }),
-      }
-    )
+    const authReq = request.clone({
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        token,
+      }),
+    });
     this.spinnerService.show();
-    return next.handle(authReq)
+    return next
+      .handle(authReq)
       .pipe(
         map((res: any) => {
-          return res
+          return res;
         }),
         catchError((error: HttpErrorResponse) => {
-          let errorMsg = '';
+          let errorMsg = '';          
           if (error.status == 401) {
-            errorMsg = error.message
-            this._router.navigate(['/account/login'])
+            errorMsg = error.message;
+            this._router.navigate(['/account/login']);
           }
-          return throwError(errorMsg);
+          return throwError(error);
         })
       )
-      .pipe(finalize(() => {
-        this.spinnerService.hide();
-      }));
+      .pipe(
+        finalize(() => {
+          this.spinnerService.hide();
+        })
+      );
   }
 }

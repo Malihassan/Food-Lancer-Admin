@@ -1,12 +1,12 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {CookieService} from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ShareModule } from './shared/module/share/share.module';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SellerModule } from './modules/seller/seller.module';
 import { OrderModule } from './modules/order/order.module';
@@ -18,9 +18,10 @@ import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { RequestInterceptor } from './Interceptor/request.interceptor';
 import { AccountModule } from './modules/account/account.module';
+import { CategoryDestailsComponent } from './components/category/category-destails/category-destails.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent],
+  declarations: [AppComponent, NotFoundPageComponent, CategoryDestailsComponent],
   imports: [
     BrowserModule,
     ShareModule,
@@ -32,17 +33,17 @@ import { AccountModule } from './modules/account/account.module';
     ProfileModule,
     CoverageAreaModule,
     CategoryModule,
-    // NgbModule,
+    NgbModule,
     AppRoutingModule,
-    AccountModule
+    AccountModule,
   ],
   providers: [
     {
-    provide:HTTP_INTERCEPTORS,
-    useClass:RequestInterceptor,
-    multi:true
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
     },
-    CookieService
+    CookieService,
   ],
   bootstrap: [AppComponent],
 })

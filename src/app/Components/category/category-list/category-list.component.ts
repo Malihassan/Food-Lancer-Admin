@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { ProductServiceService } from './../../../services/product/product-service.service';
+=======
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CategoryService } from 'src/app/services/category/category.service';
+>>>>>>> 9f1d6b14176cb94ead24cbc5841ffa3f1956d3ec
 
 @Component({
   selector: 'app-category-list',
@@ -10,9 +16,72 @@ export class CategoryListComponent implements OnInit {
   @Output() productsByStatus: EventEmitter<string[]> = new EventEmitter<string[]>();
    statusArray:any=[]
   public isCollapsed = false;
+<<<<<<< HEAD
   constructor(private productService:ProductServiceService) {}
   ngOnInit(): void {
 
+=======
+  public addCategoryCollapsed = true
+  public editCategoryCollapsed = true
+  categoryList: any = []
+  newCategoryForm: FormGroup
+  editCategoryForm:FormGroup
+  resError: string = ''
+  editCategory= false
+
+  constructor(private fb: FormBuilder, private categoryServices: CategoryService) {
+    this.newCategoryForm = this.fb.group({
+      newCategoryName: ['', [Validators.required, Validators.minLength(5), Validators.pattern('^(?![0-9._])(?!.*[0-9._]$)(?!.*\d_)(?!.*_\d)[a-zA-Z0-9_]+$')]]
+    })
+    this.editCategoryForm = this.fb.group({
+      editCategoryName: ['', [Validators.required, Validators.minLength(5), Validators.pattern('^(?![0-9._])(?!.*[0-9._]$)(?!.*\d_)(?!.*_\d)[a-zA-Z0-9_]+$')]]
+    })
+  }
+
+  ngOnInit(): void {
+    this.getCategories()
+  }
+  getCategories() {
+    this.categoryServices.getCategories().subscribe((res: any) => {
+      res.map((item:any)=>item.toggle=true)      
+      this.categoryList = res
+    })
+  }
+  editCategoryHandler(id: string) {
+    this.editCategory = true
+    console.log('hereeeeeee');
+    
+    // this.categoryServices.getCategoryById(id).subscribe((res: any) => {
+    //   console.log(res);
+    // })
+  }
+  deleteCategoryHandler(id: string) {
+    this.categoryServices.deleteCategory(id).subscribe((res) => {
+      this.getCategories()
+    })
+  }
+  get newCategoryFormControl() {
+    return this.newCategoryForm.controls
+  }
+  get editCategoryFormControl(){
+    return this.editCategoryForm.controls
+  }
+  SubmitNewCategoryForm(name: string) {
+    console.log(name);
+
+    this.categoryServices.addCategory(name).subscribe(res => {
+      this.getCategories()
+    }, (err) => {
+      this.resError = err.error.error
+    })
+
+
+  }
+  SubmitEditCategoryForm(id:string,name:string){
+    this.categoryServices.updateCategory(id,name).subscribe(res=>{
+      this.getCategories()
+    })
+>>>>>>> 9f1d6b14176cb94ead24cbc5841ffa3f1956d3ec
   }
   onCheckboxChange(e:any){
     const checkedValue = e.target.value

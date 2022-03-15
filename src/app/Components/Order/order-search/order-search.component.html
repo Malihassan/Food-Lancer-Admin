@@ -1,0 +1,72 @@
+<div class="card mt-3 shadow-lg ms-3 rounded-3 h-100">
+  <div class="card-body h-100">
+    <form class="h-50" #searchForm="ngForm">
+      {{ searchForm.value | json }}
+      <div class="d-flex flex-column h-100 justify-content-start">
+        <div class="m-2 form-group">
+          <label for="exampleInputEmail1" class="form-label"
+            >Maximum Price</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            ngModel
+            name="maxPrice"
+            [(ngModel)]="query.maxPrice"
+            min="0"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="m-2 form-group">
+          <label for="exampleInputPassword1" class="form-label"
+            >Minimum Price</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            ngModel
+            [(ngModel)]="query.minPrice"
+            name="minPrice"
+            min="0"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="m-2 form-group">
+          <label for="exampleInputPassword1" class="form-label">
+            Order Status</label
+          >
+          <select
+            class="form-select"
+            ngModel="0"
+            [(ngModel)]="query.orderStatus"
+            name="status"
+            aria-label="Select"
+          >
+            <option value="0">All</option>
+            <option value="in progress">in progress</option>
+            <option value="done">done</option>
+            <option value="cancel">cancel</option>
+          </select>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        (click)="searchSubmit()"
+        class="btn ms-3 btn-primary btn-lg"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+
+  <div class="pagination-container d-flex justify-content-between p-2">
+    <label>{{ count }} total</label>
+    <ngb-pagination
+      [collectionSize]="count"
+      [(page)]="page"
+      (pageChange)="refreshPagination()"
+      [pageSize]="pageSize"
+    ></ngb-pagination>
+  </div>
+</div>
