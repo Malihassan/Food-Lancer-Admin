@@ -38,8 +38,10 @@
             {{ product._id?.description }}</small
           >
           <div class="d-flex justify-content-between">
-            <small class="fw-bold">5$</small>
-            <small class="fw-bold">Qty: 1</small>
+            <small class="fw-bold"
+              >{{ product._id?.price | currency: "EGP " }}
+            </small>
+            <small class="fw-bold">Qty: {{ product?.quantity }}</small>
           </div>
           <hr />
         </div>
@@ -71,4 +73,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
