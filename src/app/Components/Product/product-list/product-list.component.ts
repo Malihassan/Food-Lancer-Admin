@@ -17,21 +17,21 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductServiceService) {
   }
   ngOnInit(): void {
-    this.getStatus()
-    //this.status=this.currentMsgFromCategoryToProduct
-    this.productsDisplay(1);
-    //console.log(this.status);
-    //console.log(this.blahhhhhh);
-  }
-  getStatus(){
-    this.productService.getStatus(status).subscribe((res: any) => {
-      console.log('====>',res);
-    })
-  }
-  //this.paginationHandler.emit(this.page)
-  productsDisplay(page: number) {
+    console.log(this.status);
 
-    this.productService.getAllProduct(page,this.currentMsgFromCategoryToProduct).subscribe(
+    this.getStatusArr()
+   this.productsDisplay(1,this.status);
+  }
+  getStatusArr(){
+    this.productService.getStatus(status).subscribe((res: any) => {
+      this.status = res
+      console.log(this.status);
+    })
+  } 
+  productsDisplay(page: number,status:any) {
+    //this.getStatusArr()
+    console.log(this.status);
+    this.productService.getAllProduct(page,status).subscribe(
       (res: any) => {
         this.products = res.docs;
         this.collectionSize = res.totalDocs;
@@ -43,7 +43,8 @@ export class ProductListComponent implements OnInit {
     );
   }
   newPageNumber(page: number) {
+    console.log(this.status);
     this.page = page;
-    this.productsDisplay(this.page);
+    this.productsDisplay(this.page,this.status);
   }
 }

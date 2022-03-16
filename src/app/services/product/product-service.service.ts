@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductServiceService {
   private productID = new BehaviorSubject(0);
   private newStatus = new BehaviorSubject("");
+  //public status = new BehaviorSubject(["active"]);
   constructor(private http: HttpClient) {}
   getAllProduct(page:number,status:any) {
     console.log(this.newStatus);
@@ -62,9 +63,7 @@ export class ProductServiceService {
       );
   }
   getStatus(status:any){
-    console.log(this.newStatus);
-   return this.newStatus=status
-
+   this.newStatus.next(status)
+   return this.newStatus
   }
-
 }
