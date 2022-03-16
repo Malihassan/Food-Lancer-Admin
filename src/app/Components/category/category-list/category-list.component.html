@@ -18,7 +18,7 @@
             >
               <li class="editCategory px-1">
                 <div class="d-flex justify-content-between">
-                  <label> {{ category.name }}</label>
+                  <label (click)="onCategoryChange(category._id)"> {{ category.name }}</label>
                   <div>
                     <!-- for update category -->
                     <i class="fa-solid fa-pen icon" (click)="editCategory.toggle(category.toggle)"
