@@ -38,7 +38,7 @@ const routes: Routes = [
   ]},
   { path: 'seller' ,children:[
     {path:'',component:RootSellerPageComponent},
-    {path:'details',component:RootSellerDetailsPageComponent}
+    {path:'details/:id',component:RootSellerDetailsPageComponent}
   ]},
   { path: 'category',component:RootCategoryPageComponent },
   { path: "product" ,children:[

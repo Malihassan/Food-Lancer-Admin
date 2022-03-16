@@ -25,7 +25,7 @@ export class OrderInfoComponent implements OnInit {
       console.log(this.id);
     });
     this.orderService.search(1, { id: this.id }).subscribe((res: any) => {
-      this.order = res.data[0];
+      this.order = res.docs[0];
       console.log(this.order);
       this.textColor =
         this.order.status === 'in progress'
