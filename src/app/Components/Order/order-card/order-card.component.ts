@@ -14,8 +14,7 @@ export class OrderCardComponent implements OnInit {
   src: any;
 
   ngOnInit(): void {
-    console.log("or",this.order);
-
+    console.log('or', this.order);
     this.textColor =
       this.order.status === 'in progress'
         ? 'text-warning'

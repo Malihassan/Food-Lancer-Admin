@@ -14,16 +14,17 @@
     >
       <div class="col-4">
         <img
-          src="../../../../assets/elmaestro2.JPG"
+          src="{{ product._id?.image[0].url }}"
           class="round-img img-fluid rounded-circle"
           alt=".."
         />
       </div>
       <div class="ps-0 col-8 d-flex flex-column">
-        <h6>Vegatble</h6>
-        <small class="card-text text-secondary"
-          >Vegatble Fitters with Egg</small
-        >
+        <h6>{{ product._id?.name }}</h6>
+
+        <small class="card-text text-secondary">{{
+          product._id?.description
+        }}</small>
         <div class="d-flex justify-content-between">
           <small class="fw-bold">5$</small>
           <small class="fw-bold">Qty: 1</small>
@@ -36,20 +37,21 @@
       <div class="col-9 d-flex flex-column">
         <h6 class="fw-bold">
           Seller Name :
-        <small class="text-secondary">
-          {{
-            order.sellerId.firstName + " " + order.sellerId.lastName | titlecase
-          }}
-        </small>
+          <small class="text-secondary">
+            {{
+              order.sellerId.firstName + " " + order.sellerId.lastName
+                | titlecase
+            }}
+          </small>
         </h6>
         <h6 class="fw-bold">
           Buyer Name :
           <small class="text-secondary">
-          {{
-            order.buyerId.firstName + " " + order.buyerId.lastName | titlecase
-          }}
-        </small>
-      </h6>
+            {{
+              order.buyerId.firstName + " " + order.buyerId.lastName | titlecase
+            }}
+          </small>
+        </h6>
       </div>
       <div class="d-flex flex-column col-3 ps-3">
         <small class="text-secondary pb-2">X2 Items</small>
