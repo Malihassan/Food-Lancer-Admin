@@ -12,7 +12,7 @@ export class ProductServiceService {
     console.log(this.newStatus);
     console.log("tt",status);
    // status=["active","blocked"]
-   return this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`,
+   return this.http.get(`/admin/product/allProducts?page=${page}`,
    {
     params: {status},
   }

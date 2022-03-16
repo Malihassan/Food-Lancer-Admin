@@ -12,7 +12,7 @@ export class SellerService {
 
   getSellersList(pageNum: number, query: any) {
     return this.http.get(
-      `${environment.apiUrl}seller/allSellers?page=${pageNum}`,
+      `/admin/seller/allSellers?page=${pageNum}`,
       {
         params: { ...query },
       }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:'http://localhost:3000/admin/'
+  apiUrl:'https://food-lancer.herokuapp.com/admin'
 };
 
 /*

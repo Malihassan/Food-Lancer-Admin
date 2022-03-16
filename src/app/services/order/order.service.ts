@@ -10,7 +10,7 @@ export class OrderService {
 
   search(page: number, query: any) {
     return this.http.get(
-      `http://localhost:3000/admin/order/orders?page=${page}`,
+      `/admin/order/orders?page=${page}`,
       {
         params: {
           ...query,

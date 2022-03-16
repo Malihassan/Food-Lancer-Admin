@@ -9,10 +9,10 @@ export class SellerDetailsService {
   constructor(private http : HttpClient) { }
 
   getSellerProducts(id:string){
-    return this.http.get(`http://localhost:3000/admin/seller/${id}/products`)
+    return this.http.get(`/admin/seller/${id}/products`)
   }
 
   getSellerOrders(id:string){
-    return this.http.get(`http://localhost:3000/admin/seller/${id}/orders`)
+    return this.http.get(`/admin/seller/${id}/orders`)
   }
 }

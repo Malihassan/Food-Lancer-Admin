@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class BuyerService {
   constructor(private http: HttpClient) { }
 
   getBuyerList(pageNum: number,query:any={}) {
-    return this.http.get(`http://localhost:3000/admin/buyer/allBuyers?page=${pageNum}`, {
+    return this.http.get(`${environment.apiUrl}/buyer/allBuyers?page=${pageNum}`, {
       params: { ...query },
   
     })
