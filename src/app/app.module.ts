@@ -18,11 +18,11 @@ import { CategoryModule } from './modules/category/category.module';
 import { NotFoundPageComponent } from './shared/components/not-found-page/not-found-page.component';
 import { RequestInterceptor } from './Interceptor/request.interceptor';
 import { AccountModule } from './modules/account/account.module';
-import { CategoryDestailsComponent } from './components/category/category-destails/category-destails.component';
+import { HomeModule } from './modules/home/home.module';
 
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent, CategoryDestailsComponent],
+  declarations: [AppComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
     ShareModule,
@@ -37,6 +37,7 @@ import { CategoryDestailsComponent } from './components/category/category-destai
     NgbModule,
     AppRoutingModule,
     AccountModule,
+    HomeModule
   ],
   providers: [
     {

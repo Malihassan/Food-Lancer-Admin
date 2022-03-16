@@ -9,7 +9,7 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   postAdmin(newAdmin: any){
-    return this.http.post("http://localhost:3000/admin/account/signup", newAdmin)
+    return this.http.post("/admin/account/signup", newAdmin)
   }
   
 }

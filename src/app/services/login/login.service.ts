@@ -9,6 +9,6 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   adminLogin(adminData : any){
-    return this.http.post("http://localhost:3000/admin/account/login", adminData)
+    return this.http.post("/admin/account/login", adminData)
   }
 }

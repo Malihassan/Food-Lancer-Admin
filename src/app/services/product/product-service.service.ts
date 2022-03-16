@@ -9,12 +9,13 @@ export class ProductServiceService {
   private newStatus = new BehaviorSubject("");
   //public status = new BehaviorSubject(["active"]);
   constructor(private http: HttpClient) {}
-  getAllProduct(page:number,statuss:any) {
-    statuss=["active","blocked"]
-    console.log(statuss);
-   return this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`,
+  getAllProduct(page:number,status:any) {
+    console.log(this.newStatus);
+    console.log("tt",status);
+   // status=["active","blocked"]
+   return this.http.get(`/admin/product/allProducts?page=${page}`,
    {
-    params: {statuss},
+    params: {status},
   }
    );
   }
