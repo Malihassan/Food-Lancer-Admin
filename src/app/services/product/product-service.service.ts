@@ -7,14 +7,14 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductServiceService {
   private productID = new BehaviorSubject(0);
   private newStatus = new BehaviorSubject("");
+  //public status = new BehaviorSubject(["active"]);
   constructor(private http: HttpClient) {}
-  getAllProduct(page:number,status:any) {
-    console.log(this.newStatus);
-    console.log("tt",status);
-   // status=["active","blocked"]
+  getAllProduct(page:number,statuss:any) {
+    statuss=["active","blocked"]
+    console.log(statuss);
    return this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}`,
    {
-    params: {status},
+    params: {statuss},
   }
    );
   }
@@ -62,9 +62,7 @@ export class ProductServiceService {
       );
   }
   getStatus(status:any){
-    console.log(this.newStatus);
-   return this.newStatus=status
-
+   this.newStatus.next(status)
+   return this.newStatus
   }
-
 }
