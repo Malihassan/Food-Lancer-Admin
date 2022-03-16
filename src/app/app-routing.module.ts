@@ -40,7 +40,7 @@ const routes: Routes = [
     {path:'',component:RootSellerPageComponent},
     {path:'details/:id',component:RootSellerDetailsPageComponent}
   ]},
-  { path: 'category',component:RootCategoryPageComponent },
+  { path: 'home',component:HomePageComponent },
   { path: "product" ,children:[
     {path:'',component:RootProductPageComponent},
     {path:':id',component:ProductDetailesComponent}
