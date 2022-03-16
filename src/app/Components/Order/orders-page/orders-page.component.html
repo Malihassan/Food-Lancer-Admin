@@ -1,26 +1,16 @@
 <div class="d-flex flex-row justify-content-start align-items-stretch">
   <app-order-search
-    class="col-3"
+    class="col-2"
     (submitted)="onNewSearch($event)"
     (pageCount)="onPageChange($event)"
     [count]="count"
     [page]="page"
   ></app-order-search>
-
-  <div
-    class="container overflow-auto overflowScss col-9 flex-grow-1"
-    #ordersPage
-  >
-    <app-order-card
-      *ngFor="let order of orders"
-      [order]="order"
-    ></app-order-card>
-
-    <!-- 
-    https://www.w3schools.com/howto/howto_js_scroll_to_top.asp 
-    https://mdbootstrap.com/docs/standard/extended/back-to-top/
-    to make it disappear
-  --></div>
+  <div class="col-10 d-flex flex-wrap over-flow-auto overflowScss" #ordersPage>
+    <div class="mx-2 widthOfCard"  *ngFor="let order of orders">
+      <app-order-card class="widthOfCard" [order]="order"></app-order-card>
+    </div>
+  </div>
 </div>
 <button
   (click)="scrollToTop()"

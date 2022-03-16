@@ -1,15 +1,47 @@
-<div class="card my-5 shadow-lg rounded-3" style="width: 100%">
+<div class="container card my-5 shadow-lg rounded-3" style="width: 100%">
   <div class="card-body">
     <h5 class="card-title">Order #{{ id }}</h5>
 
     <h6 [class]="'card-subtitle mb-2 ' + textColor">{{ order?.status }}</h6>
     <p class="card-text">{{ order?.createdAt | date: "long" }}</p>
-    <p class="card-text">
-      Seller userName: {{ order?.sellerId.userName }} with Phone number of :
-      {{ order?.sellerId.phone }}
-    </p>
-    <p class="card-text">Buyer userName: {{ order?.buyerId.userName }}</p>
-    <p class="card-text">Total Price : {{ order?.totalPrice }}</p>
+    <div class="d-flex flex-row justify-content-around">
+      <div class="card shadow-lg" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Seller</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            user name : {{ order?.sellerId.userName }}
+          </h6>
+          <p class="card-text mt-3 mb-0">
+            Full Name : {{ order?.sellerId.firstName }}
+            {{ order?.sellerId.lastName }}
+          </p>
+          <p class="card-text m-0">
+            Phone Number : {{ order?.sellerId.phone }}
+          </p>
+          <p class="card-text m-0">Email : {{ order?.sellerId.email }}</p>
+          <p class="card-text m-0">Status : {{ order?.sellerId.status }}</p>
+          <p class="card-text m-0">Gender : {{ order?.sellerId.gender }}</p>
+        </div>
+      </div>
+      <div class="card shadow-lg" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">Buyer</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            user name : {{ order?.buyerId.userName }}
+          </h6>
+          <p class="card-text mt-3 mb-0">
+            Full Name : {{ order?.buyerId.firstName }}
+            {{ order?.buyerId.lastName }}
+          </p>
+          <p class="card-text m-0">Phone Number : {{ order?.buyerId.phone }}</p>
+          <p class="card-text m-0">Email : {{ order?.buyerId.email }}</p>
+          <p class="card-text m-0">Status : {{ order?.buyerId.status }}</p>
+          <p class="card-text m-0">Gender : {{ order?.buyerId.gender }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <p class="card-text">Total Price : {{ order?.totalPrice }}</p>
     <ul>
       <li class="card-text">productName</li>
       <img src="http://placekitten.com/200/300" class="m-2" alt=".." />
@@ -17,84 +49,78 @@
       <img src="http://placekitten.com/200/301" class="m-2" alt=".." />
       <li class="card-text">productName</li>
       <img src="http://placekitten.com/201/301" class="m-2" alt=".." />
-    </ul>
+    </ul> -->
 
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p>
+    <h3 class="mt-4">Products</h3>
+    <div class="d-flex mt-2">
+      <ul
+        ngbNav
+        #nav="ngbNav"
+        [(activeId)]="active"
+        class="nav-pills"
+        orientation="vertical"
+      >
+        <li ngbNavItem=" {{ order?.products[0]._id.name }} ">
+          <a ngbNavLink> {{ order?.products[0]._id.name }}</a>
+          <ng-template ngbNavContent>
+            <p class="lead">Quantity : {{ order?.products[0].quantity }}</p>
+            <p>Status : {{ order?.products[0]._id.status }}</p>
+            <p>Price : {{ order?.products[0]._id.price }}</p>
 
-    <button href="#" type="button" class="btn btn-primary">See Details</button>
+            <img src="{{ order?.products[0]._id.image[0].url }}" alt=".." />
+            <p>Description : {{ order?.products[0]._id.description }}</p>
+          </ng-template>
+        </li>
+        <li ngbNavItem="bla">
+          <a ngbNavLink>bla</a>
+          <ng-template ngbNavContent>
+            <p>
+              Exercitation +1 labore velit, blog sartorial PBR leggings next
+              level wes anderson artisan four loko farm-to-table craft beer
+              twee. Qui photo booth letterpress, commodo enim craft beer mlkshk
+              aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud
+              organic, assumenda labore aesthetic magna delectus mollit. Keytar
+              helvetica VHS salvia yr, vero magna velit sapiente labore
+              stumptown. Vegan fanny pack odio cillum wes anderson 8-bit,
+              sustainable jean shorts beard ut DIY ethical culpa terry
+              richardson biodiesel. Art party scenester stumptown, tumblr
+              butcher vero sint qui sapiente accusamus tattooed echo park.
+            </p>
+          </ng-template>
+        </li>
+        <li ngbNavItem="bottom">
+          <a ngbNavLink>Bottom</a>
+          <ng-template ngbNavContent>
+            <p>
+              Sed commodo, leo at suscipit dictum, quam est porttitor sapien,
+              eget sodales nibh elit id diam. Nulla facilisi. Donec egestas
+              ligula vitae odio interdum aliquet. Duis lectus turpis, luctus
+              eget tincidunt eu, congue et odio. Duis pharetra et nisl at
+              faucibus. Quisque luctus pulvinar arcu, et molestie lectus
+              ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat
+              volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
+              nisl enim, nec tristique ipsum euismod facilisis. Morbi ut
+              bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
+              magnis dis parturient montes, nascetur ridiculus mus. Mauris
+              aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus
+              nec tortor vel tellus pulvinar feugiat.
+            </p>
+          </ng-template>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="nav" class="ms-4"></div>
+    </div>
+
+    <button routerLink="/order" type="button" class="btn btn-primary mt-5">
+      Go Back
+    </button>
   </div>
 </div>
 
-<p>
+<!-- <p>
   You should use <code>class="nav-pills"</code> if you need pills and the
   <code>[orientation]</code> input to change nav orientation
 </p>
 
-<div class="d-flex">
-  <ul
-    ngbNav
-    #nav="ngbNav"
-    [(activeId)]="active"
-    class="nav-pills"
-    orientation="vertical"
-  >
-    <li ngbNavItem="top">
-      <a ngbNavLink>Top</a>
-      <ng-template ngbNavContent>
-        <p>
-          Raw denim you probably haven't heard of them jean shorts Austin.
-          Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
-          cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
-          butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
-          qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-          iphone. Seitan aliquip quis cardigan american apparel, butcher
-          voluptate nisi qui.
-        </p>
-      </ng-template>
-    </li>
-    <li ngbNavItem="middle">
-      <a ngbNavLink>Middle</a>
-      <ng-template ngbNavContent>
-        <p>
-          Exercitation +1 labore velit, blog sartorial PBR leggings next level
-          wes anderson artisan four loko farm-to-table craft beer twee. Qui
-          photo booth letterpress, commodo enim craft beer mlkshk aliquip jean
-          shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda
-          labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
-          yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio
-          cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY
-          ethical culpa terry richardson biodiesel. Art party scenester
-          stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed
-          echo park.
-        </p>
-      </ng-template>
-    </li>
-    <li ngbNavItem="bottom">
-      <a ngbNavLink>Bottom</a>
-      <ng-template ngbNavContent>
-        <p>
-          Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget
-          sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae
-          odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
-          congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus
-          pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas
-          ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu.
-          Vivamus faucibus nisl enim, nec tristique ipsum euismod facilisis.
-          Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          Mauris aliquet odio ac lorem aliquet ultricies in eget neque.
-          Phasellus nec tortor vel tellus pulvinar feugiat.
-        </p>
-      </ng-template>
-    </li>
-  </ul>
-
-  <div [ngbNavOutlet]="nav" class="ms-4"></div>
-</div>
-
-<pre>Active: {{ active }}</pre>
-
-<h1>Order Info</h1>
+<pre>Active: {{ active }}</pre> -->

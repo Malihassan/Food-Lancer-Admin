@@ -56,7 +56,7 @@
                             [checked]="row.status !== 'blocked'" (change)="changeStatus($event,row._id)" value={{row.status}}>
                     </div>
                 </td>
-                <td  (click)="toDirect(row._id)">
+                <td [routerLink]="['details',row._id]">
                     <i class="prof-icon fa-solid fa-user"></i>
                 </td>
             </tr>

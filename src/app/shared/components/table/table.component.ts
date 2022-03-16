@@ -30,9 +30,9 @@ export class TableComponent implements OnInit {
   refreshPagination() {
     this.paginationHandler.emit(this.page)
   }
-  toDirect(id: string) {
-    this.router.navigate(['/buyer', id])
-  }
+  // toDirect(id: string) {
+  //   this.router.navigate(['details/', id],{ relativeTo: this.router })
+  // }
   changeStatus($event: any, id: string) {
     let checkedValue = $event.target.value
     const ischecked = $event.target.checked

@@ -27,9 +27,9 @@ export class OrdersPageComponent implements OnInit {
   onSearch(query: any) {
     this.orderService.search(this.page, query).subscribe((res: any) => {
       this.orders = res.docs;
+      this.orders.map((elem: any) => (elem.toggle = true));
+      console.log(this.orders,"tessssst");
       this.count = res.totalPages;
-      console.log(res);
-      console.log('data', this.orders);
     });
   }
 

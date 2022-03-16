@@ -20,7 +20,6 @@ import { RequestInterceptor } from './Interceptor/request.interceptor';
 import { AccountModule } from './modules/account/account.module';
 import { HomeModule } from './modules/home/home.module';
 
-
 @NgModule({
   declarations: [AppComponent, NotFoundPageComponent],
   imports: [
@@ -37,7 +36,7 @@ import { HomeModule } from './modules/home/home.module';
     NgbModule,
     AppRoutingModule,
     AccountModule,
-    HomeModule
+    HomeModule,
   ],
   providers: [
     {
