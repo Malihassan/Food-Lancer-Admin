@@ -25,7 +25,7 @@ export class ProductListComponent implements OnInit {
   }
   getStatus(){
     this.productService.getStatus(status).subscribe((res: any) => {
-      console.log(res);
+      console.log('====>',res);
     })
   }
   //this.paginationHandler.emit(this.page)
