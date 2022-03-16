@@ -22,13 +22,13 @@ export class ProductServiceService {
   getProductById(productID: any) {
     console.log(productID);
 
-    return this.http.get(`http://localhost:3000/admin/product/${productID}`);
+    return this.http.get(`/admin/product/${productID}`);
   }
   updateProductStatusToAccepted(newProductID: any) {
     this.productID.next(newProductID);
     console.log(newProductID);
     this.http
-      .patch(`http://localhost:3000/admin/product/${newProductID}`, {
+      .patch(`/admin/product/${newProductID}`, {
         status: 'active',
       })
       .subscribe(
@@ -47,7 +47,7 @@ export class ProductServiceService {
     this.productID.next(newProductID);
     console.log(newProductID);
     this.http
-      .patch(`http://localhost:3000/admin/product/${newProductID}/pending`, {
+      .patch(`/admin/product/${newProductID}/pending`, {
         "pendingMessage": `${message}`,
       })
       .subscribe(

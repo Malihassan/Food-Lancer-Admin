@@ -19,17 +19,17 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.status);
 
-    //this.getStatusArr()
-   // this.productsDisplay(1,this.status);
+    this.getStatusArr()
+   this.productsDisplay(1,this.status);
   }
   getStatusArr(){
     this.productService.getStatus(status).subscribe((res: any) => {
       this.status = res
       console.log(this.status);
     })
-  }
+  } 
   productsDisplay(page: number,status:any) {
-    this.getStatusArr()
+    //this.getStatusArr()
     console.log(this.status);
     this.productService.getAllProduct(page,status).subscribe(
       (res: any) => {
