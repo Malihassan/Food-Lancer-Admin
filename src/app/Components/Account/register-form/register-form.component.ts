@@ -39,18 +39,13 @@ export class RegisterFormComponent implements OnInit {
   }
 
   fileTypeChecker: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
-    const size = group.get('image')?.value.size
-    console.log(size);
-    // let ser = group.get('image')?.type;
     let img = group.get('image')?.value; 
-    console.log(img);
     return img.type === "image/jpeg" || img.type === "image/png" ? null : { extension: true }
-    
   }
 
   fileSizeChecker: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
     let img = group.get('image')?.value; 
-    return img.size > 0 ? null : { size: true }
+    return img.size > 5000 ? null : { size: true }
   }
 
   submitForm(){

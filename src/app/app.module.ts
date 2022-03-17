@@ -37,7 +37,6 @@ import { HomeModule } from './modules/home/home.module';
     AppRoutingModule,
     AccountModule,
     HomeModule,
-    
   ],
   providers: [
     {

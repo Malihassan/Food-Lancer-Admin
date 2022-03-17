@@ -108,6 +108,8 @@
 .sidebar ul li a:hover{
     color: #11101d;
     background-color: #fff;
+    text-align: center;
+    padding-left: 4px;
 }
 .sidebar ul li a i{
     height: 50px;
@@ -153,7 +155,7 @@
     font-weight: 400;
 }
 .profile .profile_details .jop{
-    font-size: 12px;
+    font-size: 15px;
 }
 .profile #logout{
     position: absolute;
@@ -161,7 +163,7 @@
     bottom: 5px;
     transform: translateX(-50%);
     min-width: 50px;
-    line-height: 50px;
+    line-height: 65px;
     font-size: 20px;
     border-radius: 12px;
     text-align: center;

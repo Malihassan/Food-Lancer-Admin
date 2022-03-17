@@ -4,9 +4,7 @@
   </div>
 </div>
 <div class="card-body ">
-  <div>
-    <ngb-rating> </ngb-rating>
-  </div>
+  <ngb-rating [rate]="product.avgRate"></ngb-rating>
   <h5 id="productName" class="card-title">{{product.name}}</h5>
   <h6 id="userName" class="card-title">{{product.sellerId.userName}}</h6>
   <p id="productDescription" class="card-text  my-2">{{product.description}}</p>
