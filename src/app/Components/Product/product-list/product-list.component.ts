@@ -6,10 +6,8 @@ import { ProductServiceService } from '../../../services/product/product-service
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  @Input() currentMsgFromCategoryToProduct: any=[];
-  @Input() blahhhhhh: any;
-  //@Output() fwdMsgToProduct = new EventEmitter<any>()
   status:any;
+  category:any;
   page: number = 1;
   pageSize = 12;
   collectionSize: number = 0;
@@ -17,21 +15,24 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductServiceService) {
   }
   ngOnInit(): void {
-    console.log(this.status);
-
     this.getStatusArr()
-   this.productsDisplay(1,this.status);
+    this.getCategory()
+   this.productsDisplay(1,this.status,this.category);
   }
   getStatusArr(){
     this.productService.getStatus(status).subscribe((res: any) => {
       this.status = res
-      console.log(this.status);
+      this.productsDisplay(this.page,this.status,this.category);
     })
-  } 
-  productsDisplay(page: number,status:any) {
-    //this.getStatusArr()
-    console.log(this.status);
-    this.productService.getAllProduct(page,status).subscribe(
+  }
+  getCategory(){
+    this.productService.getCategory(status).subscribe((res: any) => {
+      this.category = res
+      this.productsDisplay(this.page,this.status,this.category);
+    })
+  }
+  productsDisplay(page: number,status:any,category:any) {
+    this.productService.getAllProduct(page,status,category).subscribe(
       (res: any) => {
         this.products = res.docs;
         this.collectionSize = res.totalDocs;
@@ -43,8 +44,7 @@ export class ProductListComponent implements OnInit {
     );
   }
   newPageNumber(page: number) {
-    console.log(this.status);
     this.page = page;
-    this.productsDisplay(this.page,this.status);
+    this.productsDisplay(this.page,this.status,this.category);
   }
 }
