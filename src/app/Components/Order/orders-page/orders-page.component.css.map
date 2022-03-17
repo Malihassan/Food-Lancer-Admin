@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,MAAM,EAAC,KAAK;EACZ,UAAU,EAAE,MAAM;CACnB;;AACD,AAAA,GAAG,CAAA;EACD,eAAe,EAAE,MAAM;CACxB;;AACD,AAAA,gBAAgB,CAAC;EACf,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,KAAK;CAEf;;AACD,AAAA,YAAY,CAAA;EACV,KAAK,EAAC,KAAK;CACZ",
+    "sources": [
+        "orders-page.component.scss"
+    ],
+    "names": [],
+    "file": "orders-page.component.css"
+}

@@ -1,0 +1,20 @@
+.mi {
+  border: 3px solid red;
+}
+
+.pagination-container {
+  border-top: 1px solid #596677;
+  color: #596677;
+  margin-top: 4%;
+}
+
+.pagination-container label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#delete:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=order-search.component.css.map */

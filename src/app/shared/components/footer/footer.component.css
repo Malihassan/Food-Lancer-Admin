@@ -1,0 +1,22 @@
+#footer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100%;
+  color: #6E767D !important;
+  background-color: black;
+}
+
+#footer div a {
+  color: #6E767D !important;
+}
+
+#footer div a:hover {
+  color: blue !important;
+}
+
+@media (max-width: 600px) {
+  #footer {
+    font-size: 10px !important;
+  }
+}
+/*# sourceMappingURL=footer.component.css.map */
