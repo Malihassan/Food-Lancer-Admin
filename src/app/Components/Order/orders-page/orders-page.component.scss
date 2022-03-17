@@ -13,18 +13,25 @@ div{
 
 }
 .widthOfCard{
-  width:350px;
+  width:360px;
 }
 
 .filter_btn{
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 2%;
+  top: 5%;
   z-index: 100;
 }
 
 .hidden_overflow{
   scrollbar-width: none; 
+}
 
-  
+.pagination-container{
+  border-top: 1px solid #596677;
+  color: #596677;
+  margin-top: 4%;
+  label{
+      align-self: center;
+  }
 }

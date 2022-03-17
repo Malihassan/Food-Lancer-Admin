@@ -57,9 +57,11 @@ export class OrdersPageComponent implements OnInit {
 
   onNewSearch(e: any) {
     this.orders = e;
+    console.log(this.orders);
   }
   onPageChange(e: any) {
-    this.page = e;
+    this.count = e;
+    console.log(this.count, 'here count');
   }
 
   ngOnInit(): void {

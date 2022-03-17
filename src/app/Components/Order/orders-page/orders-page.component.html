@@ -57,8 +57,9 @@
 </div>
 
 <div class="pagination-container mb-3 d-flex justify-content-start">
-  <label>{{ count }} total</label>
+  <label class="mx-3">{{ count }} total</label>
   <ngb-pagination
+    class="mt-1"
     [collectionSize]="count"
     [(page)]="page"
     (pageChange)="refreshPagination()"
