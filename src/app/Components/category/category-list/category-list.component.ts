@@ -13,6 +13,7 @@ export class CategoryListComponent implements OnInit {
     string[]
   >();
   statusArray: any = [];
+  category:any;
   public isCollapsed = false;
   public addCategoryCollapsed = true;
   public editCategoryCollapsed = true;
@@ -106,10 +107,17 @@ export class CategoryListComponent implements OnInit {
         (item: string) => item !== checkedValue
       );
       this.productService.getStatus(this.statusArray);
-      //this.productsByStatus.emit(this.statusArray);
       return;
     }
     this.statusArray.push(checkedValue);
     this.productService.getStatus(this.statusArray);
+  }
+  onCategoryChange(e:any){
+    console.log(e);
+    this.category=e
+this.productService.getCategory(this.category)
+console.log(e);
+
+
   }
 }

@@ -19,10 +19,6 @@ const routes: Routes = [
   { path: "",component:HomePageComponent },
   { path: 'account', component: RootAccountPageComponent, children:[
     {
-      path: '',
-      component: HomeComponent
-    },
-    {
       path: 'login',
       component: LoginFormComponent
     },
