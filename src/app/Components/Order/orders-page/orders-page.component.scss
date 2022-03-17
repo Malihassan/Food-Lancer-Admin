@@ -13,5 +13,18 @@ div{
 
 }
 .widthOfCard{
-  width:31.5%;
+  width:350px;
+}
+
+.filter_btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 100;
+}
+
+.hidden_overflow{
+  scrollbar-width: none; 
+
+  
 }
