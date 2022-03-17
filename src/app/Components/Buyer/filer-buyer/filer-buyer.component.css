@@ -1,0 +1,25 @@
+.filter-label {
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.form-control {
+  border-radius: 0%;
+}
+
+.status-filter {
+  border-top: 1px solid #dddddd;
+}
+
+.status-filter .title {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.status-filter .list-group-item {
+  padding-top: 0.5rem;
+  padding-left: 0;
+  border: none;
+}
+/*# sourceMappingURL=filer-buyer.component.css.map */

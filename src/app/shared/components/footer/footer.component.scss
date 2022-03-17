@@ -1,4 +1,27 @@
+@function fromPXtoVM($width) {
+    @return ($width/16) + vw;
+}
+@function fromPXtoVH($height) {
+    @return ($height/7.57) + vh;
+}
 #footer{
     position: sticky;
     top: 100%;
+    color: #6E767D !important;
+    background-color: black;
+    // font-size: fromPXtoVM(16) !important;
+    div{
+        a{
+            color: #6E767D !important;
+            &:hover{
+                color: blue !important;
+            }
+        }
+    }
+}
+$breakpoint-tablet: 600px;
+@media (max-width: $breakpoint-tablet) {
+    #footer{
+        font-size: 10px !important;
+    }
 }

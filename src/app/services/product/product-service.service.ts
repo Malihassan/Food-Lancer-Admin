@@ -6,30 +6,29 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ProductServiceService {
   private productID = new BehaviorSubject(0);
-  private newStatus = new BehaviorSubject("");
+  private newStatus = new BehaviorSubject('');
+  private CategoryId = new BehaviorSubject("");
+
   //public status = new BehaviorSubject(["active"]);
   constructor(private http: HttpClient) {}
-  getAllProduct(page:number,status:any) {
-    console.log(this.newStatus);
-    console.log("tt",status);
-   // status=["active","blocked"]
-   return this.http.get(`/admin/product/allProducts?page=${page}`,
-   {
-    params: {status},
-  }
-   );
+  getAllProduct(page: number, status: any,categoryId:any='') {
+    console.log('status', status);
+    return this.http.get(`/admin/product/allProducts`, {
+      params: {status,page,categoryId},
+    });
   }
   getProductById(productID: any) {
     console.log(productID);
 
     return this.http.get(`/admin/product/${productID}`);
   }
-  updateProductStatusToAccepted(newProductID: any) {
+  updateProductStatus(newProductID: any,status:any) {
+    console.log(status);
     this.productID.next(newProductID);
     console.log(newProductID);
     this.http
       .patch(`/admin/product/${newProductID}`, {
-        status: 'active',
+        status
       })
       .subscribe(
         (val) => {
@@ -43,12 +42,12 @@ export class ProductServiceService {
         }
       );
   }
-  sendPendingMessage(newProductID:any,message: string) {
+  sendPendingMessage(newProductID: any, message: string) {
     this.productID.next(newProductID);
     console.log(newProductID);
     this.http
       .patch(`/admin/product/${newProductID}/pending`, {
-        "pendingMessage": `${message}`,
+        pendingMessage: `${message}`,
       })
       .subscribe(
         (val) => {
@@ -62,8 +61,12 @@ export class ProductServiceService {
         }
       );
   }
-  getStatus(status:any){
-   this.newStatus.next(status)
-   return this.newStatus
+  getStatus(status: any) {
+    this.newStatus.next(status);
+    return this.newStatus;
+  }
+  getCategory(category: any) {
+    this.CategoryId.next(category);
+    return this.CategoryId;
   }
 }

@@ -1,58 +1,80 @@
-<div #sideBar [ngClass]="status? 'active' : ''" class="sidebar sticky-top">
+<div #sideBar [ngClass]="status ? 'active' : ''" class="sidebar sticky-top ">
   <div class="logo_content">
-    <div class="logo" [ngClass]="status? 'active_logo' : ''" >
+    <div class="logo" [ngClass]="status ? 'active_logo' : ''">
       <i class="fa-solid fa-utensils pe-3"></i>
       <div class="logo_name">Food Lancer</div>
     </div>
-    <i (click)="clickEvent()" [ngClass]="status? 'left_btn' : ''" class="fa-solid fa-bars" id="btn"></i>
+    <i
+      (click)="clickEvent()"
+      [ngClass]="status ? 'left_btn' : ''"
+      class="fa-solid fa-bars"
+      id="btn"
+    ></i>
   </div>
   <ul class="nav_list">
     <li>
-      <a routerLink="/seller" routerLinkActive=""
+      <a routerLink="/home" routerLinkActive="bg-light text-dark ps-1 text-center">
+        <i class="fa-solid fa-house-chimney"></i>
+        <span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+          >Home</span
+        ></a
+      >
+      <span [ngClass]="status ? 'active_tool' : ''" class="tool">Home</span>
+    </li>
+    <li>
+      <a routerLink="/seller" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-brands fa-sellcast"></i
-        ><span  [ngClass]="status? 'active_links_name' : ''"  class="links_name">Seller</span></a
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+          >Seller</span
+        ></a
       >
-      <span [ngClass]="status? 'active_tool' : ''" class="tool">Seller</span>
+      <span [ngClass]="status ? 'active_tool' : ''" class="tool">Seller</span>
     </li>
     <li>
-      <a routerLink="/buyer" routerLinkActive=" "
+      <a routerLink="/buyer" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-solid fa-person"></i
-        ><span  [ngClass]="status? 'active_links_name' : ''" class="links_name">Buyer</span></a
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+          >Buyer</span
+        ></a
       >
-      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Buyer</span>
+      <span [ngClass]="status ? 'active_tool' : ''" class="tool">Buyer</span>
     </li>
     <li>
-      <a routerLink="/category" routerLinkActive=""
-        ><i class="fa-solid fa-border-all"></i>
-        <span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Category</span></a
-      >
-      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Category</span>
-    </li>
-    <li>
-      <a routerLink="/product" routerLinkActive=" "
+      <a routerLink="/product" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-brands fa-product-hunt"></i
-        ><span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Product</span></a
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+          >Product</span
+        ></a
       >
-      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Product</span>
+      <span [ngClass]="status ? 'active_tool' : ''" class="tool">Product</span>
     </li>
     <li>
-      <a routerLink="/order" routerLinkActive=" "
+      <a routerLink="/order" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-brands fa-jedi-order"></i
-        ><span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Order</span></a
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+          >Order</span
+        ></a
       >
-      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Order</span>
+      <span [ngClass]="status ? 'active_tool' : ''" class="tool">Order</span>
     </li>
     <li>
-      <a routerLink="/coverageArea" routerLinkActive=" "
+      <a routerLink="/coverageArea" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-solid fa-location-dot"></i>
-        <span [ngClass]="status? 'active_links_name' : ''"  class="links_name">Coverage Area</span></a
+        <span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+          >Coverage Area</span
+        ></a
       >
-      <span [ngClass]="status? 'active_tool' : ''" class="tool" >Coverage Area</span>
+      <span [ngClass]="status ? 'active_tool' : ''" class="tool"
+        >Coverage Area</span
+      >
     </li>
   </ul>
   <div class="profile_content">
     <div class="profile">
-      <div [ngClass]="status? 'pofile_details_active' : ''" class="profile_details">
+      <div
+        [ngClass]="status ? 'pofile_details_active' : ''"
+        class="profile_details"
+      >
         <img
           id="adminImg"
           src="../assets/elmaestro2.JPG"
@@ -61,9 +83,17 @@
         />
         <div class="name_jop">
           <div class="name">Bilal A Mohammed</div>
-          <div class="jop">Developer</div>
+          <div class="jop pt-1" routerLink="/account/register">
+            add Admin
+              <i class="ps-5 ms-4 fa-solid fa-user-plus"></i>
+          </div>
         </div>
       </div>
-      <i [ngClass]="status? 'logout_active' : ''" class="fa-solid fa-right-from-bracket" id="logout"></i>
+      <i
+        [ngClass]="status ? 'logout_active' : ''"
+        class="fa-solid fa-right-from-bracket"
+        id="logout"
+      ></i>
     </div>
   </div>
+</div>

@@ -82,7 +82,7 @@
     </div>
     <div class="mb-3">
       <label class="form-label" for="inputGroupFile02">Upload An Image</label>
-      <input type="file" formControlName="image" class="form-control" id="inputGroupFile02">
+      <input type="file" accept="image/x-png,image/gif,image/jpeg"  formControlName="image" class="form-control" id="inputGroupFile02">
       <div class="text-danger" *ngIf="formControls['image'].invalid && formControls['image'].touched">
         <small *ngIf="formControls['image'].errors?.['required']">
           This field is required

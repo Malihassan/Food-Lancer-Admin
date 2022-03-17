@@ -41,6 +41,7 @@ export class OrderSearchComponent implements OnInit {
         this.orders = res.docs;
         this.count = res.totalPages;
         this.submitted.emit(this.orders);
+        this.pageCount.emit(this.count);
       });
   }
 
@@ -66,11 +67,7 @@ export class OrderSearchComponent implements OnInit {
     this.orderService
       .search(this.page, this.neutralizeQuery(this.query))
       .subscribe((res: any) => {
-        console.log(this.page);
-        console.log(this.neutralizeQuery(this.query));
-        console.log(res, 'res');
         this.orders = res.docs;
-        console.log('docs', this.orders);
         this.pageCount.emit(this.page);
         this.submitted.emit(this.orders);
       });
