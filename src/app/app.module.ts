@@ -19,7 +19,6 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
 import { RequestInterceptor } from './Interceptor/request.interceptor';
 import { AccountModule } from './modules/account/account.module';
 import { HomeModule } from './modules/home/home.module';
-import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators'; 
 
 @NgModule({
   declarations: [AppComponent, NotFoundPageComponent],
@@ -38,7 +37,7 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
     AppRoutingModule,
     AccountModule,
     HomeModule,
-    RxReactiveFormsModule
+    
   ],
   providers: [
     {
