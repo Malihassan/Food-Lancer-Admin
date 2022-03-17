@@ -1,14 +1,42 @@
+@mixin responsive($size) {
+  $phone: 576px;
+  $tablet: 768px;
+  @if ($size == small) {
+    @media screen and (max-width: $phone) {
+      @content;
+    }
+  }
+  @if ($size == medium) {
+    @media screen and (max-width: $tablet) {
+      @content;
+    }
+  }
+}
 @mixin flex-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 @mixin flex-col {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.container-page{
-    @include flex-row();
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
+.container-page {
+  @include flex-row();
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  @include responsive(small) {
+    @include flex-col();
+  }
+  .seller-filter {
+    width: 20%;
+    @include responsive(medium) {
+      width: 100%;
+      @include flex-row();
+    }
+  }
+  .seller-table {
+    width: 80%;
+    
+  }
 }

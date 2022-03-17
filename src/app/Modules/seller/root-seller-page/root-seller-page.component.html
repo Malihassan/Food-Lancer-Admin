@@ -1,6 +1,6 @@
 
 <section class="container-page mt-5">
-    <app-filter-seller (getSellersAfterFilter)="getSellersAfterFilter($event)"></app-filter-seller>
-    <app-table class="col-9" (updateStatus)="updateSellerStatus($event)" (paginationHandler)="paginationHandler($event)" [pageSize]="limit" [collectionSize]="countOfSellers" [tableHeader]="tableHeader"
+    <app-filter-seller class="seller-filter my-2" (getSellersAfterFilter)="getSellersAfterFilter($event)"></app-filter-seller>
+    <app-table class="seller-table" (updateStatus)="updateSellerStatus($event)" (paginationHandler)="paginationHandler($event)" [pageSize]="limit" [collectionSize]="countOfSellers" [tableHeader]="tableHeader"
         [tableData]="sellersData"></app-table>
 </section>    
