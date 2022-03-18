@@ -25,6 +25,7 @@ export class OrdersPageComponent implements OnInit {
   page: number = 1;
   orders: Order[] = [];
   count: number = 0;
+  // countOfSellers:0
 
   pageSize: number = 1;
 
@@ -45,9 +46,11 @@ export class OrdersPageComponent implements OnInit {
   onSearch(query: any) {
     this.orderService.search(this.page, query).subscribe((res: any) => {
       this.orders = res.docs;
-      this.orders.map((elem: any) => (elem.toggle = true));
-      console.log(this.orders, 'tessssst');
+      // this.countOfSellers = res.totalDocs
+      // this.limit = res.limit
       this.count = res.totalPages;
+      console.log(res);
+      
     });
   }
 
