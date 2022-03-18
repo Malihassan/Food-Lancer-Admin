@@ -11,6 +11,7 @@ export class FilterSellerComponent implements OnInit {
   @Output() getSellersAfterFilter = new EventEmitter<any>()
   status: any = [];
   rate: any = []
+  query: any = {}
   constructor(private fb: FormBuilder) {
     this.sellerFilterFormGroup = this.fb.group({
       email: ['', [Validators.email, Validators.required]]
@@ -23,40 +24,35 @@ export class FilterSellerComponent implements OnInit {
     return this.sellerFilterFormGroup.controls
   }
   submitSellerFilterForm() {
-    let query: any = {}
+    
     let formData = this.sellerFilterFormGroup.value
-    formData.email ? query.email = formData.email : ""
-    this.status.length > 0 ? query.status = this.status : ""
-    this.rate.length > 0 ? query.rate =JSON.stringify(this.rate ) : ''
+    formData.email ? this.query.email = formData.email : ""
+    // this.status.length > 0 ? this.query.status = this.status : ""
+    // this.rate.length > 0 ? this.query.rate =JSON.stringify(this.rate ) : ''
 
-    console.log(query);
+    // console.log(this.query);
 
-    this.getSellersAfterFilter.emit(query)
+    this.getSellersAfterFilter.emit(this.query)
   }
   changeStatusSelection($event: any) {
     const checkedValue = $event.target.value
     const ischecked = $event.target.checked
     if (!ischecked) {
       this.status = this.status.filter((item: string) => item !== checkedValue)
-      return
-    }
-    this.status.push(checkedValue)
+    }else{
+      this.status.push(checkedValue)
+    }    
+    this.getSellersAfterFilter.emit({status:this.status})
   }
   changeRateSelection($event: any) {
     let checkedValue = $event.target.value
     const isChecked = $event.target.checked
     if (!isChecked) {
       this.rate = this.rate.filter((item: string) => item !== checkedValue)
-      return
+    }else{
+      this.rate.push(checkedValue)
     }
-    this.rate.push(checkedValue)
+    this.getSellersAfterFilter.emit({rate:this.rate})
+  }
 
-  }
-  formValid() {
-    let validForm = this.sellerFilterFormGroup.valid
-    if (validForm || this.status.length > 0 || this.rate.length > 0) {
-      return true
-    }
-    return false
-  }
 }

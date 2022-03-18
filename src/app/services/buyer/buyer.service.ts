@@ -10,9 +10,8 @@ export class BuyerService {
   constructor(private http: HttpClient) { }
 
   getBuyerList(pageNum: number,query:any={}) {
-    return this.http.get(`${environment.apiUrl}/buyer/allBuyers?page=${pageNum}`, {
+    return this.http.get(`/admin/buyer/allBuyers?page=${pageNum}`, {
       params: { ...query },
-  
     })
   }
   updateBuyerStatus(id: string, status: string) {

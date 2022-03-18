@@ -1,20 +1,16 @@
-<section class="container-category shadow-lg">
+<section class="container-category">
   <div class="category-wrapper">
     <div>
       <!--  for categories -->
-      <p class="categ-list" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-        aria-controls="collapseExample">
+      <p class="categ-list">
         Category
-        <label>
-          <i class="fa-solid fa-chevron-down"></i>
-        </label>
       </p>
-      <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+      <div>
         <div class="card">
-          <div class="card-body px-2 py-0">
+          <div class="card-body px-1 py-0">
             <ul
               class="list-group"
-              *ngFor="let category of categoryList; let indexOfelement = index"
+              *ngFor="let category of categoryList"
             >
               <li class="editCategory px-1">
                 <div class="d-flex justify-content-between">
@@ -118,18 +114,14 @@
     </div>
   </div>
 
-  <div class="category-wrapper shadow-lg">
+  <div class="category-wrapper">
     <!--  for statuse -->
-    <p class="categ-list" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-      aria-controls="collapseExample">
+    <p class="categ-list">
       Status
-      <label>
-        <i class="fa-solid fa-chevron-down"></i>
-      </label>
     </p>
-    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div>
       <div class="card">
-        <div class="card-body px-2 py-0">
+        <div class="card-body px-1 py-0">
           <ul class="list-group">
             <li class="list-group-item">
               <input class="form-check-input me-1" type="checkbox" value="pending"
