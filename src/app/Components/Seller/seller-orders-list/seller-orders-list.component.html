@@ -1,7 +1,7 @@
 <div class="container-fluid card g-0 text-center">
     <div class="m-4 display-5">Orders</div>
     <div class="container row-cols-3 d-flex flex-wrap justify-content-evenly">
-        <app-seller-orders-card class="col" *ngFor="let card of viewCards" [cardDetails] = 'card'></app-seller-orders-card>
+        <app-order-card class="col m-1 w-25" *ngFor="let card of viewCards" [order] = 'card'></app-order-card>
     </div>
     <button class="btn my-2" (click)="showMore()">{{isReadMore? 'See Less': 'See More'}}</button>
 </div>

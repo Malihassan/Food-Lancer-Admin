@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { OrderCardComponent } from '../../components/order-card/order-card.component';
+
 // import {CookieService} from 'ngx-cookie-service';
 
 
@@ -23,6 +25,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ProductDetailesComponent,
     FooterComponent,
     LoaderComponent,
+    OrderCardComponent
   ],
   imports: [
     CommonModule,
@@ -44,6 +47,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ProductDetailesComponent,
     FooterComponent,
     LoaderComponent,
+    OrderCardComponent,
     NgbModule,
   ]
 })

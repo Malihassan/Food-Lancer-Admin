@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { OrdersPageComponent } from '../../components/order/orders-page/orders-page.component';
 import { OrderInfoComponent } from '../../components/order/order-info/order-info.component';
-import { OrderCardComponent } from '../../components/order/order-card/order-card.component';
 import { OrderSearchComponent } from '../../components/order/order-search/order-search.component';
 
 import { OrderRoutingModule } from './order-routing.module';
@@ -15,7 +14,6 @@ import { RootOrderPageComponent } from './root-order-page/root-order-page.compon
   declarations: [
     OrdersPageComponent,
     OrderInfoComponent,
-    OrderCardComponent,
     OrderSearchComponent,
     RootOrderPageComponent,
   ],
@@ -23,7 +21,6 @@ import { RootOrderPageComponent } from './root-order-page/root-order-page.compon
   exports: [
     OrdersPageComponent,
     OrderInfoComponent,
-    OrderCardComponent,
     OrderSearchComponent,
   ],
 })
