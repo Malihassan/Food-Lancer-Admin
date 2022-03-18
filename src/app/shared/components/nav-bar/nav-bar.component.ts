@@ -11,8 +11,7 @@ export class NavBarComponent implements OnInit {
   status: boolean = true;
   clickEvent(){
     this.newItemEvent.emit(this.status);
-    console.log("clicked");
-    this.status = !this.status;       
+    this.status = !this.status;      
 }
   ngOnInit(): void {
   }

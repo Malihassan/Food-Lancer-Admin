@@ -54,7 +54,23 @@
     </li>
     <li ngbNavItem>
       <a ngbNavLink>Reviews <span>(0)</span></a>
-      <ng-template ngbNavContent>Second content</ng-template>
+      <ng-template ngbNavContent>
+<!-- <div>Your Experience</div>
+<div>Your rating</div> -->
+<ngb-rating [rate]="product.reviews.rate"></ngb-rating>
+<div>
+  <label for="">Your review</label>
+  <textarea type="text"></textarea>
+</div>
+<div>
+  <label for=""> Name</label>
+  <input type="text">
+</div>
+<div>
+  <label for=""> Email</label>
+  <input type="text">
+</div>
+      </ng-template>
     </li>
   </ul>
   <div [ngbNavOutlet]="nav"></div>

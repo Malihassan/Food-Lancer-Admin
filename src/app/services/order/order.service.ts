@@ -9,14 +9,11 @@ export class OrderService {
   constructor(private http: HttpClient) {}
 
   search(page: number, query: any) {
-    return this.http.get(
-      `http://localhost:3000/admin/order/orders?page=${page}`,
-      {
-        params: {
-          ...query,
-        },
-      }
-    );
+    return this.http.get(`admin/order/orders?page=${page}`, {
+      params: {
+        ...query,
+      },
+    });
   }
 }
 

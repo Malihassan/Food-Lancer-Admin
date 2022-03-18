@@ -1,13 +1,13 @@
-<div #sideBar [ngClass]="status ? 'active' : ''" class="sidebar sticky-top ">
+<div #sideBar [ngClass]="status ? 'active' : ''" class="sidebar sticky-top sideBarTabeltScreen">
   <div class="logo_content">
-    <div class="logo" [ngClass]="status ? 'active_logo' : ''">
+    <div class="logo logoTabletScreen" [ngClass]="status ? 'active_logo' : ''">
       <i class="fa-solid fa-utensils pe-3"></i>
       <div class="logo_name">Food Lancer</div>
     </div>
     <i
       (click)="clickEvent()"
       [ngClass]="status ? 'left_btn' : ''"
-      class="fa-solid fa-bars"
+      class="fa-solid fa-bars btnTabeltScreen"
       id="btn"
     ></i>
   </div>
@@ -15,7 +15,7 @@
     <li>
       <a routerLink="/home" routerLinkActive="bg-light text-dark ps-1 text-center">
         <i class="fa-solid fa-house-chimney"></i>
-        <span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+        <span [ngClass]="status ? 'active_links_name' : ''" class="links_name linksNameTabeltScreen"
           >Home</span
         ></a
       >
@@ -24,7 +24,7 @@
     <li>
       <a routerLink="/seller" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-brands fa-sellcast"></i
-        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name linksNameTabeltScreen"
           >Seller</span
         ></a
       >
@@ -33,7 +33,7 @@
     <li>
       <a routerLink="/buyer" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-solid fa-person"></i
-        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name linksNameTabeltScreen"
           >Buyer</span
         ></a
       >
@@ -42,7 +42,7 @@
     <li>
       <a routerLink="/product" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-brands fa-product-hunt"></i
-        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name linksNameTabeltScreen"
           >Product</span
         ></a
       >
@@ -51,7 +51,7 @@
     <li>
       <a routerLink="/order" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-brands fa-jedi-order"></i
-        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+        ><span [ngClass]="status ? 'active_links_name' : ''" class="links_name linksNameTabeltScreen"
           >Order</span
         ></a
       >
@@ -60,7 +60,7 @@
     <li>
       <a routerLink="/coverageArea" routerLinkActive="bg-light text-dark ps-1 text-center"
         ><i class="fa-solid fa-location-dot"></i>
-        <span [ngClass]="status ? 'active_links_name' : ''" class="links_name"
+        <span [ngClass]="status ? 'active_links_name' : ''" class="links_name linksNameTabeltScreen"
           >Coverage Area</span
         ></a
       >
@@ -73,7 +73,7 @@
     <div class="profile">
       <div
         [ngClass]="status ? 'pofile_details_active' : ''"
-        class="profile_details"
+        class="profile_details profile_detailsTabletScreen"
       >
         <img
           id="adminImg"
@@ -83,7 +83,7 @@
         />
         <div class="name_jop">
           <div class="name">Bilal A Mohammed</div>
-          <div class="jop pt-1" routerLink="/account/register">
+          <div class="jop py-1" routerLink="/account/register">
             add Admin
               <i class="ps-5 ms-4 fa-solid fa-user-plus"></i>
           </div>
@@ -91,7 +91,7 @@
       </div>
       <i
         [ngClass]="status ? 'logout_active' : ''"
-        class="fa-solid fa-right-from-bracket"
+        class="fa-solid fa-right-from-bracket logoutTabletScreen"
         id="logout"
       ></i>
     </div>

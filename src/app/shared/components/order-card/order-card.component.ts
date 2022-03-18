@@ -1,5 +1,5 @@
 import { map } from 'rxjs';
-import { Order } from './../../../interfaces/order';
+import { Order } from '../../../interfaces/order';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({

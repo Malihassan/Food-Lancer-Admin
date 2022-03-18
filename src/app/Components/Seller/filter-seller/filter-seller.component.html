@@ -1,6 +1,6 @@
 <section class="container">
     <form [formGroup]="sellerFilterFormGroup" (ngSubmit)="submitSellerFilterForm()">
-        <div class="email-filter mb-4">
+        <div class="email-filter">
             <input type="text" class="form-control" formControlName="email" placeholder="Search By Email">
             <small class="text-danger" *ngIf="formControls['email'].errors?.['email']">Inavlid Email</small>
         </div>

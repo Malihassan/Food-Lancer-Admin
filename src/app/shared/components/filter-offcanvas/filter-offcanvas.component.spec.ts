@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SellerProductsCardComponent } from './seller-products-card.component';
+import { FilterOffcanvasComponent } from './filter-offcanvas.component';
 
-describe('SellerProductsCardComponent', () => {
-  let component: SellerProductsCardComponent;
-  let fixture: ComponentFixture<SellerProductsCardComponent>;
+describe('FilterOffcanvasComponent', () => {
+  let component: FilterOffcanvasComponent;
+  let fixture: ComponentFixture<FilterOffcanvasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SellerProductsCardComponent ]
+      declarations: [ FilterOffcanvasComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SellerProductsCardComponent);
+    fixture = TestBed.createComponent(FilterOffcanvasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

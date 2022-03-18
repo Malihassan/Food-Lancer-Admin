@@ -1,5 +1,6 @@
 $width1: calc(100% - 78px);
 $width2: calc(100% - 240px);
+
 .home {
   position: absolute;
   height: 100%;
@@ -11,4 +12,11 @@ $width2: calc(100% - 240px);
   width: $width1 !important;
   left: 78px !important;
 }
+$breakpoint-tablet: 840px;
+@media (max-width: $breakpoint-tablet) {
+  .tabeltScreen {
+  width: $width1 !important;
+  left: 78px !important;
 
+  }
+}
