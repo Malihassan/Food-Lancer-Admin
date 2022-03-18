@@ -1,6 +1,10 @@
-<section class="container-page mt-5">
-    <app-filer-buyer  (getBuyersAfterFilter)="getBuyersAfterFilter($event)"></app-filer-buyer>
-    <!-- <app-buyer-table [query]="query" class="col-9"></app-buyer-table> -->
-    <app-table class="col-9" (updateStatus)="updateSellerStatus($event)" (paginationHandler)="paginationHandler($event)" [pageSize]="limit"  [collectionSize]="countOfBuyers" [tableHeader]="tableHeader" [tableData]="buyersData"></app-table>
+<section class="container mt-3">
+    <app-filter-offcanvas class="buyer-filter">
+        <h5>Filter Buyer</h5>
+        <app-filer-buyer (getBuyersAfterFilter)="getBuyersAfterFilter($event)"></app-filer-buyer>
+    </app-filter-offcanvas>
+    <app-table class="col-9" (updateStatus)="updateSellerStatus($event)" (paginationHandler)="paginationHandler($event)"
+        [pageSize]="limit" [collectionSize]="countOfBuyers" [tableHeader]="tableHeader" [tableData]="buyersData">
+    </app-table>
 
 </section>

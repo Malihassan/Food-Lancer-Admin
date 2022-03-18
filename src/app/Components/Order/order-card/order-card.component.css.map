@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,MAAM,EAAE,IAAI;CACb;;AACD,AAAA,YAAY,CAAA;EACV,KAAK,EAAC,KAAK;CACZ;;AACD,AAAA,QAAQ,AAAA,MAAM,CAAA;EACd,MAAM,EAAE,kBAAkB;CACzB",
-    "sources": [
-        "order-card.component.scss"
-    ],
-    "names": [],
-    "file": "order-card.component.css"
-}

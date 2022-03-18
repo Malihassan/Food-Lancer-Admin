@@ -25,6 +25,8 @@ export class OrdersPageComponent implements OnInit {
   page: number = 1;
   orders: Order[] = [];
   count: number = 0;
+  ordersCount: number = 0;
+  // countOfSellers:0
 
   pageSize: number = 1;
 
@@ -45,9 +47,10 @@ export class OrdersPageComponent implements OnInit {
   onSearch(query: any) {
     this.orderService.search(this.page, query).subscribe((res: any) => {
       this.orders = res.docs;
-      this.orders.map((elem: any) => (elem.toggle = true));
-      console.log(this.orders, 'tessssst');
+      // this.countOfSellers = res.totalDocs
+      // this.limit = res.limit
       this.count = res.totalPages;
+      this.ordersCount = res.totalDocs;
     });
   }
 
@@ -57,11 +60,9 @@ export class OrdersPageComponent implements OnInit {
 
   onNewSearch(e: any) {
     this.orders = e;
-    console.log(this.orders);
   }
   onPageChange(e: any) {
     this.count = e;
-    console.log(this.count, 'here count');
   }
 
   ngOnInit(): void {
@@ -88,11 +89,8 @@ export class OrdersPageComponent implements OnInit {
     this.orderService
       .search(this.page, this.neutralizeQuery(this.query))
       .subscribe((res: any) => {
-        console.log(this.page);
-        console.log(this.neutralizeQuery(this.query));
-        console.log(res, 'res');
         this.orders = res.docs;
-        console.log('docs', this.orders);
+
         this.pageCount.emit(this.page);
         this.submitted.emit(this.orders);
       });

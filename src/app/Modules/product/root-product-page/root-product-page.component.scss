@@ -6,9 +6,9 @@
     display: flex;
     flex-direction: column;
 }
-.container-page{
-    @include flex-row();
+.container{
+    @include flex-col();
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     width: 100%;
 }

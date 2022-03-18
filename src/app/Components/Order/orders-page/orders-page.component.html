@@ -1,49 +1,18 @@
-<div
-  class="offcanvas offcanvas-end "
-  data-bs-scroll="true"
-  data-bs-backdrop="false"
-  tabindex="-1"
-  id="offcanvasScrolling"
-  aria-labelledby="offcanvasScrollingLabel"
->
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filters</h5>
-    <button
-      type="button"
-      class="btn-close text-reset"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
-  </div>
-  <div class="offcanvas-body">
-    <app-order-search
-      (submitted)="onNewSearch($event)"
-      (pageCount)="onPageChange($event)"
-      [count]="count"
-      [page]="page"
-    ></app-order-search>
-  </div>
-</div>
-
-<div>
-  <button
-    class="btn btn-primary filter_btn"
-    type="button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasScrolling"
-    aria-controls="offcanvasScrolling"
+<app-filter-offcanvas class="float-end mt-3 mx-2">
+  <app-order-search
+    (submitted)="onNewSearch($event)"
+    (pageCount)="onPageChange($event)"
+    [count]="count"
+    [page]="page"
   >
-    <i class="fa-solid fa-filter me-1"></i>
-    Filters
-  </button>
-</div>
-<div class=" back-color d-flex container-fluid flex-row justify-content-start" #ordersPage>
-  <div class="d-flex flex-row flex-wrap">
-    <div
-      class="widthOfCard mx-2 d-flex flex-row flex-wrap justify-content-start align-items-start"
-      *ngFor="let order of orders"
-    >
-      <app-order-card class="widthOfCard mx-5" [order]="order"></app-order-card>
+  </app-order-search>
+</app-filter-offcanvas>
+
+<div class="d-flex container-fluid flex-row justify-content-start" #ordersPage>
+  <div class="d-flex justify-content-around row flex-wrap">
+    <div class="col-lg-4 col-md-6 col-sm-8"
+      *ngFor="let order of orders">
+      <app-order-card [order]="order"></app-order-card>
     </div>
   </div>
   <!-- <button
@@ -57,7 +26,7 @@
 </div>
 
 <div class="pagination-container mb-3 d-flex justify-content-start">
-  <label class="mx-3">{{ count }} total</label>
+  <label class="mx-3">{{ ordersCount }} total</label>
   <ngb-pagination
     class="mt-1"
     [collectionSize]="count"

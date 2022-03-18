@@ -14,7 +14,6 @@ export class CategoryListComponent implements OnInit {
   >();
   statusArray: any = [];
   category:any;
-  public isCollapsed = false;
   public addCategoryCollapsed = true;
   public editCategoryCollapsed = true;
   categoryList: any = [];

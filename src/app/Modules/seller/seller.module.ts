@@ -7,9 +7,8 @@ import { FilterSellerComponent } from 'src/app/components/seller/filter-seller/f
 import { RootSellerDetailsPageComponent } from './root-seller-details-page/root-seller-details-page.component';
 import { SellerDetailsComponent } from 'src/app/components/seller/seller-details/seller-details.component';
 import { SellerProductsListComponent } from 'src/app/components/seller/seller-products-list/seller-products-list.component';
-import { SellerProductsCardComponent } from 'src/app/components/seller/seller-products-card/seller-products-card.component';
 import { SellerOrdersListComponent } from 'src/app/components/seller/seller-orders-list/seller-orders-list.component';
-import { SellerOrdersCardComponent } from 'src/app/components/seller/seller-orders-card/seller-orders-card.component';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +17,7 @@ import { SellerOrdersCardComponent } from 'src/app/components/seller/seller-orde
     RootSellerDetailsPageComponent,
     SellerDetailsComponent,
     SellerProductsListComponent,
-    SellerProductsCardComponent,
-    SellerOrdersListComponent,
-    SellerOrdersCardComponent
+    SellerOrdersListComponent
   ],
   imports: [
     ShareModule,
@@ -28,6 +25,10 @@ import { SellerOrdersCardComponent } from 'src/app/components/seller/seller-orde
     SellerRoutingModule,
   ],
   exports:[
+    FilterSellerComponent,
+    SellerDetailsComponent,
+    SellerProductsListComponent,
+    SellerOrdersListComponent
   ]
 })
 export class SellerModule { }

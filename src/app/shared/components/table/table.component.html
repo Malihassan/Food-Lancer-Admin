@@ -1,10 +1,10 @@
-<div class="container">
+<div>
     <ng-template [ngIf]="tableData.length ==0">
         <p class="notFoundData col-12 text-danger">
             Query not match any data
         </p>
     </ng-template>
-    <table class="table">
+    <table class="table table-responsive w-100 d-block d-lg-table">
         <thead>
             <tr>
                 <th *ngFor="let colData of tableHeader" scope="col">{{colData}}</th>
