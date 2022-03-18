@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register/register.service';
-import { RxwebValidators } from '@rxweb/reactive-form-validators';
+//import { RxwebValidators } from '@rxweb/reactive-form-validators';
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -11,7 +11,7 @@ export class RegisterFormComponent implements OnInit {
   registerForm : FormGroup;
   token : any;
   errors : object[] = [];
-  constructor(private memeber : FormBuilder, private registerService : RegisterService) { 
+  constructor(private memeber : FormBuilder, private registerService : RegisterService) {
     this.registerForm = this.memeber.group({
       firstName: ['',  Validators.required],
       lastName: ['',  Validators.required],
@@ -23,14 +23,14 @@ export class RegisterFormComponent implements OnInit {
       image: ['', Validators.required ]
     }, { validators: [this.checkPassword, this.fileSizeChecker, this.fileTypeChecker ]})
   }
-  
+
   ngOnInit(): void {
   }
 
   checkPassword: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
     let pass = group.get('password')?.value;
     let confirmPass = group.get('confirmPasswordField')?.value;
-    
+
     return pass === confirmPass ? null : { notSame: true }
   }
 
@@ -39,12 +39,12 @@ export class RegisterFormComponent implements OnInit {
   }
 
   fileTypeChecker: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
-    let img = group.get('image')?.value; 
+    let img = group.get('image')?.value;
     return img.type === "image/jpeg" || img.type === "image/png" ? null : { extension: true }
   }
 
   fileSizeChecker: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
-    let img = group.get('image')?.value; 
+    let img = group.get('image')?.value;
     return img.size > 5000 ? null : { size: true }
   }
 
