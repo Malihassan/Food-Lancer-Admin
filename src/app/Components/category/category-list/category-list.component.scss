@@ -1,11 +1,6 @@
 .container-category {
-  width: 250px;
-  margin-top: 3rem;
-  border-radius: 3px;
-  border: 2px solid rgb(230, 230, 230);
-
   .category-wrapper {
-    padding: 7px;
+    width: 100%;
     margin-bottom: 0.5rem;
     .card {
       border: 0px;
@@ -13,7 +8,6 @@
         @extend .list-group-item;
         display: flex;
         flex-direction: column;
-
       }
       .list-group-item {
         cursor: pointer;
@@ -51,7 +45,6 @@
     }
   }
   .categ-list {
-    width: 90%;
     display: flex;
     justify-content: space-between;
     font-size: 1.2rem;

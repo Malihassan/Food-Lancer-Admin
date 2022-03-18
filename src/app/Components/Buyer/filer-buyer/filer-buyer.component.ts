@@ -10,6 +10,7 @@ import { BuyerService } from 'src/app/services/buyer/buyer.service';
 export class FilerBuyerComponent implements OnInit {
   buyerFilterFormGroup: FormGroup
   status: any = [];
+  query: any = {}
   @Output() getBuyersAfterFilter = new EventEmitter<any>()
   constructor(private fb: FormBuilder) {
     this.buyerFilterFormGroup = this.fb.group({
@@ -27,23 +28,16 @@ export class FilerBuyerComponent implements OnInit {
     const ischecked = $event.target.checked
     if (!ischecked) {
       this.status = this.status.filter((item: string) => item !== checkedValue)
-      return
+    }else{
+      this.status.push(checkedValue)
     }
-    this.status.push(checkedValue)
+    this.getBuyersAfterFilter.emit({status:this.status})
   }
   submitBuyerFilterForm() {
-    let query: any = {}
     let formData = this.buyerFilterFormGroup.value
-    formData.email ? query.email = formData.email : ""
-    this.status.length > 0 ? query.status = this.status : ""
-    this.getBuyersAfterFilter.emit(query)
+    formData.email ? this.query.email = formData.email : ""
+    this.getBuyersAfterFilter.emit(this.query)
     
   }
-  formValid() {
-    let validForm = this.buyerFilterFormGroup.valid
-    if (validForm || this.status.length > 0) {
-      return true
-    }
-    return false
-  }
+
 }
