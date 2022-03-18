@@ -1,31 +1,28 @@
-<div class="container ">
+<div class="container back-color">
   <div class="row">
     <div class="col-6">
-      <ngb-carousel>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper p-5">
-            <img [src]="product.image[0].url" alt="Random first slide">
-          </div>
-        </ng-template>
-      </ngb-carousel>
+
+      <div class="picsum-img-wrapper p-5">
+        <img [src]="product?.image[0].url" alt="Random first slide">
+      </div>
     </div>
     <div class="col-6">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title my-3">{{product.name}}</h5>
-          <ngb-rating [rate]="product.avgRate"></ngb-rating>
-          <div class="card-link my-3">Seller:<a href="" class=" mx-1 p-0 px-2">{{product.sellerId.userName}}</a></div>
-          <h5 class="card-subtitle mb-3 text-muted my-3 ">{{product.price|currency:"EGP":"symbol"}}</h5>
-          <p class="card-text my-3">{{product.Description}}</p>
+          <h5 class="card-title my-3">{{product?.name}}</h5>
+          <ngb-rating [rate]="product?.avgRate"></ngb-rating>
+          <div class="card-link my-3">Seller:<a href="" class=" mx-1 p-0 px-2">{{product?.sellerId?.userName}}</a></div>
+          <h5 class="card-subtitle mb-3 text-muted my-3 ">{{product?.price|currency:"EGP":"symbol"}}</h5>
+          <p class="card-text my-3">{{product?.Description}}</p>
           <div class="card-link my-3">Category:<a href=""
-              class="btn btn-outline-dark mx-1 p-0 px-2">{{product.categoryId.name}}</a></div>
-          <div class="card-link ms-0">Status: {{product.status}}
-              <button *ngIf="this.product.status==='pending'" (click)="changeStatusToActive($event)" name="active" class="btn btn-outline-info mx-1 p-0 px-2 " >Active
+              class="btn btn-outline-dark mx-1 p-0 px-2">{{product?.categoryId?.name}}</a></div>
+          <div class="card-link ms-0">Status: {{product?.status}}
+              <button *ngIf="this.product?.status==='pending'" (click)="changeStatusToActive($event)" name="active" class="btn btn-outline-info mx-1 p-0 px-2 " >Active
               </button>
-              <button *ngIf="this.product.status==='active'" (click)="changeStatusToPending($event)" name="pending" class="btn btn-outline-warning mx-1 p-0 px-2 " >Pending
+              <button *ngIf="this.product?.status==='active'" (click)="changeStatusToPending($event)" name="pending" class="btn btn-outline-warning mx-1 p-0 px-2 " >Pending
               </button>
           </div>
-          <div *ngIf="this.product.status==='pending'">
+          <div *ngIf="this.product?.status==='pending'">
             <label>Pending Message:</label>
             <br>
             <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
@@ -53,23 +50,26 @@
       </ng-template>
     </li>
     <li ngbNavItem>
-      <a ngbNavLink>Reviews <span>(0)</span></a>
-      <ng-template ngbNavContent>
-<!-- <div>Your Experience</div>
-<div>Your rating</div> -->
-<ngb-rating [rate]="product.reviews.rate"></ngb-rating>
-<div>
-  <label for="">Your review</label>
-  <textarea type="text"></textarea>
-</div>
-<div>
-  <label for=""> Name</label>
-  <input type="text">
-</div>
-<div>
-  <label for=""> Email</label>
-  <input type="text">
-</div>
+  <a ngbNavLink>Reviews <span>(0)</span></a>
+  <ng-template ngbNavContent>
+  <div *ngFor="let review of product.reviews" class="card w-75">
+  <div class="card-body">
+   <div class="d-flex justify-content-start align-items-center">
+    <div class="img-container">
+      <img class="" src="../../../../assets/elmaestro2.JPG"/>
+     </div>
+      <p class="mx-3"> {{review?.buyerId.userName}}</p>
+   </div>
+    <div >
+      <ngb-rating [rate]="review?.rate"></ngb-rating>
+      <!-- <p>{{comment?.rate}}</p> -->
+<p class=" py-4">{{review?.comments}}</p>
+<span class="text-sm">{{review?.createdAt}}</span>
+    </div>
+    <hr>
+  </div>
+  </div>
+
       </ng-template>
     </li>
   </ul>

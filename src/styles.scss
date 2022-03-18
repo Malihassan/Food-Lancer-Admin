@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400;600;700;900&display=swap');
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+$navbar-color: #072227;
+$background-color: #000;
+$font-color:#008080;
+$fontFamily:'Source Serif Pro', serif;
+
+/* body{
+  background-color: $background-color !important;
+} */
+
+
+

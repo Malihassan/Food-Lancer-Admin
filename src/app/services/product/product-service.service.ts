@@ -8,21 +8,18 @@ export class ProductServiceService {
   private productID = new BehaviorSubject(0);
   private newStatus = new BehaviorSubject('');
   private CategoryId = new BehaviorSubject("");
-
-  //public status = new BehaviorSubject(["active"]);
   constructor(private http: HttpClient) {}
   getAllProduct(page: number, status: any,categoryId:any='') {
-    console.log('status', status);
     return this.http.get(`/admin/product/allProducts`, {
       params: {status,page,categoryId},
     });
   }
-  getProductById(productID: any) {
+  getProductById(productID:any) {
     console.log(productID);
 
     return this.http.get(`/admin/product/${productID}`);
   }
-  updateProductStatus(newProductID: any,status:any) {
+  updateProductStatus(newProductID:any,status:any) {
     console.log(status);
     this.productID.next(newProductID);
     console.log(newProductID);
@@ -42,7 +39,7 @@ export class ProductServiceService {
         }
       );
   }
-  sendPendingMessage(newProductID: any, message: string) {
+  sendPendingMessage(newProductID:any, message: string) {
     this.productID.next(newProductID);
     console.log(newProductID);
     this.http

@@ -1,3 +1,5 @@
+@import "./../styles";
+
 $width1: calc(100% - 78px);
 $width2: calc(100% - 240px);
 .home {
@@ -11,4 +13,6 @@ $width2: calc(100% - 240px);
   width: $width1 !important;
   left: 78px !important;
 }
+
+
 
