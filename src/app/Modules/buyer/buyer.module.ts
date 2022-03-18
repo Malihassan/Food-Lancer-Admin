@@ -4,10 +4,11 @@ import { FilerBuyerComponent } from '../../components/buyer/filer-buyer/filer-bu
 import { BuyerRoutingModule } from './buyer-routing.module';
 import { ShareModule } from 'src/app/shared/module/share/share.module';
 import { RootBuyerPageComponent } from './root-buyer-page/root-buyer-page.component';
+import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 
 
 @NgModule({
-  declarations: [FilerBuyerComponent, RootBuyerPageComponent],
+  declarations: [FilerBuyerComponent, RootBuyerPageComponent, BuyerDetailsComponent],
   imports: [
     ShareModule,
     CommonModule,

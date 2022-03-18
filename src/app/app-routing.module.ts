@@ -4,6 +4,7 @@ import { HomeComponent } from './components/account/home/home.component';
 import { LoginFormComponent } from './components/account/login-form/login-form.component';
 import { RegisterFormComponent } from './components/account/register-form/register-form.component';
 import { RootAccountPageComponent } from './modules/account/root-account-page/root-account-page.component';
+import { BuyerDetailsComponent } from './modules/buyer/buyer-details/buyer-details.component';
 import { RootBuyerPageComponent } from './modules/buyer/root-buyer-page/root-buyer-page.component';
 import { RootCategoryPageComponent } from './modules/category/root-category-page/root-category-page.component';
 import { RootCoverageAreaPageComponent } from './modules/coverage-area/root-coverage-area-page/root-coverage-area-page.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'profile',component:RootProfilePageComponent},
   { path: 'buyer' ,children:[
     {path:'',component:RootBuyerPageComponent},
-    {path:':id',component:RootBuyerPageComponent}
+    {path:'details/:id',component:BuyerDetailsComponent}
   ]},
   { path: 'seller' ,children:[
     {path:'',component:RootSellerPageComponent},
@@ -41,10 +42,7 @@ const routes: Routes = [
     {path:'',component:RootProductPageComponent},
     {path:':id',component:ProductDetailesComponent}
   ]},
-  { path: 'order' ,children:[
-    {path:'',component:RootOrderPageComponent},
-    // {path:'details/:id',component:RootOrderPageComponent}
-  ]},
+  { path: 'order' ,component:RootOrderPageComponent},
   { path: 'coverageArea' ,component:RootCoverageAreaPageComponent},
   { path: '**',component:NotFoundPageComponent }
 ];
