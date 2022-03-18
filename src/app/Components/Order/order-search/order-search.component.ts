@@ -30,14 +30,9 @@ export class OrderSearchComponent implements OnInit {
   };
 
   searchSubmit() {
-    console.log(this.query, 'query');
-    console.log(this.neutralizeQuery(this.query), 'noQQ');
     this.orderService
       .search(this.page, this.neutralizeQuery(this.query))
       .subscribe((res: any) => {
-        console.log(res);
-        console.log(res.docs, 'docs');
-
         this.orders = res.docs;
         this.count = res.totalPages;
         this.submitted.emit(this.orders);
