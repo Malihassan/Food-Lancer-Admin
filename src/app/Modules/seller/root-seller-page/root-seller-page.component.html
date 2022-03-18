@@ -1,6 +1,9 @@
 
-<section class="container-page mt-5">
-    <app-filter-seller class="seller-filter my-2" (getSellersAfterFilter)="getSellersAfterFilter($event)"></app-filter-seller>
+<section class=" container mt-5">
+    <app-filter-offcanvas class="seller-filter">
+        <h5>Filter Seller</h5>
+        <app-filter-seller (getSellersAfterFilter)="getSellersAfterFilter($event)"></app-filter-seller>
+    </app-filter-offcanvas>
     <app-table class="seller-table" (updateStatus)="updateSellerStatus($event)" (paginationHandler)="paginationHandler($event)" [pageSize]="limit" [collectionSize]="countOfSellers" [tableHeader]="tableHeader"
         [tableData]="sellersData"></app-table>
 </section>    

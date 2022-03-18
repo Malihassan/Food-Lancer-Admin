@@ -41,7 +41,10 @@ const routes: Routes = [
     {path:'',component:RootProductPageComponent},
     {path:':id',component:ProductDetailesComponent}
   ]},
-  { path: 'order' ,component:RootOrderPageComponent},
+  { path: 'order' ,children:[
+    {path:'',component:RootOrderPageComponent},
+    // {path:'details/:id',component:RootOrderPageComponent}
+  ]},
   { path: 'coverageArea' ,component:RootCoverageAreaPageComponent},
   { path: '**',component:NotFoundPageComponent }
 ];

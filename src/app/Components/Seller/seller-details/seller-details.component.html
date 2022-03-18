@@ -2,12 +2,15 @@
     <div class="card border-0 border-bottom bg-light">
       <div class="row g-0">
         <div class="card-body row justify-content-evenly align-items-center">
-          <img src="./../../assets/2.jfif" class="col-4 w-h-even rounded-circle my-5" alt="...">
+          <img src="details.image || ../../../../../../assets/2.jfif " class="col-4 w-h-even rounded-circle my-5" alt="...">
           <div class="col-6">
-            <h5 class="card-title display-2 mb-4">sellerDetails.name</h5>
-            <p class="card-text text-muted ms-3"><ngb-rating class="text-warning me-2"  [readonly]="true" [max]="5" [rate]="3.5"></ngb-rating><small> 3.5/5</small></p>
-            <p class="card-text my-3 ms-3 text-muted">sellerDetails</p>
-            <p class="card-text ms-3"><small class="text-muted">Active 3 mins ago</small></p>
+            <h5 class="card-title display-2 mb-4">{{details.firstName}} {{details.lastName}}</h5>
+            <p class="card-text mb-5 text-muted ms-3"><ngb-rating class="text-warning me-2"  [readonly]="true" [max]="5" [rate]="details.rate"></ngb-rating><small> {{details.rate}}/5</small></p>
+            <p class="card-text ms-3 text-muted">{{details.phone}}</p>
+            <p class="card-text ms-3 text-muted">{{details.gender}}</p>
+            <p class="card-text ms-3 text-muted">{{details.coverageArea.governorateName}}, {{details.coverageArea.regionName}}</p>
+            <p class="card-text ms-3 text-muted">{{details.status}}</p>
+            <p class="card-text mt-5 ms-3"><small class="text-muted">Active 3 mins ago</small></p>
           </div>
         </div>
       </div>

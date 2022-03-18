@@ -15,4 +15,8 @@ export class SellerDetailsService {
   getSellerOrders(id:string){
     return this.http.get(`/admin/seller/${id}/orders`)
   }
+
+  getSellerDetails(id: string){
+    return this.http.get(`/admin/seller/${id}`)
+  }
 }

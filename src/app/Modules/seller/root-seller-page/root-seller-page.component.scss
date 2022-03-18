@@ -20,23 +20,26 @@
   display: flex;
   flex-direction: column;
 }
-.container-page {
-  @include flex-row();
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  @include responsive(small) {
-    @include flex-col();
-  }
-  .seller-filter {
-    width: 20%;
-    @include responsive(medium) {
-      width: 100%;
-      @include flex-row();
-    }
-  }
-  .seller-table {
-    width: 80%;
-    
-  }
+.seller-filter{
+    float: right;
 }
+// .container-page {
+// //   @include flex-row();
+//   justify-content: space-between;
+//   align-items: flex-start;
+//   width: 100%;
+//   @include responsive(small) {
+//     @include flex-col();
+//   }
+//   .seller-filter {
+//     width: 20%;
+//     @include responsive(medium) {
+//       width: 100%;
+//       @include flex-row();
+//     }
+//   }
+//   .seller-table {
+//     width: 80%;
+
+//   }
+// }

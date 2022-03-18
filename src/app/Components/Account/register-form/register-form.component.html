@@ -87,10 +87,10 @@
         <small *ngIf="formControls['image'].errors?.['required']">
           This field is required
         </small>
-        <small *ngIf="extensionError && !formControls['image'].errors?.['required']">
+        <small *ngIf="formControls['image'].errors?.['pattern']">
           Upload a valid image
         </small>
-        <small *ngIf="sizeError && !formControls['image'].errors?.['required']">
+        <small *ngIf="formControls['image'].errors?.['inValidSize']">
           Size is way too big
         </small>
       </div>
