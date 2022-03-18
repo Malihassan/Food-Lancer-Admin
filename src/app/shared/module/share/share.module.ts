@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { OrderCardComponent } from '../../components/order-card/order-card.component';
 
+import { FilterOffcanvasComponent } from '../../components/filter-offcanvas/filter-offcanvas.component';
 // import {CookieService} from 'ngx-cookie-service';
 
 
@@ -25,7 +26,8 @@ import { OrderCardComponent } from '../../components/order-card/order-card.compo
     ProductDetailesComponent,
     FooterComponent,
     LoaderComponent,
-    OrderCardComponent
+    OrderCardComponent,
+    FilterOffcanvasComponent
   ],
   imports: [
     CommonModule,
@@ -49,6 +51,7 @@ import { OrderCardComponent } from '../../components/order-card/order-card.compo
     LoaderComponent,
     OrderCardComponent,
     NgbModule,
+    FilterOffcanvasComponent
   ]
 })
 export class ShareModule { }
