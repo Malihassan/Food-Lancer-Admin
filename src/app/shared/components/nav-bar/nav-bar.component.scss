@@ -1,12 +1,10 @@
-@import "../../../../styles.scss";
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 78px;
-  // background-color: #11101d;
-  background-color: $navBackGroundColor;
+  background-color: #11101d;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -36,9 +34,9 @@
 .sidebar #btn {
   color: #fff;
   position: absolute;
-  left: 40%;
+  left: 45%;
   top: 6px;
-  font-size: 20px;
+  font-size: 25px;
   height: 50px;
   width: 50px;
   text-align: center;
@@ -148,7 +146,6 @@
   width: 50px;
   height: 50px;
 }
-
 .profile .profile_details .name_jop {
   margin-left: 10px;
 }
@@ -158,9 +155,6 @@
 }
 .profile .profile_details .jop {
   font-size: 15px;
-}
-.jop{
-    cursor: pointer;
 }
 .profile #logout {
   position: absolute;
@@ -176,4 +170,29 @@
 }
 .logout_active {
   left: 92% !important;
+}
+$breakpoint-tablet: 840px;
+@media (max-width: $breakpoint-tablet) {
+  .sideBarTabeltScreen {
+    width: 78px !important;
+  }
+  .logoTabletScreen {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  .btnTabeltScreen {
+    left: 45% !important;
+  }
+  .linksNameTabeltScreen{
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  .logoutTabletScreen{
+  left: 60% !important;
+      
+  }
+  .profile_detailsTabletScreen{
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }

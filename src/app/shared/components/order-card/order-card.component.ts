@@ -1,5 +1,5 @@
 import { map } from 'rxjs';
-import { Order } from './../../../interfaces/order';
+import { Order } from '../../../interfaces/order';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -15,7 +15,6 @@ export class OrderCardComponent implements OnInit {
   textColor: any;
   src: any;
   ngOnInit(): void {
-    console.log("order==>",this.order);
     this.textColor =
       this.order.status === 'in progress'
         ? 'text-warning'
