@@ -25,6 +25,7 @@ export class OrdersPageComponent implements OnInit {
   page: number = 1;
   orders: Order[] = [];
   count: number = 0;
+  ordersCount: number = 0;
   // countOfSellers:0
 
   pageSize: number = 1;
@@ -49,7 +50,7 @@ export class OrdersPageComponent implements OnInit {
       // this.countOfSellers = res.totalDocs
       // this.limit = res.limit
       this.count = res.totalPages;
-      console.log(res);
+      this.ordersCount = res.totalDocs;
     });
   }
 
