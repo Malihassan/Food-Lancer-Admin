@@ -1,0 +1,55 @@
+.form-switch .form-check-input {
+  width: 3em;
+  height: 20px;
+}
+
+.notFoundData {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.table thead {
+  border-bottom: 2px solid #d6d6d6;
+  background-color: #f9f9f9;
+}
+
+.table thead th {
+  border-top: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #596677;
+}
+
+.table tbody tr:hover {
+  background-color: #bebebe;
+}
+
+.table tbody tr td {
+  font-size: 1rem;
+}
+
+.table tbody tr td .rate {
+  width: 25px;
+}
+
+.table tbody tr td .status {
+  width: 60px;
+}
+
+.table tbody tr td .prof-icon {
+  text-align: right;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.pagination-container {
+  border-top: 1px solid #596677;
+  color: #596677;
+}
+
+.pagination-container label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=table.component.css.map */

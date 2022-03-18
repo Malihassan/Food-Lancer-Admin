@@ -1,5 +1,5 @@
-<div class="card mt-3 shadow-lg ms-3 rounded-3 h-100">
-  <div class="card-body h-75">
+<div class="container-fluid h-100">
+  <div class="h-75">
     <form class="h-50" #searchForm="ngForm">
       <p class="text-muted">
         If you don't want to filter just leave the inputs empty
@@ -80,29 +80,28 @@
           >
             <option value="0">All</option>
             <option value="in progress">in progress</option>
-            <option value="done">done</option>
-            <option value="cancel">cancel</option>
+            <option value="delivered">delivered</option>
+            <option value="canceled">canceled</option>
           </select>
         </div>
+        <button
+          type="submit"
+          (click)="searchSubmit()"
+          class="btn ms-3 btn-primary btn-lg"
+          style="width: 50%"
+        >
+          Search
+        </button>
+        <!-- <div class="pagination-container mb-3 d-flex justify-content-between">
+          <label>{{ count }} total</label>
+          <ngb-pagination
+            [collectionSize]="count"
+            [(page)]="page"
+            (pageChange)="refreshPagination()"
+            [pageSize]="pageSize"
+          ></ngb-pagination>
+        </div> -->
       </div>
     </form>
-  </div>
-  <button
-    type="submit"
-    (click)="searchSubmit()"
-    class="btn ms-3 btn-primary btn-lg"
-    style="width: 50%"
-  >
-    Search
-  </button>
-
-  <div class="pagination-container mb-3 d-flex justify-content-between">
-    <label>{{ count }} total</label>
-    <ngb-pagination
-      [collectionSize]="count"
-      [(page)]="page"
-      (pageChange)="refreshPagination()"
-      [pageSize]="pageSize"
-    ></ngb-pagination>
   </div>
 </div>

@@ -11,25 +11,23 @@ export class ProductServiceService {
 
   //public status = new BehaviorSubject(["active"]);
   constructor(private http: HttpClient) {}
-  getAllProduct(page: number, status: any,CategoryId:any) {
-    console.log("category",CategoryId);
+  getAllProduct(page: number, status: any,categoryId:any='') {
     console.log('status', status);
-    return this.http.get(`http://localhost:3000/admin/product/allProducts?page=${page}?categoryId=${CategoryId}`, {
-      params: {status},
-      //,category,
+    return this.http.get(`/admin/product/allProducts`, {
+      params: {status,page,categoryId},
     });
   }
   getProductById(productID: any) {
     console.log(productID);
 
-    return this.http.get(`http://localhost:3000/admin/product/${productID}`);
+    return this.http.get(`/admin/product/${productID}`);
   }
   updateProductStatus(newProductID: any,status:any) {
     console.log(status);
     this.productID.next(newProductID);
     console.log(newProductID);
     this.http
-      .patch(`http://localhost:3000/admin/product/${newProductID}`, {
+      .patch(`/admin/product/${newProductID}`, {
         status
       })
       .subscribe(
@@ -48,7 +46,7 @@ export class ProductServiceService {
     this.productID.next(newProductID);
     console.log(newProductID);
     this.http
-      .patch(`http://localhost:3000/admin/product/${newProductID}/pending`, {
+      .patch(`/admin/product/${newProductID}/pending`, {
         pendingMessage: `${message}`,
       })
       .subscribe(

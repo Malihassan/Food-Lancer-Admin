@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,mBAAmB,CAAA;EACnB,MAAM,EAAE,IAAI;CACX;;AACD,AAAA,mBAAmB,CAAC,GAAG,CAAA;EACrB,MAAM,EAAC,IAAI;EACX,KAAK,EAAE,IAAI;CACV;;AAED,AAAA,KAAK,CAAA;EACH,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "product-detailes.component.scss"
+    ],
+    "names": [],
+    "file": "product-detailes.component.css"
+}

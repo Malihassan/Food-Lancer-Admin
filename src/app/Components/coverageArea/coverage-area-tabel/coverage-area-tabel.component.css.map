@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AA6BA,AAAA,qBAAqB,CAAA;EACjB,UAAU,EAAE,iBAAiB;EAC7B,KAAK,EAAE,OAAO;EACd,UAAU,EAAE,EAAE;CAIjB;;AAPD,AAII,qBAJiB,CAIjB,KAAK,CAAA;EACD,UAAU,EAAE,MAAM;CACrB;;AAEL,AAAA,OAAO,AAAA,MAAM,CAAA;EACT,MAAM,EAAE,OAAO;CAClB;;AACD,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,sBAAsB;CAClC",
+    "sources": [
+        "coverage-area-tabel.component.scss"
+    ],
+    "names": [],
+    "file": "coverage-area-tabel.component.css"
+}

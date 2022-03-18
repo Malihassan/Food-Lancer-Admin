@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from 'src/app/services/login/login.service';
 
@@ -9,7 +10,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginFormComponent implements OnInit {
   token: any;
-  constructor(private loginService : LoginService, private cookieService: CookieService) { }
+  constructor(private loginService : LoginService, private cookieService: CookieService,private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +21,7 @@ export class LoginFormComponent implements OnInit {
       this.token = message.token
       console.log(this.token);
       this.cookieService.set('token', this.token, { expires: new Date(new Date().getTime() +  1000 * 60 * 60 * 24) });
+      window.location.reload()
     });
   }
-
 }

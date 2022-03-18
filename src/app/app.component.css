@@ -1,0 +1,14 @@
+.home {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 240px);
+  left: 240px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.home_active {
+  width: calc(100% - 78px) !important;
+  left: 78px !important;
+}
+/*# sourceMappingURL=app.component.css.map */
