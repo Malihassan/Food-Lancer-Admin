@@ -1,5 +1,10 @@
 <app-filter-offcanvas class="float-end mt-3 mx-2">
-  <app-order-search (submitted)="onNewSearch($event)" (pageCount)="onPageChange($event)" [count]="count" [page]="page">
+  <app-order-search
+    (submitted)="onNewSearch($event)"
+    (pageCount)="onPageChange($event)"
+    [count]="count"
+    [page]="page"
+  >
   </app-order-search>
 </app-filter-offcanvas>
 
@@ -21,7 +26,12 @@
 </div>
 
 <div class="pagination-container mb-3 d-flex justify-content-start">
-  <label class="mx-3">{{ count }} total</label>
-  <ngb-pagination class="mt-1" [collectionSize]="count" [(page)]="page" (pageChange)="refreshPagination()"
-    [pageSize]="pageSize"></ngb-pagination>
+  <label class="mx-3">{{ ordersCount }} total</label>
+  <ngb-pagination
+    class="mt-1"
+    [collectionSize]="count"
+    [(page)]="page"
+    (pageChange)="refreshPagination()"
+    [pageSize]="pageSize"
+  ></ngb-pagination>
 </div>
