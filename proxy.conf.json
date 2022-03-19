@@ -1,6 +1,6 @@
 {
     "/admin": {
-        "target": "http://localhost:3000",
+        "target": "https://food-lancer.herokuapp.com",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {
