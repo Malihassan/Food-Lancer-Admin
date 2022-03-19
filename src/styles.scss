@@ -4,19 +4,36 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
-
-$navbar-color: #072227;
-$background-color: #000;
+$navbar-color: #154d6b;
+$background-color: #EEEEEE;
 $font-color:#008080;
-$fontFamily:'Source Serif Pro', serif;
 
-/* body{
+$fontFamily:'Source Serif Pro', serif;
+//////Date Paragraph Price User Product
+$paragraph-color:#a3a3a3;
+$date-color:#8f8f8f;
+$price-color:#9f0000;
+$user-color:#333333;
+$product-color:#000000;
+/////////
+$card-color:#faf9f8;
+$charts-color:#154d6b;
+
+ body{
   background-color: $background-color !important;
+  font-family: $fontFamily!important;
+  font-size: 1rem !important;
+}
+/* p{
+  font-size: 1rem;
+  color: $paragraph-color;
 } */
 
-
-
-$backGroundBody:#e9e6c9;
-$navBackGroundColor :#21313c;
+//#e9e6c9
+//#f8f7ed
+//#f4fcfd
+//#EEEEEE
+//$backGroundBody:#e9e6c9;
+//$navBackGroundColor :#21313c;
 
 
