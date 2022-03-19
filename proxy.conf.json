@@ -1,6 +1,6 @@
 {
     "/admin": {
-        "target": "https://food-lancer.herokuapp.com/",
+        "target": "https://food-lancer.herokuapp.com",
         "secure": false,
         "changeOrigin": true,
         "pathRewrite": {

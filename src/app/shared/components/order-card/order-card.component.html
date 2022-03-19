@@ -1,27 +1,40 @@
-<div class="card-color"
->
+<div class="card my-3 shadow-lg rounded-3 card-color" style="min-width: 20rem">
   <div class="row ps-3 justify-content-between pt-3">
     <div class="d-flex flex-column col-12">
       <h6 class="card-title fw-bold">Order #{{ order._id }}</h6>
       <small class="card-text text-secondary">{{
         order?.createdAt | date: "medium"
-        }}</small>
+      }}</small>
     </div>
   </div>
   <div class="card-body d-flex flex-column justify-content-between">
     <div class="overflow-auto" style="max-height: 388px">
-      <div class="row pb-2 justify-content-between mx-0" *ngFor="let product of order?.products">
+      <div
+        class="row pb-2 justify-content-between mx-0"
+        *ngFor="let product of order?.products"
+      >
         <div class="col-4">
-          <img [src]="product._id?.image[0].url" class="round-img img-fluid rounded-circle" alt=".." />
+          <img
+            [src]="product._id?.image[0].url"
+            class="round-img img-fluid rounded-circle"
+            alt=".."
+          />
         </div>
         <div class="col-8 d-flex flex-column">
           <h6>{{ product._id?.name }}</h6>
-          <small id="showDes" class="py-2" class="card-text text-secondary" placement="bottom"
-          ngbTooltip="{{ product._id?.description }}" container="body">show description</small>
-
+          <small
+            id="showDes"
+            class="py-2"
+            class="card-text text-secondary"
+            placement="bottom"
+            ngbTooltip="{{ product._id?.description }}"
+            container="body"
+            >show description</small
+          >
 
           <div class="d-flex justify-content-between">
-            <small class="fw-bold">{{ product._id?.price | currency: "EGP " }}
+            <small class="fw-bold"
+              >{{ product._id?.price | currency: "EGP " }}
             </small>
             <small class="fw-bold">Qty: {{ product?.quantity }}</small>
           </div>
@@ -35,8 +48,8 @@
           Seller Name :
           <small class="text-secondary">
             {{
-            order.sellerId.firstName + " " + order.sellerId.lastName
-            | titlecase
+              order.sellerId.firstName + " " + order.sellerId.lastName
+                | titlecase
             }}
           </small>
         </h6>
@@ -44,7 +57,7 @@
           Buyer Name :
           <small class="text-secondary">
             {{
-            order.buyerId.firstName + " " + order.buyerId.lastName | titlecase
+              order.buyerId.firstName + " " + order.buyerId.lastName | titlecase
             }}
           </small>
         </h6>
