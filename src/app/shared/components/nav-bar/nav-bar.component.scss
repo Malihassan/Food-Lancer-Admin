@@ -189,63 +189,10 @@ $breakpoint-tablet: 840px;
   }
   .logoutTabletScreen{
   left: 60% !important;
-
+      
   }
   .profile_detailsTabletScreen{
     opacity: 0 !important;
     pointer-events: none !important;
   }
-}
-.sidebar .profile_content{
-    position: absolute;
-    color: #fff;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
-.sidebar .profile_content .profile{
-    position: relative;
-    padding: 10px 6px;
-    height: 60px;
-    background-color: #1d1b31;
-}
-.profile_content .profile .profile_details{
-    display: flex;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    white-space: nowrap;
-}
-.pofile_details_active{
-    opacity: 1 !important;
-    pointer-events: auto !important;
-}
-#adminImg{
-     width: 50px;
-    height: 50px;
-}
-.profile .profile_details .name_jop{
-    margin-left: 10px;
-}
-.profile .profile_details .name{
-    font-size: 15px;
-    font-weight: 400;
-}
-.profile .profile_details .jop{
-    font-size: 15px;
-}
-.profile #logout{
-    position: absolute;
-    left: 60%;
-    bottom: 5px;
-    transform: translateX(-50%);
-    min-width: 50px;
-    line-height: 65px;
-    font-size: 20px;
-    border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-}
-.logout_active{
-    left: 92% !important;
 }
