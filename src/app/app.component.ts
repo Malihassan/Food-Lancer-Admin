@@ -6,22 +6,22 @@ import { LoginService } from './services/login/login.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent {
   title = 'food-lancer-admin';
   status: boolean = false;
-  pageNotFounded :any;
+  pageNotFounded: any;
 
-  authenticated: boolean = this.cookieService.get('token') ? true : false
-  constructor(private cookieService: CookieService,private loginService:LoginService) {
-  }
+  authenticated: boolean = this.cookieService.get('token') ? true : false;
+  constructor(
+    private cookieService: CookieService,
+    private loginService: LoginService
+  ) {}
   ngOnInit(): void {
-    this.loginService.getisFoundValue().subscribe((res=>{
-      this.pageNotFounded=res;
-      console.log('onInit',this.pageNotFounded);
-    }));
+    this.loginService.getisFoundValue().subscribe((res) => {
+      this.pageNotFounded = res;
+    });
   }
   addItem(newItem: boolean) {
     this.status = newItem;

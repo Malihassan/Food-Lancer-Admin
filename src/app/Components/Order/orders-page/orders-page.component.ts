@@ -95,7 +95,7 @@ export class OrdersPageComponent implements OnInit {
         this.orders.length === 0
           ? (this.isEmpty = true)
           : (this.isEmpty = false);
-        this.ordersCount = this.orders.length;
+
         this.pageCount.emit(this.page);
         this.submitted.emit(this.orders);
       });
