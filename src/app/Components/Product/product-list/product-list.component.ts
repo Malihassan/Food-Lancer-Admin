@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit {
   pageSize = 12;
   collectionSize: number = 0;
   products: [] = [];
+  errorStatement:string="";
   constructor(private productService: ProductServiceService) {
   }
   ngOnInit(): void {
@@ -39,7 +40,10 @@ export class ProductListComponent implements OnInit {
         this.pageSize = res.limit;
       },
       (err) => {
+        console.log("222");
         console.log(err.error.error);
+        this.errorStatement=err.error.error
+        console.log(this.errorStatement);
       }
     );
   }

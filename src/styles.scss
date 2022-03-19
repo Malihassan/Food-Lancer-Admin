@@ -6,7 +6,7 @@
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
 $navbar-color: #154d6b;
 $background-color: #EEEEEE;
-$font-color:#008080;
+//$font-color:#008080;
 
 $fontFamily:'Source Serif Pro', serif;
 //////Date Paragraph Price User Product
@@ -18,7 +18,7 @@ $product-color:#000000;
 /////////
 $card-color:#faf9f8;
 $charts-color:#154d6b;
-
+$btn-color:#15386b;
  body{
   background-color: $background-color !important;
   font-family: $fontFamily!important;

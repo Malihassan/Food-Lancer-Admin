@@ -1,15 +1,15 @@
 <div class="container back-color">
   <div class="row">
-    <div class="col-6">
+    <div class="col-xl-6 col-md-12 bg-danger p-3">
 
-      <div class="picsum-img-wrapper p-5">
+      <div class="picsum-img-wrapper ">
         <img [src]="product?.image[0].url" alt="Random first slide">
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-xl-6 col-md-12 bg-dark p-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title my-3">{{product?.name}}</h5>
+          <h6 class="card-title my-3">{{product?.name}}</h6>
           <ngb-rating [rate]="product?.avgRate"></ngb-rating>
           <div class="card-link my-3">Seller:<a href="" class=" mx-1 p-0 px-2">{{product?.sellerId?.userName}}</a></div>
           <h5 class="card-subtitle mb-3 text-muted my-3 ">{{product?.price|currency:"EGP":"symbol"}}</h5>
