@@ -26,6 +26,7 @@ export class OrdersPageComponent implements OnInit {
   orders: Order[] = [];
   count: number = 0;
   ordersCount: number = 0;
+  isEmpty: boolean = false;
   // countOfSellers:0
 
   pageSize: number = 1;
@@ -47,8 +48,7 @@ export class OrdersPageComponent implements OnInit {
   onSearch(query: any) {
     this.orderService.search(this.page, query).subscribe((res: any) => {
       this.orders = res.docs;
-      // this.countOfSellers = res.totalDocs
-      // this.limit = res.limit
+      this.orders.length === 0 ? (this.isEmpty = true) : (this.isEmpty = false);
       this.count = res.totalPages;
       this.ordersCount = res.totalDocs;
     });
@@ -60,6 +60,8 @@ export class OrdersPageComponent implements OnInit {
 
   onNewSearch(e: any) {
     this.orders = e;
+    this.orders.length === 0 ? (this.isEmpty = true) : (this.isEmpty = false);
+    this.ordersCount = this.orders.length;
   }
   onPageChange(e: any) {
     this.count = e;
@@ -90,7 +92,10 @@ export class OrdersPageComponent implements OnInit {
       .search(this.page, this.neutralizeQuery(this.query))
       .subscribe((res: any) => {
         this.orders = res.docs;
-
+        this.orders.length === 0
+          ? (this.isEmpty = true)
+          : (this.isEmpty = false);
+        this.ordersCount = this.orders.length;
         this.pageCount.emit(this.page);
         this.submitted.emit(this.orders);
       });

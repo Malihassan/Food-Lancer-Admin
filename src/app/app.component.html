@@ -1,11 +1,10 @@
-<!-- <app-seller></app-seller>
-    <app-filer-buyer></app-filer-buyer>
-    <app-buyer></app-buyer> -->
-
 <ng-template [ngIf]="!authenticated">
   <app-login-form></app-login-form>
 </ng-template>
-<ng-template [ngIf]="authenticated">
+<ng-template [ngIf]="!pageNotFounded">
+  <app-not-found-page ></app-not-found-page>
+</ng-template>
+<ng-template [ngIf]="authenticated &&pageNotFounded">
   <app-nav-bar (newItemEvent)="addItem($event)"></app-nav-bar>
   <div [ngClass]="status ? 'home_active' : ''" class="home tabeltScreen">
     <router-outlet></router-outlet>
