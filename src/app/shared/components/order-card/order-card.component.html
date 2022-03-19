@@ -41,7 +41,7 @@
             }}
           </small>
         </h6>
-        <h6 class="fw-bold">
+        <h6 *ngIf="order.buyerId.firstName" class="fw-bold">
           Buyer Name :
           <small class="text-secondary">
             {{
