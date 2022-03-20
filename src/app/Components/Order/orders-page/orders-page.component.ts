@@ -61,6 +61,9 @@ export class OrdersPageComponent implements OnInit {
   onNewSearch(e: any) {
     this.orders = e;
     this.orders.length === 0 ? (this.isEmpty = true) : (this.isEmpty = false);
+    if (this.count > 1 && this.orders.length === 6) {
+      return;
+    }
     this.ordersCount = this.orders.length;
   }
   onPageChange(e: any) {

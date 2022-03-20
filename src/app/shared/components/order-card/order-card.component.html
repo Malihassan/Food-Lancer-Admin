@@ -1,10 +1,15 @@
-<div class="card my-3 shadow-lg rounded-3 card-color" >
+<div class="card my-3 shadow-lg rounded-3 card-color" style="min-width: 25rem">
   <div class="row ps-3 justify-content-between pt-3">
     <div class="d-flex flex-column col-12">
       <h6 class="card-title fw-bold">Order #{{ order._id }}</h6>
-      <small class="card-text text-secondary">{{
-        order?.createdAt | date: "medium"
-      }}</small>
+      <div class="d-flex flex-row justify-content-between">
+        <small class="card-text text-secondary">{{
+          order?.createdAt | date: "medium"
+        }}</small>
+        <small [class]="'badge rounded-2 me-2 ' + textColor">{{
+          this.order.status
+        }}</small>
+      </div>
     </div>
   </div>
   <div class="card-body d-flex flex-column justify-content-between">
