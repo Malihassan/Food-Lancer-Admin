@@ -17,6 +17,7 @@ export class OrderSearchComponent implements OnInit {
 
   @Output() submitted = new EventEmitter<Order[]>();
   @Output() pageCount = new EventEmitter<number>();
+  @Output() newQuery = new EventEmitter();
 
   constructor(private orderService: OrderService) {}
 
@@ -35,6 +36,7 @@ export class OrderSearchComponent implements OnInit {
       .subscribe((res: any) => {
         this.orders = res.docs;
         this.count = res.totalPages;
+        this.newQuery.emit(this.neutralizeQuery(this.query));
         this.submitted.emit(this.orders);
         this.pageCount.emit(this.count);
       });

@@ -27,7 +27,6 @@ export class OrdersPageComponent implements OnInit {
   count: number = 0;
   ordersCount: number = 0;
   isEmpty: boolean = false;
-  // countOfSellers:0
 
   pageSize: number = 1;
 
@@ -35,6 +34,10 @@ export class OrdersPageComponent implements OnInit {
   @Output() pageCount = new EventEmitter<number>();
 
   constructor(private orderService: OrderService) {}
+
+  onQueryChange(e: any) {
+    this.onSearch(e);
+  }
 
   query = {
     maxPrice: null,
