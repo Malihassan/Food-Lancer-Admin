@@ -5,7 +5,7 @@
 <ng-template [ngIf]="!authenticated">
   <app-login-form></app-login-form>
 </ng-template>
-<ng-template [ngIf]="authenticated">
+<ng-template class="mx-0 px-0" [ngIf]="authenticated">
   <app-nav-bar (newItemEvent)="addItem($event)"></app-nav-bar>
   <div [ngClass]="status ? 'home_active' : ''" class="home tabeltScreen">
     <router-outlet></router-outlet>
