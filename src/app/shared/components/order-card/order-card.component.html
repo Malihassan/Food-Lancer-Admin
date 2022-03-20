@@ -1,4 +1,4 @@
-<div class="card my-3 shadow-lg rounded-3 card-color" style="min-width: 25rem">
+<div class="card my-3 shadow-lg rounded-3 card-color" style="min-width: 25rem;min-height: 495px;">
   <div class="row ps-3 justify-content-between pt-3">
     <div class="d-flex flex-column col-12">
       <h6 class="card-title fw-bold">Order #{{ order._id }}</h6>
@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="card-body d-flex flex-column justify-content-between">
-    <div class="overflow-auto" style="max-height: 388px">
+    <div class="overflow-auto" style="max-height: 340px">
       <div
         class="row flex-wrap pb-2 justify-content-around mx-0"
         *ngFor="let product of order?.products"
