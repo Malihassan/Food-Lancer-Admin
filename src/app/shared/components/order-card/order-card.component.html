@@ -1,4 +1,4 @@
-<div class="card my-3 shadow-lg rounded-3 card-color" style="min-width: 20rem">
+<div class="card my-3 shadow-lg rounded-3 card-color" >
   <div class="row ps-3 justify-content-between pt-3">
     <div class="d-flex flex-column col-12">
       <h6 class="card-title fw-bold">Order #{{ order._id }}</h6>
@@ -10,18 +10,17 @@
   <div class="card-body d-flex flex-column justify-content-between">
     <div class="overflow-auto" style="max-height: 388px">
       <div
-        class="row pb-2 justify-content-between mx-0"
+        class="row flex-wrap pb-2 justify-content-around mx-0"
         *ngFor="let product of order?.products"
       >
-        <div class="col-4">
+        <div class="col-4 ps-0">
           <img
             [src]="product._id?.image[0].url"
             class="round-img img-fluid rounded-circle"
-            alt=".."
           />
         </div>
-        <div class="col-8 d-flex flex-column">
-          <h6>{{ product._id?.name }}</h6>
+        <div class="col-8 d-flex pe-0 flex-column">
+          <h6 class="fw-bold">{{ product._id?.name }}</h6>
           <small
             id="showDes"
             class="py-2"
@@ -53,7 +52,7 @@
             }}
           </small>
         </h6>
-        <h6 class="fw-bold">
+        <h6 *ngIf="order.buyerId.firstName" class="fw-bold">
           Buyer Name :
           <small class="text-secondary">
             {{

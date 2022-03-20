@@ -18,7 +18,7 @@ export class CoverageAreaTabelComponent implements OnInit {
     this.subscribeForGetCoverageArea(1,this.valueOfSearch);
   }
   page: number = 1;
-  pageSize: number = 6;
+  pageSize: number = 8;
   subscribeForGetCoverageArea(page: number,query:string) {
     console.log("subScripe",query)
     this.coverageAreaService.getCoverageAreaList(page,query).subscribe(
