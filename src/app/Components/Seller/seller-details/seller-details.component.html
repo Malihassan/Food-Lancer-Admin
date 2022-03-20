@@ -1,6 +1,6 @@
-<div class="border-0 g-0 border-bottom bg-light">
+<div class="border-0 g-0 border-bottom cardColor">
   <div class="row g-0 mb-5">
-    <div class="col-12 position-relative d-flex justify-content-center align-items-end bg-cover mb-5">
+    <div class="col-12 position-relative d-flex justify-content-center align-items-end bg-cover mb-md-3 mb-lg-4">
       <div class="shadow p-1 rounded-circle bg-light position-absolute top-100 start-50 translate-middle">
         <img src="details.image || ../../../../../../assets/2.jfif " class="w-h-even rounded-circle" alt="...">
       </div>
@@ -8,13 +8,13 @@
   </div>
   <div class="row g-0">
     <div class="col-12 text-center">
-      <h5 class="display-3 mb-4">{{details.firstName}} {{details.lastName}}</h5>
+      <h3 class="mt-lg-5 mt-sm-3">{{details.firstName}} {{details.lastName}}</h3>
       <p class="mb-5 text-muted ms-3">
         <ngb-rating class="text-warning me-2" [readonly]="true" [max]="5" [rate]="details.rate"></ngb-rating><small>
           {{details.rate}}/5</small>
       </p>
-      <div class="row flex-sm-row flex-column justify-content-sm-evenly justify-content-start">
-        <div class="text-danger col-3">
+      <div class="d-flex justify-content-sm-around flex-sm-row align-items-center flex-column">
+        <div class="text-danger mb-3 col-sm-3 col-6">
           <h5>{{cancelPercent}}%</h5>
           <label class="pb-3"><i class="fa-solid fa-circle-exclamation me-2"></i> Cancelled Orders</label>
           <div class="progress h-10 rounded-pill g-0">
@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <div class="text-success col-3">
+        <div class="text-success mb-3 col-sm-3 col-6">
           <h5>{{completedPercent}}%</h5>
           <label class="pb-3"><i class="fa-solid fa-circle-check me-2"></i> Delivered Orders</label>
           <div class="progress h-10 rounded-pill g-0">
@@ -34,7 +34,7 @@
             </div>
           </div>
         </div>
-        <div class="text-warning col-3">
+        <div class="text-warning mb-3 col-sm-3 col-6">
           <h5>{{inProgressPercent}}%</h5>
           <label class="pb-3"><i class="fa-solid fa-spinner me-2"></i> In Progress Orders</label>
           <div class="progress h-10 rounded-pill g-0">

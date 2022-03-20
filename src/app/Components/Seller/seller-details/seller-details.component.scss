@@ -1,13 +1,18 @@
+@import "../../../../variables.scss";
+
+.cardColor{
+    background-color: $card-color !important;
+}
 .w-h-even{
     width: 15vw;
     height: 15vw;
 }
 .bg-cover{
-    background-image: url("../../../../assets/bg-seller.jpg");
-    background-size: cover;
+    background-image: url("../../../../assets/bg-seller.png");
+    background-size: repeat;
     height: 25vw;
 }
 
 .h-10{
-    height: 10% !important;
+    height: 10px !important;
 }
