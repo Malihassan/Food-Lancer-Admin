@@ -1,3 +1,5 @@
+@import '../../../../variables.scss';
+
 .form-switch{
     .form-check-input{
         width: 3em;
@@ -11,12 +13,12 @@
 .table{
     thead {
         border-bottom: 2px solid #d6d6d6;
-        background-color: #f9f9f9;
+        background-color: $tabel-header-color;
         th{
             border-top: none;
             font-size: 0.8rem;
             font-weight: 500;
-            color: #596677;
+            color: $tabel-header-text-color;
         }
     }
     tbody{
@@ -36,6 +38,7 @@
                 .prof-icon{
                     text-align: right;
                     font-size: 25px;
+                    color:$navbar-color !important;
                     cursor: pointer;
 
                 }

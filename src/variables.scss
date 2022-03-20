@@ -1,0 +1,21 @@
+$navbar-color: #154d6b;
+$background-color: #EEEEEE;
+$font-color:#008080;
+$tabel-header-color:#154d6b;
+$tabel-header-text-color:#fff;
+$fontFamily:'Source Serif Pro', serif;
+//////Date Paragraph Price User Product
+$paragraph-color:#a3a3a3;
+$date-color:#8f8f8f;
+$price-color:#9f0000;
+$user-color:#333333;
+$product-color:#000000;
+/////////
+$card-color:#faf9f8;
+$charts-color:#154d6b;
+
+ body{
+  background-color: $background-color !important;
+  font-family: $fontFamily!important;
+  font-size: 1rem !important;
+}

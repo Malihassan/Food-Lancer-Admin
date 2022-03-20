@@ -21,9 +21,8 @@ export class ProductDetailesComponent implements OnInit {
    }
   ngOnInit(): void {
    this.displayProduct()
-   /*  this.productservice.getProductById(this.productID).subscribe((res)=>{
-      this.product = res
-    }) */
+
+
   }
 
   changeStatusToActive(e:any){
@@ -31,7 +30,6 @@ export class ProductDetailesComponent implements OnInit {
     this.productservice.updateProductStatus(this.productID,this.status)
 
     this.displayProduct()
-    //this.product.status=this.status
   }
   changeStatusToPending(e:any){
     this.status=e.target.name
@@ -54,6 +52,8 @@ export class ProductDetailesComponent implements OnInit {
    displayProduct(){
     this.productservice.getProductById(this.productID).subscribe((res)=>{
       this.product=res
+      console.log(this.product);
+      console.log(this.product.reviews[0].comments);
     })
   }
 }

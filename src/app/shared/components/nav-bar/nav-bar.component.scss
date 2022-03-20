@@ -1,10 +1,12 @@
+@import "./../../../../variables.scss";
+
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 78px;
-  background-color: #11101d;
+  background-color: $navbar-color;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -129,7 +131,7 @@
   position: relative;
   padding: 10px 6px;
   height: 60px;
-  background-color: #1d1b31;
+  background-color: $navbar-color;
 }
 .profile_content .profile .profile_details {
   display: flex;
@@ -189,7 +191,7 @@ $breakpoint-tablet: 840px;
   }
   .logoutTabletScreen{
   left: 60% !important;
-      
+
   }
   .profile_detailsTabletScreen{
     opacity: 0 !important;

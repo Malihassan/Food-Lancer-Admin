@@ -39,7 +39,7 @@ export class ProductListComponent implements OnInit {
         this.pageSize = res.limit;
       },
       (err) => {
-        console.log(err);
+        console.log(err.error.error);
       }
     );
   }

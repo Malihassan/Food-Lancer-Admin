@@ -19,4 +19,7 @@ export class BuyerService {
     // ${environment.apiUrl}
     return this.http.patch(`/admin/buyer/Buyerstatus/${id}`,body)
   }
+  getOrdersBuyer(id:string){
+    return this.http.get(`/admin/buyer/${id}/orders`)
+  }
 }
