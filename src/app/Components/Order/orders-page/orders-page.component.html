@@ -13,9 +13,9 @@
   No Orders Found
 </p>
 
-<div class="d-flex container-fluid flex-row justify-content-start" #ordersPage>
-  <div class="d-flex justify-content-around row flex-wrap">
-    <div class="col-xl-4 col-lg-6 col-md-12 mx-0" *ngFor="let order of orders">
+<div class="container-fluid flex-row flex-wrap" #ordersPage>
+  <div class="justify-content-start row flex-wrap">
+    <div class="col-xl-4 col-lg-6 col-md-12 flex-wrap" *ngFor="let order of orders">
       <app-order-card [order]="order"></app-order-card>
     </div>
   </div>
