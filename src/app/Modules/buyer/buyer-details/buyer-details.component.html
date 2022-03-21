@@ -1,10 +1,11 @@
-
-
+<app-buyer-info [id] = "id"></app-buyer-info>
 <div class="container">
-    <h2 *ngIf="resError" class="py-5 text-center">No Orders Yet</h2>
-    <div class="d-flex justify-content-around row flex-wrap">
-        <div class="col-lg-4 col-md-6 col-sm-8" *ngFor="let order of orders">
-            <app-order-card   [order]="order"></app-order-card>
+    <div class="m-4 text-center display-5">Orders</div>
+    <div *ngIf="!orders[0]" class="py-5 text-center">No Orders Yet</div>
+    <div *ngIf="orders[0]" class="d-flex justify-content-around row flex-wrap">
+        <div class="col-lg-4 col-md-6 col-sm-8" *ngFor="let card of viewCards">
+            <app-order-card   [order]="card"></app-order-card>
         </div>
+        <button class="btn my-2" (click)="showMore()">{{isReadMore? 'See Less': 'See More'}}</button>
     </div>
 </div>
