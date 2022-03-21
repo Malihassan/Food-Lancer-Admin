@@ -75,12 +75,14 @@
         [ngClass]="status ? 'pofile_details_active' : ''"
         class="profile_details profile_detailsTabletScreen"
       >
-        <img
+        <div class="bg-light rounded-circle">
+          <img
           id="adminImg"
-          src="../assets/elmaestro2.JPG"
-          class="img-fluid rounded-circle"
+          src="../../../../assets/admin-avatar.png"
+          class="img-fluid"
           alt=""
         />
+        </div>
         <div class="name_jop">
           <div class="name">Bilal A Mohammed</div>
           <div class="jop py-1" routerLink="/account/register">
