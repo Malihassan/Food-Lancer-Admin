@@ -3,7 +3,7 @@
     <div *ngIf="!cards[0]" class="py-5 text-center">No Products Yet</div>
     <div *ngIf="cards[0]" class="container row-cols-3 d-flex flex-wrap justify-content-evenly">
         <app-product-card class="col shadow m-1 w-25" *ngFor="let card of viewCards" [product] = 'card'></app-product-card>
-        <button class="btn my-2" (click)="showMore()">{{isReadMore? 'See Less': 'See More'}}</button>
+        <button *ngIf="viewCards[3]" class="btn my-2" (click)="showMore()">{{isReadMore? 'See Less': 'See More'}}</button>
     </div>
 
 </div>
