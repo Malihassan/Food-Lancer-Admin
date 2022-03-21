@@ -1,5 +1,5 @@
 import { LoginService } from 'src/app/services/login/login.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -10,14 +10,18 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+  name:any='';
   @Output() newItemEvent = new EventEmitter<boolean>();
-  constructor(private cookieService: CookieService,private serviceLogin:LoginService) { }
+  constructor(private cookieService: CookieService,private serviceLogin:LoginService) {
+   }
+
   status: boolean = true;
   clickEvent(){
     this.newItemEvent.emit(this.status);
     this.status = !this.status;   
 }
   ngOnInit(): void {
+    this.name=this.cookieService.get('userName');
   }
   handelLogout(){
     this.serviceLogin.adminLogout().subscribe((res=>{

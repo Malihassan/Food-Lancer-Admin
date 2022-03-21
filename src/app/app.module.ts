@@ -49,4 +49,5 @@ import { BuyerInfoComponent } from './components/buyer/buyer-info/buyer-info.com
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

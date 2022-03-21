@@ -68,6 +68,18 @@
         >Coverage Area</span
       >
     </li>
+    <li>
+      <a routerLink="/account/register" routerLinkActive="bg-light text-dark ps-1 text-center"
+        >
+        <i class="fa-solid fa-user-plus pe-1"></i>
+        <span [ngClass]="status ? 'active_links_name' : ''" class="links_name linksNameTabeltScreen"
+          >Add Admin</span
+        ></a
+      >
+      <span [ngClass]="status ? 'active_tool' : ''" class="tool"
+        >Add Admin</span
+      >
+    </li>
   </ul>
   <div class="profile_content">
     <div class="profile">
@@ -75,7 +87,7 @@
         [ngClass]="status ? 'pofile_details_active' : ''"
         class="profile_details profile_detailsTabletScreen"
       >
-        <div class="bg-light rounded-circle">
+        <div class="bg-light rounded-circle mb-3">
           <img
           id="adminImg"
           src="../../../../assets/admin-avatar.png"
@@ -84,17 +96,14 @@
         />
         </div>
         <div class="name_jop">
-          <div class="name">Bilal A Mohammed</div>
-          <div class="jop py-1" routerLink="/account/register">
-            add Admin
-              <i class="ps-5 ms-4 fa-solid fa-user-plus"></i>
-          </div>
+          <div class="name pb-5">{{name}}</div>
         </div>
       </div>
       <i
         [ngClass]="status ? 'logout_active' : ''"
         class="fa-solid fa-right-from-bracket logoutTabletScreen"
         (click)="handelLogout()"
+        routerLink="/"
         id="logout"
       ></i>
     </div>
