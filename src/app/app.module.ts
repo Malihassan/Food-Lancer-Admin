@@ -19,10 +19,9 @@ import { NotFoundPageComponent } from './shared/components/not-found-page/not-fo
 import { RequestInterceptor } from './Interceptor/request.interceptor';
 import { AccountModule } from './modules/account/account.module';
 import { HomeModule } from './modules/home/home.module';
-import { BuyerInfoComponent } from './components/buyer/buyer-info/buyer-info.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent, BuyerInfoComponent],
+  declarations: [AppComponent, NotFoundPageComponent],
   imports: [
     BrowserModule,
     ShareModule,
