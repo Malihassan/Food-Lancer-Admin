@@ -10,9 +10,15 @@
 .bg-cover{
     background-image: url("../../../../assets/bg-seller.png");
     background-size: repeat;
-    height: 25vw;
+    height: 30vh;
 }
 
 .h-10{
     height: 10px !important;
+}
+
+.overlay{
+    height: 30vh;
+    width: 100%;
+    background-color: rgba(21,77,107, 0.3);
 }

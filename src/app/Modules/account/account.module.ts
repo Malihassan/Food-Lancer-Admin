@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ]
   ,exports:[
+    RootAccountPageComponent,
     LoginFormComponent,
     RegisterFormComponent
   ]
