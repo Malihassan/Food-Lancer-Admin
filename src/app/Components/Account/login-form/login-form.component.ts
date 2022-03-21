@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginFormComponent implements OnInit {
   token: any;
+  res:string='';
   constructor(private loginService : LoginService, private cookieService: CookieService,private route:Router) { }
 
   ngOnInit(): void {
@@ -21,6 +22,9 @@ export class LoginFormComponent implements OnInit {
       console.log(this.token);
       this.cookieService.set('token', this.token, { expires: new Date(new Date().getTime() +  1000 * 60 * 60 * 24) });
       window.location.reload()
+    },(err)=>{
+        console.log(err.message);
+        
     });
   }
 }
