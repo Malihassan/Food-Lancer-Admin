@@ -1,0 +1,56 @@
+@import "../../../../variables.scss";
+
+.bg{
+    background: linear-gradient(to bottom right, $navbar-color, $card-color) fixed;
+}
+
+.w-h-10{
+    width: 5rem;
+    height: 5rem
+}
+
+.label-blue{
+    color: $navbar-color;
+}
+
+.rounded-bubble{
+    border-radius: 1.5rem;
+}
+
+.bg-opacity{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-input{
+    background-color: rgba(21,77,107, 0.7) !important;
+
+}
+
+::placeholder{
+    color: white;
+}
+
+.bg-white{
+    color: white
+}
+
+.border-blue{
+    border-color: $navbar-color
+}
+
+.test-color{
+    color: white;
+}
+
+
+
+.btn-rounded{
+    background-color: rgba(255, 255, 255, 0) !important;
+    border-color: $navbar-color;
+    color: $navbar-color;
+}
+
+.btn-rounded:hover{
+    background-color: $navbar-color !important;
+    color: white;
+}

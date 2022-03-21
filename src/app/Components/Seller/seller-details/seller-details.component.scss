@@ -1,9 +1,24 @@
+@import "../../../../variables.scss";
+
+.cardColor{
+    background-color: $card-color !important;
+}
 .w-h-even{
     width: 15vw;
     height: 15vw;
 }
 .bg-cover{
-    background-image: url("../../../../assets/bg-seller.jpg");
-    background-size: cover;
-    height: 25vw;
+    background-image: url("../../../../assets/bg-seller.png");
+    background-size: repeat;
+    height: 30vh;
+}
+
+.h-10{
+    height: 10px !important;
+}
+
+.overlay{
+    height: 30vh;
+    width: 100%;
+    background-color: rgba(21,77,107, 0.3);
 }

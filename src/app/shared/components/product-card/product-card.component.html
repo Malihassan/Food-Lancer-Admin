@@ -1,17 +1,36 @@
 <div class="card-color shadow-sm">
-  <div class="position-relative ">
+  <div class="position-relative">
     <div class="image-container">
-      <img class="card-img-top p-3" id="productImage " [src]= "product.image[0].url"alt="...">
+      <img
+        class="card-img-top p-3"
+        id="productImage "
+        [src]="product.image[0].url"
+        alt="..."
+      />
     </div>
   </div>
-  <div class="card-body ">
-    <ngb-rating class="text-warning my-2" [readonly]="true" [max]="5" [rate]="product.avgRate"></ngb-rating>
-    <h5  class="productName card-title">{{product.name}}</h5>
-    <h6  class="card-title userName">{{product.sellerId.userName}}</h6>
-    <p id="productDescription" class="card-text  my-2">{{product.description}}</p>
+  <div class="card-body">
+    <ngb-rating
+      class="text-warning my-2"
+      [readonly]="true"
+      [max]="5"
+      [rate]="product.avgRate"
+    ></ngb-rating>
+    <h5 class="productName card-title">{{ product.name }}</h5>
+    <h6 class="card-title userName">{{ product.sellerId.userName }}</h6>
+    <p id="productDescription" class="card-text my-2">
+      {{ product.description }}
+    </p>
     <div class="d-flex justify-content-between align-items-center">
-    <span class="productPrice text-danger ">{{product.price|currency:"EGP":"symbol"}}</span>
-    <button  (click)="goToDetailes()" class="card-link btn btn-outline-dark my-2">Detailes</button>
+      <span class="productPrice text-danger">{{
+        product.price | currency: "EGP":"symbol"
+      }}</span>
+      <button
+        (click)="goToDetailes()"
+        class="card-link btn btn-outline-dark my-2"
+      >
+        Detailes
+      </button>
     </div>
   </div>
 </div>
