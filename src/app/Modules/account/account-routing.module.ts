@@ -6,10 +6,6 @@ import { RegisterFormComponent } from 'src/app/components/account/register-form/
 
 const routes: Routes = [
   {
-    path: "",
-    component: HomeComponent
-  },
-  {
     path: "login",
     component: LoginFormComponent
   },
