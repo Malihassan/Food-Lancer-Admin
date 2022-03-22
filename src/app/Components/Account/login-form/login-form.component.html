@@ -26,7 +26,7 @@
           <div class="mb-4">
             <div class="input-group border-blue">
               <span class="input-group-text border-blue bg-white bg-input"><i class="fa-solid fa-key"></i></span>
-              <input type="password" ngModel name="password" #password="ngModel"
+              <input type="password" placeholder="Password" ngModel name="password" #password="ngModel"
                 class="form-control border-blue bg-input test-color" id="exampleInputPassword1" required>
             </div>
             <div class="text-danger" *ngIf="password.invalid && password.touched">
