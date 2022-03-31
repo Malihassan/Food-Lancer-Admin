@@ -1,27 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400;600;700;900&display=swap");
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-@import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+/* @import '~bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss'; */
 $navbar-color: #154d6b;
-$background-color: #EEEEEE;
+$background-color: #eeeeee;
 //$font-color:#008080;
 
-$fontFamily:'Source Serif Pro', serif;
+$fontFamily: "Source Serif Pro", serif;
 //////Date Paragraph Price User Product
-$paragraph-color:#a3a3a3;
-$date-color:#8f8f8f;
-$price-color:#9f0000;
-$user-color:#333333;
-$product-color:#000000;
+$paragraph-color: #a3a3a3;
+$date-color: #8f8f8f;
+$price-color: #9f0000;
+$warning-color: #ffc209;
+// blue #00009f
+// yellow #ffff09
+// green #009f00
+$user-color: #333333;
+$product-color: #000000;
 /////////
-$card-color:#faf9f8;
-$charts-color:#154d6b;
-$btn-color:#15386b;
- body{
+$card-color: #faf9f8;
+$charts-color: #154d6b;
+$btn-color: #154d6b;
+body {
   background-color: $background-color !important;
-  font-family: $fontFamily!important;
+  font-family: $fontFamily !important;
   font-size: 1rem !important;
 }
 /* p{
@@ -35,5 +39,3 @@ $btn-color:#15386b;
 //#EEEEEE
 //$backGroundBody:#e9e6c9;
 //$navBackGroundColor :#21313c;
-
-

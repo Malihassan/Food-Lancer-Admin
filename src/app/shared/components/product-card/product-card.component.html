@@ -5,12 +5,12 @@
     </div>
   </div>
   <div class="card-body ">
-    <ngb-rating class="text-warning my-2" [readonly]="true" [max]="5" [rate]="product.avgRate"></ngb-rating>
+    <ngb-rating class=" productRating my-2" [readonly]="true" [max]="5" [rate]="product.avgRate"></ngb-rating>
     <h5  class="productName card-title">{{product.name}}</h5>
     <h6  class="card-title userName">{{product.sellerId.userName}}</h6>
     <p id="productDescription" class="card-text  my-2">{{product.description}}</p>
     <div class="d-flex justify-content-between align-items-center">
-    <span class="productPrice text-danger ">{{product.price|currency:"EGP":"symbol"}}</span>
+    <span class="productPrice ">{{product.price|currency:"EGP":"symbol"}}</span>
     <button  (click)="goToDetailes()" class="card-link btn btn-outline-dark my-2">Detailes</button>
     </div>
   </div>
