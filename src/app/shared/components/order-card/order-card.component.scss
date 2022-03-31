@@ -1,9 +1,9 @@
-@import "./../../../../styles";
+@import "./../../../../variables.scss";
 .card-color{
-  background-color: $card-color;
+  background-color: $card-color!important;
 }
 .round-img {
-  height: 75px;
+  height: 75px !important;
 }
 .widthOfCard{
   width:31.5%;

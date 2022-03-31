@@ -1,7 +1,7 @@
 <div id="modal" class="container-fluid">
   <button
     type="button"
-    class="btn btn-primary"
+    class="btn btn2"
     data-bs-toggle="modal"
     style="background-color: #1d1b31"
     data-bs-target="#exampleModal2"
@@ -19,8 +19,7 @@
     <button
       type="button"
       #btn
-      class="btn btn-primary me-3"
-      style="background-color: #1d1b31"
+      class="btn me-3 btn2"
       [disabled]="isDisabled"
       (click)="searchByRegionORGovernonateName(search.value)"
     >
@@ -38,8 +37,8 @@
   >
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-danger" id="exampleModal2Label">
+        <div class="modal-header modalForm">
+          <h5 class="modal-title colorText" id="exampleModal2Label">
             Insert Coverage Area
           </h5>
           <button
@@ -49,7 +48,7 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body modalForm">
           <form
             [formGroup]="registerForm"
             (ngSubmit)="submitloginForm(governorate.value, region.value)"
@@ -64,7 +63,7 @@
                 class="form-control"
                 id="governorateName"
                 #governorate
-                (input)="isExisted=false"
+                (input)="isExisted = false"
               />
               <div
                 class="text-danger"
@@ -110,24 +109,32 @@
                 </small>
               </div>
             </div>
-
-            <button
-              type="submit"
-              [disabled]="registerForm.invalid"
-              class="btn btn-primary"
-            >
-              Insert
-            </button>
+            <div class="row justify-content-end pe-3">
+              <button
+                type="submit"
+                [disabled]="registerForm.invalid"
+                class="btn btn2 col-3 me-2"
+              >
+                Insert
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning col-3"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+            </div>
           </form>
         </div>
         <p *ngIf="isExisted" class="ps-3 text-danger">
           the region name is existed , please insert another region
         </p>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer modalForm">
           <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
             Cancel
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

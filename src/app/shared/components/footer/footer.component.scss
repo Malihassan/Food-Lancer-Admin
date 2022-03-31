@@ -1,4 +1,4 @@
-@import "./../../../../styles";
+@import "./../../../../variables.scss";
 
 @function fromPXtoVM($width) {
     @return ($width/16) + vw;
@@ -9,14 +9,15 @@
 #footer{
     position: sticky;
     top: 100%;
-    color: #6E767D !important;
-    background-color: $navbar-color;
-    // font-size: fromPXtoVM(16) !important;
+    color: white !important;
+    background-color: #081f2b !important;
+    border-top: .1px solid $paragraph-color !important;
     div{
         a{
-            color: #6E767D !important;
+            color: white !important;
+            text-decoration: none;
             &:hover{
-                color: blue !important;
+                // color: blue !important;
             }
         }
     }

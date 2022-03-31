@@ -1,6 +1,6 @@
 <div id="tabel" class="container-fluid">
   <h1 *ngIf="checkData" class="text-danger text-center"> No Data Matched Search Value</h1>
-  <table class="table table-dark table-striped">
+  <table class="table ">
     <thead>
       <tr>
         <th *ngFor="let colData of tableHeader" scope="col">{{ colData }}</th>
@@ -8,9 +8,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let row of coverageAreaData; let number=index;">
-        <!-- <td>
-          {{ number+1 }}
-        </td> -->
         <td>
           {{ row.governorateName |titlecase }}
         </td>
@@ -18,7 +15,7 @@
           {{ row.regionName|titlecase }}
         </td>
         <td>
-          <i (click)="deleteCoverageArea(row._id)" id="delete" class="text-danger fs-4 fa-solid fa-trash"></i>
+          <i (click)="deleteCoverageArea(row._id)" id="delete" class="icon fs-4 fa-solid fa-trash"></i>
         </td>
       </tr>
     </tbody>

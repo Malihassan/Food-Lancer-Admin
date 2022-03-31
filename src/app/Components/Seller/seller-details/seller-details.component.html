@@ -1,42 +1,54 @@
-<div class="container-fluid g-0">
-    <div class="border-0 border-bottom bg-light">
-      <div class="row g-0 mb-5">
-        <div class="col-12 position-relative d-flex justify-content-center align-items-end bg-cover mb-5">
-          <div class="shadow p-1 rounded-circle bg-light position-absolute top-100 start-50 translate-middle">
-            <img src="details.image || ../../../../../../assets/2.jfif " class="w-h-even rounded-circle" alt="...">
-          </div>
-        </div>
+<div class="border-0 g-0 border-bottom cardColor">
+  <div class="row g-0 mb-5">
+    <div class="col-12 position-relative d-flex justify-content-center align-items-end bg-cover mb-md-3 mb-lg-4">
+      <div class="shadow p-1 rounded-circle bg-light position-absolute top-100 start-50 translate-middle">
+        <img src="details.image || ../../../../../../assets/2.jfif " class="w-h-even rounded-circle" alt="...">
       </div>
-      <div class="row g-0">
-        <div class="col-12 text-center">
-          <h5 class="display-1 mb-4">{{details.firstName}} {{details.lastName}}</h5>
-          <p class="mb-5 text-muted ms-3"><ngb-rating class="text-warning me-2"  [readonly]="true" [max]="5" [rate]="details.rate"></ngb-rating><small> {{details.rate}}/5</small></p>
-          <div class="row justify-content-evenly">
-            <div class="col-3">
-              <h5>{{cancelledOrders.length}}</h5>
-              <label class="text-secondary p-1">Cancelled Orders</label>
-              <div class="progress rounded-pill g-0">
-                <div class="progress-bar rounded-pill bg-danger" role="progressbar" [style.width.%]="(cancelledOrders.length * 100) / orders.length" aria-valuenow="(cancelledOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-3">
-              <h5>{{completedOrders.length}}</h5>
-              <label class="text-secondary p-1">Delivered Orders</label>
-              <div class="progress rounded-pill g-0">
-                <div class="progress-bar rounded-pill bg-success" role="progressbar" [style.width.%]="(completedOrders.length * 100) / orders.length" aria-valuenow="(completedOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="col-3">
-              <h5>{{inProgressOrders.length}}</h5>
-              <label class="text-secondary p-1">In Progress Orders</label>
-              <div class="progress rounded-pill g-0">
-                <div class="progress-bar rounded-pill bg-info" role="progressbar" [style.width.%]="(inProgressOrders.length * 100) / orders.length" aria-valuenow="(inProgressOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-          <p class="mt-5 ms-3"><small class="text-muted">Total number of products: {{products.length}}</small></p>
-        </div>
+      <div class="overlay">
+
       </div>
     </div>
   </div>
-  
+  <div class="row g-0">
+    <div class="col-12 text-center">
+      <h3 class="mt-lg-5 mt-sm-3">{{details.firstName}} {{details.lastName}}</h3>
+      <p class="mb-5 text-muted ms-3">
+        <ngb-rating class="text-warning me-2" [readonly]="true" [max]="5" [rate]="details.rate"></ngb-rating><small>
+          {{details.rate}}/5</small>
+      </p>
+      <div class="d-flex justify-content-sm-around flex-sm-row align-items-center flex-column">
+        <div class="text-danger mb-3 col-sm-3 col-6">
+          <h5>{{cancelPercent}}%</h5>
+          <label class="pb-3"><i class="fa-solid fa-circle-exclamation me-2"></i> Cancelled Orders</label>
+          <div class="progress h-10 rounded-pill g-0">
+            <div class="progress-bar rounded-pill bg-danger" role="progressbar"
+              [style.width.%]="(cancelledOrders.length * 100) / orders.length"
+              aria-valuenow="(cancelledOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+        <div class="text-success mb-3 col-sm-3 col-6">
+          <h5>{{completedPercent}}%</h5>
+          <label class="pb-3"><i class="fa-solid fa-circle-check me-2"></i> Delivered Orders</label>
+          <div class="progress h-10 rounded-pill g-0">
+            <div class="progress-bar rounded-pill bg-success" role="progressbar"
+              [style.width.%]="(completedOrders.length * 100) / orders.length"
+              aria-valuenow="(completedOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+        <div class="text-warning mb-3 col-sm-3 col-6">
+          <h5>{{inProgressPercent}}%</h5>
+          <label class="pb-3"><i class="fa-solid fa-spinner me-2"></i> In Progress Orders</label>
+          <div class="progress h-10 rounded-pill g-0">
+            <div class="progress-bar rounded-pill bg-warning" role="progressbar"
+              [style.width.%]="(inProgressOrders.length * 100) / orders.length"
+              aria-valuenow="(inProgressOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-5 ms-3"><small class="text-muted">Total number of products: {{products.length}}</small></p>
+    </div>
+  </div>
+</div>

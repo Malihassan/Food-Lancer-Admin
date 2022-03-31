@@ -1,13 +1,10 @@
-<div class="container-fluid g-0 text-center">
-  <div class="m-4 display-5">Orders</div>
-  <div class="d-flex flex-wrap justify-content-evenly">
-    <app-order-card
-      class="mx-2"
-      *ngFor="let card of viewCards"
-      [order]="card"
-    ></app-order-card>
-  </div>
-  <button class="btn my-2" (click)="showMore()">
-    {{ isReadMore ? "See Less" : "See More" }}
-  </button>
+<div class="card cardColor text-center">
+    <div class="m-4 display-5">Orders</div>
+    <div *ngIf="!cards[0]" class="py-5 text-center">No Orders Yet</div>
+    <div *ngIf="cards[0]">
+        <div class="row row-cols-lg-3 row-cols-1 flex-wrap justify-content-evenly">
+            <app-order-card class="col" *ngFor="let card of viewCards" [order] = 'card'></app-order-card>
+        </div>
+        <button *ngIf="cards[3]" class="btn w-100 my-2" (click)="showMore()">{{isReadMore? 'See Less': 'See More'}}</button>
+    </div>
 </div>

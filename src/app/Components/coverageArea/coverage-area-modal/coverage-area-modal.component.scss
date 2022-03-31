@@ -1,3 +1,14 @@
+@import '../../../../variables.scss';
 #modal{
     padding: 3% 2% 1% 2%;
+}
+.btn2{
+    background-color: $navbar-color !important;
+    color: $tabel-header-text-color;
+}
+.modalForm{
+    background-color: $background-color !important;
+}
+.colorText{
+    color: $product-color !important;
 }

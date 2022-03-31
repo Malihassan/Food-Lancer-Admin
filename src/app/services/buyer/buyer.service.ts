@@ -22,4 +22,8 @@ export class BuyerService {
   getOrdersBuyer(id:string){
     return this.http.get(`/admin/buyer/${id}/orders`)
   }
+
+  getBuyerInfo(id: string){
+    return this.http.get(`/admin/buyer/${id}`)
+  }
 }

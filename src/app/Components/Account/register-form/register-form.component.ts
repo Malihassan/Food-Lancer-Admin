@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register/register.service';
+
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -28,26 +29,6 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // fileSizeValidator(files: FileList) {
-  //   return function(control: FormControl) {
-  //     // return (control: AbstractControl): { [key: string]: any } | null => {
-  //     const file = control.value;
-  //     if (file) {
-  //       var path = file.replace(/^.*[\\\/]/, "");
-  //       const fileSize = files.item(0)?.size;
-  //       const fileSizeInKB = fileSize? Math.round(fileSize / 1024) : 0;
-  //       if (fileSizeInKB >= 19) {
-  //         return {
-  //           fileSizeValidator: true
-  //         };
-  //       } else {
-  //         return null;
-  //       }
-  //     }
-  //     return null;
-  //   };
-  // }
-
   checkPassword: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
     let pass = group.get('password')?.value;
     let confirmPass = group.get('confirmPasswordField')?.value;
@@ -60,10 +41,9 @@ export class RegisterFormComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.registerForm);
-    // this.registerService.postAdmin(this.registerForm.value).subscribe(message =>{
-    //   alert(message);
-    // });
+    this.registerService.postAdmin(this.registerForm.value).subscribe(message =>{
+      alert(message);
+    });
   }
 
   get notSameError() {

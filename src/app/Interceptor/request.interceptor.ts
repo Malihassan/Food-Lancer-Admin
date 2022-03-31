@@ -41,12 +41,18 @@ export class RequestInterceptor implements HttpInterceptor {
           return res;
         }),
         catchError((error: HttpErrorResponse) => {
-          let errorMsg = '';          
-          if (error.status == 401) {
-            errorMsg = error.message;
-            this._router.navigate(['/account/login']);
-            console.log(token)
-          }
+          let errorMsg = '';     
+          switch (error.status) {
+            case 401:
+              errorMsg = error.message;
+              this._router.navigate(['/account/login']);
+              break;
+          
+            default:
+              errorMsg = error.message;
+              // this._router.navigate(['/notfound']);
+              break;
+          }     
           return throwError(error);
         })
       )
