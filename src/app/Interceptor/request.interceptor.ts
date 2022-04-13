@@ -25,7 +25,7 @@ export class RequestInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    const token = this.cookieService.get('token');
+    const token = this.cookieService.get('adminToken');
 
     const authReq = request.clone({
       headers: new HttpHeaders({
@@ -41,18 +41,18 @@ export class RequestInterceptor implements HttpInterceptor {
           return res;
         }),
         catchError((error: HttpErrorResponse) => {
-          let errorMsg = '';     
+          let errorMsg = '';
           switch (error.status) {
             case 401:
               errorMsg = error.message;
               this._router.navigate(['/account/login']);
               break;
-          
+
             default:
               errorMsg = error.message;
               // this._router.navigate(['/notfound']);
               break;
-          }     
+          }
           return throwError(error);
         })
       )
