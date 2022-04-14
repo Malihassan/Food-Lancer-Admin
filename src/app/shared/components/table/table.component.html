@@ -29,11 +29,11 @@
                         {{row.coverageArea.regionName}}
                     </td>
                     <td>
-                        <span class=" rate badge" [ngClass]="{
-                            'bg-danger': row.rate < 2.5,
-                            'bg-success' : row.rate >= 4,
-                            'bg-primary' : row.rate <= 3.9 && row.rate >= 2.5 }">
-                            {{row.rate}}</span>
+                        <span class=" rate badge px-1" [ngClass]="{
+                            'bg-danger text-start': row.rate < 2.5,
+                            'bg-success text-start' : row.rate >= 4,
+                            'bg-primary text-start' : row.rate <= 3.9 && row.rate >= 2.5 }">
+                            {{row.rate ? row.rate.toFixed(1) : row.rate}}</span>
                     </td>
                 </ng-template>
                 <!-- this for buyer data -->

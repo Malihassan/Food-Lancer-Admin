@@ -17,9 +17,9 @@ export class SellerProductsListComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     if(this.cards && !this.isReadMore){
-      this.viewCards = this.cards.docs.slice(0,3);
+      this.viewCards = this.cards?.slice(0,3);
     } else {
-      this.viewCards = this.cards.docs;
+      this.viewCards = this.cards;
     }
   }
 
