@@ -1,36 +1,25 @@
-<div class="card-color shadow-sm">
+<div class="card-color shadow-sm col-11">
   <div class="position-relative">
     <div class="image-container">
       <img
-        class="card-img-top p-3"
+        class="p-2"
         id="productImage "
         [src]="product.image[0].url"
         alt="..."
       />
     </div>
   </div>
-  <div class="card-body">
-    <ngb-rating
-      class="text-warning my-2"
-      [readonly]="true"
-      [max]="5"
-      [rate]="product.avgRate"
-    ></ngb-rating>
-    <h5 class="productName card-title">{{ product.name }}</h5>
-    <h6 class="card-title userName">{{ product.sellerId.userName }}</h6>
-    <p id="productDescription" class="card-text my-2">
-      {{ product.description }}
-    </p>
+  <div class="card-body ">
+    <ngb-rating class=" productRating my-2" [readonly]="true" [max]="5" [rate]="product.avgRate"></ngb-rating>
+    <h5  class="productName card-title">{{product.name}}</h5>
+    <h6  class="card-title userName"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+    </svg> {{product.sellerId.userName}}</h6>
+    <p  class="card-text productDescription  my-2">{{product.description}} </p>
+<!-- {{product.description | limitTo: 5}}<span ng-show="description.length > 5">...</span> -->
     <div class="d-flex justify-content-between align-items-center">
-      <span class="productPrice text-danger">{{
-        product.price | currency: "EGP":"symbol"
-      }}</span>
-      <button
-        (click)="goToDetailes()"
-        class="card-link btn btn-outline-dark my-2"
-      >
-        Detailes
-      </button>
+    <span class="productPrice ">{{product.price|currency:"EGP":"symbol"}}</span>
+    <button  (click)="goToDetailes()" class="card-link btn btn-outline-dark my-2">Detailes</button>
     </div>
   </div>
 </div>

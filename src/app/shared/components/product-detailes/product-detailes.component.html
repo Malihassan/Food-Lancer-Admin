@@ -1,33 +1,33 @@
-<div class="container back-color">
+<div class="container my-5">
   <div class="row">
-    <div class="col-6">
+    <div class="col-xl-6 col-md-12 bg-transparent p-3">
 
-      <div class="picsum-img-wrapper p-5">
+      <div class="picsum-img-wrapper ">
         <img [src]="product?.image[0].url" alt="Random first slide">
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-xl-6 col-md-12 bg-tr p-3">
       <div class="card">
-        <div class="card-body">
-          <h5 class="card-title my-3">{{product?.name}}</h5>
-          <ngb-rating [rate]="product?.avgRate"></ngb-rating>
-          <div class="card-link my-3">Seller:<a href="" class=" mx-1 p-0 px-2">{{product?.sellerId?.userName}}</a></div>
-          <h5 class="card-subtitle mb-3 text-muted my-3 ">{{product?.price|currency:"EGP":"symbol"}}</h5>
-          <p class="card-text my-3">{{product?.Description}}</p>
-          <div class="card-link my-3">Category:<a href=""
-              class="btn btn-outline-dark mx-1 p-0 px-2">{{product?.categoryId?.name}}</a></div>
-          <div class="card-link ms-0">Status: {{product?.status}}
-              <button *ngIf="this.product?.status==='pending'" (click)="changeStatusToActive($event)" name="active" class="btn btn-outline-info mx-1 p-0 px-2 " >Active
+        <div class="card-body bg-transparent">
+          <h5 class="card-title productName my-3">{{product?.name}}</h5>
+          <ngb-rating class="card-rate productRating" [rate]="product?.avgRate"></ngb-rating>
+          <div class="card-link my-3 userName  ">{{product?.sellerId?.userName}}</div>
+          <h5 class="card-subtitle productPrice  my-3 ">{{product?.price|currency:"EGP":"symbol"}}</h5>
+          <p class="card-text my-3 productDescription">{{product?.description}}</p>
+          <div class=" categoryName my-3 "><span>Category:</span>
+            <a>{{product?.categoryId?.name}}</a></div>
+          <div class=" statusName my-3  ms-0"><span >Status:</span> {{product?.status}}
+              <button *ngIf="this.product?.status==='pending'" (click)="changeStatusToActive($event)" name="active" class="btn btn-active mx-1 p-0 px-2 " >Active
               </button>
-              <button *ngIf="this.product?.status==='active'" (click)="changeStatusToPending($event)" name="pending" class="btn btn-outline-warning mx-1 p-0 px-2 " >Pending
+              <button *ngIf="this.product?.status==='active'" (click)="changeStatusToPending($event)" name="pending" class="btn btn-pending mx-1 p-0 px-2 " >Pending
               </button>
           </div>
           <div *ngIf="this.product?.status==='pending'">
-            <label>Pending Message:</label>
+            <label class="message">Pending Message:</label>
             <br>
             <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
             <div>
-              <button (click)="sendPendingMessage()" class="btn btn-outline-warning mx-1 p-0 px-2">Send
+              <button (click)="sendPendingMessage()" class="btn btn-pending mx-1 p-0 px-2">Send
               </button>
             </div>
           </div>
