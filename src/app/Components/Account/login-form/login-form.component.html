@@ -4,8 +4,8 @@
       <img src="../../../../assets/admin-avatar.png" class="rounded-circle w-h-10" alt="...">
     </div>
     <form class="d-flex flex-column align-items-center justify-content-center mt-5" #loginForm="ngForm"
-      (ngSubmit)="submitForm(loginForm)">
-      <div class="card-body p-4 col-12">
+    (ngSubmit)="submitForm(loginForm)">
+    <div class="card-body p-4 col-12">
         <div class="my-4">
           <div class="input-group border-blue">
             <span class="input-group-text border-blue bg-white bg-input"><i class="fa-solid fa-at"></i></span>
@@ -37,6 +37,7 @@
   
           </div>
         </div>
+        <small class="text-danger">{{resError}}</small>
       </div>
       <button type="submit" [disabled]="loginForm.invalid" class="btn bg-white btn-rounded mb-4 col-4">Submit</button>
     </form>

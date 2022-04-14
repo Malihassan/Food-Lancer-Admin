@@ -10,21 +10,24 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginFormComponent implements OnInit {
   token: any;
-  res:string='';
-  constructor(private loginService : LoginService, private cookieService: CookieService,private route:Router) { }
+  resError: string = '';
+  constructor(private loginService: LoginService, private cookieService: CookieService, private route: Router) { }
 
   ngOnInit(): void {
   }
-  
-  submitForm(form: any){
-    this.loginService.adminLogin(form.value).subscribe((message:any) =>{
+
+  submitForm(form: any) {
+    this.loginService.adminLogin(form.value).subscribe((message: any) => {
       this.token = message.token
       console.log(this.token);
-      this.cookieService.set('token', this.token, { expires: new Date(new Date().getTime() +  1000 * 60 * 60 * 24) });
+      this.cookieService.set('token', this.token, { expires: new Date(new Date().getTime() + 1000 * 60 * 60 * 24) });
+      console.log(message.error);
+      
       window.location.reload()
-    },(err)=>{
-        console.log(err.message);
-        
+    }, (err) => {
+      console.log('===>',err);
+      
+      this.resError = err.error.error
     });
   }
 }
