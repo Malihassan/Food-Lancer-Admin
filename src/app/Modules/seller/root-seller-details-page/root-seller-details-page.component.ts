@@ -18,10 +18,12 @@ export class RootSellerDetailsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activeRoute.snapshot.params['id'];
+    console.log(this.id);
     this.sellerData.getSellerProducts(this.id)
     .subscribe(
       (data) => {
         this.products = data
+        console.log(this.products)
       },
       (e) => {
         console.log(e);
@@ -33,6 +35,7 @@ export class RootSellerDetailsPageComponent implements OnInit {
     .subscribe(
       (data) => {
         this.orders = data
+        console.log(this.orders)
       },
       (e) => {
         console.log(e);
@@ -44,6 +47,7 @@ export class RootSellerDetailsPageComponent implements OnInit {
     .subscribe(
       (data) => {
         this.details = data
+        console.log(this.details)
       },
       (e) => {
         console.log(e);

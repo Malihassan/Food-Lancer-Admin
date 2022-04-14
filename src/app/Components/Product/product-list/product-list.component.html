@@ -1,6 +1,6 @@
 <div *ngIf="errorStatement" class="display-3">no resault found</div>
   <div class="productLists container  ">
-    <div class="row justify-content-center bg-transparent">
+    <div class="row justify-content-start bg-transparent">
       <div *ngFor="let product of products" class="card col-xl-4 col-lg-6 col-md-12 py-3 bg-transparent ">
         <app-product-card [product]="product"></app-product-card>
       </div>
