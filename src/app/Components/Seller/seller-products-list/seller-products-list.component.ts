@@ -21,6 +21,7 @@ export class SellerProductsListComponent implements OnInit, DoCheck {
     } else {
       this.viewCards = this.cards;
     }
+    
   }
 
   showMore(){
