@@ -15,7 +15,7 @@ export class SellerDetailsComponent implements OnInit, DoCheck {
   cancelPercent : number = 0;
   inProgressPercent : number = 0;
   completedPercent : number = 0;
-  imgSrc : string = "../../../../../../assets/2.jfif";
+  imgSrc : string = "../../../../../../assets/user-avatar.jpg";
 
   constructor() { }
 
