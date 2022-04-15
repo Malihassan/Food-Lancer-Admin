@@ -12,13 +12,14 @@ export class AppComponent {
   title = 'food-lancer-admin';
   status: boolean = false;
   pageNotFounded: any;
-  userName:string="";
-  authenticated: boolean = this.cookieService.get('token') ? true : false;
+  userName: string = '';
+  authenticated: boolean = this.cookieService.get('adminToken') ? true : false;
+  
   constructor(
     private cookieService: CookieService,
     private loginService: LoginService
   ) {}
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.loginService.getisFoundValue().subscribe((res) => {
       this.pageNotFounded = res;
     });
@@ -26,7 +27,7 @@ export class AppComponent {
   addItem(newItem: boolean) {
     this.status = newItem;
   }
-  userNameValue(value:any){
-    this.userName=value;
+  userNameValue(value: any) {
+    this.userName = value;
   }
 }

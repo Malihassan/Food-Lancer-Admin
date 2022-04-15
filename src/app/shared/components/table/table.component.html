@@ -33,7 +33,7 @@
                             'bg-danger': row.rate < 2.5,
                             'bg-success' : row.rate >= 4,
                             'bg-primary' : row.rate <= 3.9 && row.rate >= 2.5 }">
-                            {{row.rate}}</span>
+                            {{row.rate.toFixed(1)}}</span>
                     </td>
                 </ng-template>
                 <!-- this for buyer data -->
