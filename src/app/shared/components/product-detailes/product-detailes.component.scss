@@ -1,53 +1,71 @@
 @import "./../../../../variables";
-body {
-  font-size: 1.5rem !important;
+ body {
+  font-size: 1rem !important;
 }
 .picsum-img-wrapper {
-  height: 75vh;
+  height: 55vh;
+  width: 100%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin: 0;
 }
 .picsum-img-wrapper img {
   height: 100%;
   width: 100%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
-/* .card{
+ .card{
     border: none;
-  } */
+  }
 .productName {
   color: $product-color;
   font-weight: 600;
-  font-size: 1.5rem !important;
+  font-size: 2rem !important;
 }
 .productRating {
-  color: $price-color;
-  // color: $warning-color;
-  font-size: 1.5rem !important;
+  color: $warning-color;
+ // font-size: 1rem !important;
   //font-weight: 400;
 }
 
 .categoryName,
 .statusName,
 .message {
-  color: $user-color;
-  font-size: 1.25rem !important;
+  color: $product-color;
+  //font-size: 1.25rem !important;
+  font-weight: 500;
+}
+.categoryName span,
+.statusName span,
+.message feSpecularLighting {
+  color: $product-color;
+  //font-size: 1.25rem !important;
   font-weight: 500;
 }
 .userName{
   color: $user-color;
-  font-size: 1.5rem !important;
+  //font-size: 1.25rem !important;
   font-weight: 500;
 }
-/* .userName a ,.categoryName a{
+/*  .userName a ,.categoryName a{
     color: $user-color;
     font-weight: 500;
     text-decoration: none;
   } */
 .productPrice {
   color: $price-color;
-  font-size: 1.5rem !important;
+  //font-size: 1.25rem !important;
 }
 .productDescription {
   font-weight: 400;
-  font-size: 1.25rem;
+ font-size: 1.5rem;
   color: $paragraph-color;
 }
 .img-container {
@@ -70,22 +88,26 @@ body {
   -o-border-radius: 50%;
 }
 .btn-pending {
-  color: $price-color;
+  color: $warning-color;
   background-color: transparent;
-  border: 1px solid $price-color;
+  border: 1px solid $warning-color;
 }
 .btn-pending:hover{
   color: $product-color;
-  background-color: $price-color;
-  border: 1px solid $price-color;
+  background-color: $warning-color;
+  border: 1px solid $warning-color;
 }
 .btn-active{
-  color:$product-color;
+  color:$navbar-color;
   background-color: transparent;
-  border: 1px solid $product-color;
+  border: 1px solid $navbar-color;
 }
 .btn-active:hover{
   color:$card-color;
-  background-color: $product-color;
-  border: 1px solid $product-color;
+  background-color: $navbar-color;
+  border: 1px solid $navbar-color;
 }
+/* .containeBackGround{
+  background-color:$card-color ;
+  box-shadow: 5px 5px 20px #000;
+} */
