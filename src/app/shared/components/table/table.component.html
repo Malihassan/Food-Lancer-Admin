@@ -1,9 +1,4 @@
 <div>
-    <ng-template [ngIf]="tableData.length ==0">
-        <p class="notFoundData col-12 text-danger">
-            Query not match any data
-        </p>
-    </ng-template>
     <table class="table table-responsive w-100 d-block d-lg-table">
         <thead>
             <tr>
@@ -29,11 +24,11 @@
                         {{row.coverageArea.regionName}}
                     </td>
                     <td>
-                        <span class=" rate badge" [ngClass]="{
-                            'bg-danger': row.rate < 2.5,
-                            'bg-success' : row.rate >= 4,
-                            'bg-primary' : row.rate <= 3.9 && row.rate >= 2.5 }">
-                            {{row.rate.toFixed(1)}}</span>
+                        <span class=" rate badge px-1" [ngClass]="{
+                            'bg-danger text-start': row.rate < 2.5,
+                            'bg-success text-start' : row.rate >= 4,
+                            'bg-primary text-start' : row.rate <= 3.9 && row.rate >= 2.5 }">
+                            {{row.rate ? row.rate.toFixed(1) : row.rate}}</span>
                     </td>
                 </ng-template>
                 <!-- this for buyer data -->
@@ -53,7 +48,8 @@
                 <td>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
-                            [checked]="row.status !== 'blocked'" (change)="changeStatus($event,row._id)" value={{row.status}}>
+                            [checked]="row.status !== 'blocked'" (change)="changeStatus($event,row._id)"
+                            value={{row.status}}>
                     </div>
                 </td>
                 <td [routerLink]="['details',row._id]">
@@ -62,6 +58,9 @@
             </tr>
         </tbody>
     </table>
+    <div class="empty-container d-flex justify-content-center align-items-center" *ngIf="tableData.length === 0">
+        <app-empty></app-empty>
+    </div>
     <div class="pagination-container d-flex justify-content-between p-2">
         <label>{{collectionSize}} total</label>
         <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"

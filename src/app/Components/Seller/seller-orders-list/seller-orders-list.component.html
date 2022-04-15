@@ -1,7 +1,7 @@
 <div class="card cardColor text-center">
     <div class="m-4 display-5">Orders</div>
-    <div *ngIf="!cards[0]" class="py-5 text-center">No Orders Yet</div>
-    <div *ngIf="cards[0]">
+    <div *ngIf="!cards" class="py-5 text-center">No Orders Yet</div>
+    <div *ngIf="cards">
         <div class="row row-cols-lg-3 row-cols-1 flex-wrap justify-content-evenly">
             <app-order-card class="col" *ngFor="let card of viewCards" [order] = 'card'></app-order-card>
         </div>

@@ -1,9 +1,10 @@
-
 <section class=" container mt-3">
     <app-filter-offcanvas class="seller-filter">
         <h5>Filter Seller</h5>
         <app-filter-seller (getSellersAfterFilter)="getSellersAfterFilter($event)"></app-filter-seller>
     </app-filter-offcanvas>
-    <app-table class="seller-table" (updateStatus)="updateSellerStatus($event)" (paginationHandler)="paginationHandler($event)" [pageSize]="limit" [collectionSize]="countOfSellers" [tableHeader]="tableHeader"
-        [tableData]="sellersData"></app-table>
-</section>    
+    <app-table class="seller-table" (updateStatus)="updateSellerStatus($event)"
+        (paginationHandler)="paginationHandler($event)" [pageSize]="limit" [collectionSize]="countOfSellers"
+        [tableHeader]="tableHeader" [tableData]="sellersData"></app-table>
+
+</section>

@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { OrderCardComponent } from '../../components/order-card/order-card.component';
+import { EmptyComponent } from '../../components/empty/empty.component';
 
 import { FilterOffcanvasComponent } from '../../components/filter-offcanvas/filter-offcanvas.component';
 // import {CookieService} from 'ngx-cookie-service';
@@ -26,6 +27,7 @@ import { FilterOffcanvasComponent } from '../../components/filter-offcanvas/filt
     ProductDetailesComponent,
     FooterComponent,
     LoaderComponent,
+    EmptyComponent,
     OrderCardComponent,
     FilterOffcanvasComponent
   ],
@@ -49,6 +51,7 @@ import { FilterOffcanvasComponent } from '../../components/filter-offcanvas/filt
     ProductDetailesComponent,
     FooterComponent,
     LoaderComponent,
+    EmptyComponent,
     OrderCardComponent,
     NgbModule,
     FilterOffcanvasComponent

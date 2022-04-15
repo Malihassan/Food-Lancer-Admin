@@ -1,8 +1,8 @@
 <div class="border-0 g-0 border-bottom cardColor">
     <div class="row g-0 mb-5">
-      <div class="col-12 position-relative d-flex justify-content-center align-items-end bg-cover mb-md-3 mb-lg-4">
+      <div class="col-12 position-relative d-flex justify-content-center align-items-end bg-cover mb-md-3 mb-lg-5">
         <div class="shadow p-1 rounded-circle bg-light position-absolute top-100 start-50 translate-middle">
-          <img src="details.image || ../../../../../../assets/2.jfif " class="w-h-even rounded-circle" alt="...">
+          <img [src]="details?.image.url || imgSrc" class="w-h-even rounded-circle" alt="...">
         </div>
         <div class="overlay">
   
@@ -11,15 +11,15 @@
     </div>
     <div class="row g-0">
       <div class="col-12 text-center">
-        <h3 class="mt-lg-5 mt-sm-3 mb-5">{{details.firstName}} {{details.lastName}}</h3>
+        <h3 class="mt-lg-5 mt-sm-3 mb-5">{{details?.firstName}} {{details?.lastName}}</h3>
         <div class="d-flex justify-content-sm-around flex-sm-row align-items-center flex-column">
           <div class="text-danger mb-3 col-sm-3 col-6">
             <h5>{{cancelPercent}}%</h5>
             <label class="pb-3"><i class="fa-solid fa-circle-exclamation me-2"></i> Cancelled Orders</label>
             <div class="progress h-10 rounded-pill g-0">
               <div class="progress-bar rounded-pill bg-danger" role="progressbar"
-                [style.width.%]="(cancelledOrders.length * 100) / orders.length"
-                aria-valuenow="(cancelledOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100">
+                [style.width.%]="(cancelledOrders?.length * 100) / orders?.length"
+                aria-valuenow="(cancelledOrders?.length * 100) / orders?.length" aria-valuemin="0" aria-valuemax="100">
               </div>
             </div>
           </div>
@@ -28,8 +28,8 @@
             <label class="pb-3"><i class="fa-solid fa-circle-check me-2"></i> Delivered Orders</label>
             <div class="progress h-10 rounded-pill g-0">
               <div class="progress-bar rounded-pill bg-success" role="progressbar"
-                [style.width.%]="(completedOrders.length * 100) / orders.length"
-                aria-valuenow="(completedOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100">
+                [style.width.%]="(completedOrders?.length * 100) / orders?.length"
+                aria-valuenow="(completedOrders?.length * 100) / orders?.length" aria-valuemin="0" aria-valuemax="100">
               </div>
             </div>
           </div>
@@ -38,13 +38,13 @@
             <label class="pb-3"><i class="fa-solid fa-spinner me-2"></i> In Progress Orders</label>
             <div class="progress h-10 rounded-pill g-0">
               <div class="progress-bar rounded-pill bg-warning" role="progressbar"
-                [style.width.%]="(inProgressOrders.length * 100) / orders.length"
-                aria-valuenow="(inProgressOrders.length * 100) / orders.length" aria-valuemin="0" aria-valuemax="100">
+                [style.width.%]="(inProgressOrders?.length * 100) / orders?.length"
+                aria-valuenow="(inProgressOrders?.length * 100) / orders?.length" aria-valuemin="0" aria-valuemax="100">
               </div>
             </div>
           </div>
         </div>
-        <p class="mt-5 ms-3"><small class="text-muted">Total number of orders: {{orders.length}}</small></p>
+        <p class="mt-5 ms-3"><small class="text-muted">Total number of orders: {{orders?.length}}</small></p>
       </div>
     </div>
   </div>

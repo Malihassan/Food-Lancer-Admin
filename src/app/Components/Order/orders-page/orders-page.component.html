@@ -1,24 +1,15 @@
 <app-filter-offcanvas class="filter_btn mt-3 mx-2">
-  <app-order-search
-    (submitted)="onNewSearch($event)"
-    (pageCount)="onPageChange($event)"
-    (newQuery)="onQueryChange($event)"
-    [count]="count"
-    [page]="page"
-  >
+  <app-order-search (submitted)="onNewSearch($event)" (pageCount)="onPageChange($event)"
+    (newQuery)="onQueryChange($event)" [count]="count" [page]="page">
   </app-order-search>
 </app-filter-offcanvas>
 
-<p *ngIf="isEmpty" class="ms-5 mt-5 mb-5 display-2 text-danger">
-  No Orders Found
-</p>
-
+<div class="empty-container d-flex justify-content-center align-items-center" *ngIf="orders.length === 0 || isEmpty">
+  <app-empty></app-empty>
+</div>
 <div class="container-fluid flex-row flex-wrap mt-5" #ordersPage>
   <div class="justify-content-start row flex-wrap">
-    <div
-      class="col-xl-4 col-lg-6 col-md-12 flex-wrap"
-      *ngFor="let order of orders"
-    >
+    <div class="col-xl-4 col-lg-6 col-md-12 flex-wrap" *ngFor="let order of orders">
       <app-order-card [order]="order"></app-order-card>
     </div>
   </div>
@@ -34,11 +25,6 @@
 
 <div class="pagination-container mb-3 d-flex justify-content-start">
   <label class="mx-3">{{ ordersCount }} total</label>
-  <ngb-pagination
-    class="mt-2"
-    [collectionSize]="count"
-    [(page)]="page"
-    (pageChange)="refreshPagination()"
-    [pageSize]="pageSize"
-  ></ngb-pagination>
+  <ngb-pagination class="mt-2" [collectionSize]="count" [(page)]="page" (pageChange)="refreshPagination()"
+    [pageSize]="pageSize"></ngb-pagination>
 </div>
