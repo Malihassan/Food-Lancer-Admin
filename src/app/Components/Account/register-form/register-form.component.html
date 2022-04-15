@@ -1,5 +1,6 @@
 <div class="d-flex justify-content-center align-items-center min-vh-100 bg">
-  <div class="card position-relative m-5 w-lg-75 rounded-bubble bg-opacity" style="min-width: 24rem; max-width: 50rem;">
+  <h1 *ngIf="isRegisterd">This Email is Already Regisetred</h1>
+  <div *ngIf="!isRegisterd" class="card position-relative m-5 w-lg-75 rounded-bubble bg-opacity" style="min-width: 24rem; max-width: 50rem;">
     <div class="shadow rounded-circle bg-light position-absolute top-0 start-50 translate-middle mb-5">
       <img src="../../../../assets/admin-avatar.png" class="rounded-circle w-h-10" alt="...">
     </div>

@@ -54,8 +54,6 @@ export class ProductDetailesComponent implements OnInit {
   displayProduct() {
     this.productservice.getProductById(this.productID).subscribe((res) => {
       this.product = res;
-      console.log(this.product);
-      console.log(this.product.reviews[0].comments);
     });
   }
 }

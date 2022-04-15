@@ -8,6 +8,7 @@ import { RegisterService } from 'src/app/services/register/register.service';
   styleUrls: ['./register-form.component.scss']
 })
 export class RegisterFormComponent implements OnInit {
+  isRegisterd:boolean=false;
   registerForm: FormGroup;
   token: any;
   img: any;
@@ -41,7 +42,16 @@ export class RegisterFormComponent implements OnInit {
 
   submitForm() {
     this.registerService.postAdmin(this.registerForm.value).subscribe(message =>{
+      
       alert(message);
+    },(err)=>{
+      if (err.status===400)
+      {
+        this.isRegisterd=true;
+        setTimeout(()=>{
+          this.isRegisterd=false;
+        },2000)
+      }
     });
   }
 
