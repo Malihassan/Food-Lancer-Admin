@@ -3,7 +3,7 @@
     <div *ngIf="!cards" class="py-5 text-center">No Products Yet</div>
     <div *ngIf="cards">
         <div class="d-flex flex-wrap justify-content-evenly">
-            <div *ngFor="let card of viewCards" class="card col-lg-3 col-md-10 m-1 bg-transparent ">
+            <div *ngFor="let card of viewCards" class="col-xl-4 col-lg-6 col-md-12 py-3 bg-transparent ">
                 <app-product-card [product] = 'card'></app-product-card>
               </div>
         </div>
