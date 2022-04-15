@@ -10,9 +10,10 @@
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between pagination-container">
   <label>{{ collectionSize }} total</label>
   <ngb-pagination
+  class="mt-2"
     (pageChange)="newPageNumber($event)"
     [collectionSize]="collectionSize"
     [page]="page"
