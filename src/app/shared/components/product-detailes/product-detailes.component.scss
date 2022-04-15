@@ -1,9 +1,9 @@
 @import "./../../../../variables";
  body {
-  font-size: 1rem !important;
+  font-size: 1.25rem !important;
 }
 .picsum-img-wrapper {
-  height: 55vh;
+  height: 60vh;
   width: 100%;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -11,6 +11,7 @@
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   margin: 0;
+  background-color: aqua;
 }
 .picsum-img-wrapper img {
   height: 100%;
@@ -39,19 +40,19 @@
 .statusName,
 .message {
   color: $product-color;
-  //font-size: 1.25rem !important;
+  font-size: 1.25rem !important;
   font-weight: 500;
 }
 .categoryName span,
 .statusName span,
 .message feSpecularLighting {
   color: $product-color;
-  //font-size: 1.25rem !important;
+  font-size: 1.25rem !important;
   font-weight: 500;
 }
 .userName{
   color: $user-color;
-  //font-size: 1.25rem !important;
+  font-size: 1.25rem !important;
   font-weight: 500;
 }
 /*  .userName a ,.categoryName a{
@@ -61,7 +62,7 @@
   } */
 .productPrice {
   color: $price-color;
-  //font-size: 1.25rem !important;
+  font-size: 1.25rem !important;
 }
 .productDescription {
   font-weight: 400;
