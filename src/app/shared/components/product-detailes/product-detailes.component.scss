@@ -9,16 +9,16 @@ body {
   height: 100%;
   width: 100%;
 }
-/* .card{
+ .card{
     border: none;
-  } */
+  }
 .productName {
   color: $product-color;
   font-weight: 600;
   font-size: 1.5rem !important;
 }
 .productRating {
-  // color: $warning-color;
+  color: $warning-color;
   font-size: 1.5rem !important;
   //font-weight: 400;
 }
@@ -27,7 +27,7 @@ body {
 .statusName,
 .message {
   color: $user-color;
-  font-size: 1.25rem !important;
+  font-size: 1rem !important;
   font-weight: 500;
 }
 .userName{
@@ -35,7 +35,7 @@ body {
   font-size: 1.5rem !important;
   font-weight: 500;
 }
-/* .userName a ,.categoryName a{
+/*  .userName a ,.categoryName a{
     color: $user-color;
     font-weight: 500;
     text-decoration: none;
@@ -79,12 +79,12 @@ body {
   border: 1px solid $warning-color;
 }
 .btn-active{
-  color:$btn-color;
+  color:$navbar-color;
   background-color: transparent;
-  border: 1px solid $btn-color;
+  border: 1px solid $navbar-color;
 }
 .btn-active:hover{
   color:$card-color;
-  background-color: $btn-color;
-  border: 1px solid $btn-color;
+  background-color: $navbar-color;
+  border: 1px solid $navbar-color;
 }
