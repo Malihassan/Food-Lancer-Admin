@@ -12,7 +12,9 @@ export class ProductDetailesComponent implements OnInit {
   product: any;
   productID: any;
   inputValue = '';
+  responseInputValue =''
   status = '';
+
   constructor(
     private router: ActivatedRoute,
     private productservice: ProductServiceService,
@@ -49,7 +51,13 @@ export class ProductDetailesComponent implements OnInit {
   ////send button
   sendPendingMessage() {
     console.log(this.inputValue);
-    this.productservice.sendPendingMessage(this.productID, this.inputValue);
+    this.productservice.sendPendingMessage(this.productID, this.inputValue).subscribe((res)=>{
+      this.inputValue =''
+      this.responseInputValue ="send done"
+      setTimeout(()=>{
+      this.responseInputValue =""
+      },5000)
+    })
   }
   displayProduct() {
     this.productservice.getProductById(this.productID).subscribe((res) => {

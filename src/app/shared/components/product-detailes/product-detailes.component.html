@@ -26,11 +26,12 @@
             <div *ngIf="this.product?.status==='pending'">
               <label class="message">Pending Message:</label>
               <br>
-              <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
+              <textarea (input)="onChangeValue($event)" [value]="inputValue" name="pendingMessage" id="" cols="30" rows="2"></textarea>
               <div>
                 <button (click)="sendPendingMessage()" class="btn btn-pending mx-1 p-0 px-2 my-2">Send
                 </button>
               </div>
+              <label class="text-dark">{{responseInputValue}}</label>
             </div>
           </div>
         </div>
