@@ -1,76 +1,77 @@
-<div class="container my-5 col-9 ">
-  <div class="row justify-content-md-center shadow-lg">
-    <div class="col-xl-6 col-md-8 justify-content-md-center  py-3">
+<div>
+  <div class="container my-5 col-9 py-2  shadow-lg" >
+    <div class="row justify-content-md-center  ">
+      <div class="col-xl-6 col-md-8 justify-content-md-center my-4  ">
 
-      <div class="picsum-img-wrapper h-auto">
-        <img [src]="product?.image[0].url" alt="Random first slide">
+        <div class="picsum-img-wrapper ">
+          <img [src]="product?.image[0].url" alt="Random first slide">
+        </div>
       </div>
-    </div>
-    <div class="col-xl-6 col-md-8 justify-content-md-center  py-3">
-      <div class="card">
-        <div class="card-body containeBackGround px-4">
-          <h5 class="card-title productName my-3">{{product?.name}}</h5>
-          <ngb-rating class="card-rate productRating" [rate]="product?.avgRate"></ngb-rating>
-          <div class="card-link my-3 userName  ">{{product?.sellerId?.userName}}</div>
-          <h5 class="card-subtitle productPrice  my-3 ">{{product?.price |currency:"EGP":"symbol"}}</h5>
-          <!-- <p class="card-text my-3 productDescription">{{product?.description}}</p> -->
-          <div class=" categoryName my-3 "><!-- <span>Category:</span> -->
-            <a>{{product?.categoryId?.name}}</a></div>
-          <div class=" statusName my-3  ms-0"><!-- <span >Status:</span> --> {{product?.status}}
-              <button *ngIf="this.product?.status==='pending'" (click)="changeStatusToActive($event)" name="active" class="btn btn-active mx-1 p-0 px-2 " >Active
-              </button>
-              <button *ngIf="this.product?.status==='active'" (click)="changeStatusToPending($event)" name="pending" class="btn btn-pending mx-1 p-0 px-2 " >Pending
-              </button>
-          </div>
-          <div *ngIf="this.product?.status==='pending'">
-            <label class="message">Pending Message:</label>
-            <br>
-            <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
-            <div>
-              <button (click)="sendPendingMessage()" class="btn btn-pending mx-1 p-0 px-2 my-2">Send
-              </button>
+      <div class="col-xl-6 col-md-8 justify-content-md-center my-4  ">
+        <div class="card">
+          <div class="card-body containeBackGround px-4">
+            <h5 class="card-title productName my-3">{{product?.name}}</h5>
+            <ngb-rating class="card-rate productRating" [rate]="product?.avgRate"></ngb-rating>
+            <div class="card-link my-3 userName  ">{{product?.sellerId?.userName}}</div>
+            <h5 class="card-subtitle productPrice  my-3 ">{{product?.price |currency:"EGP":"symbol"}}</h5>
+            <!-- <p class="card-text my-3 productDescription">{{product?.description}}</p> -->
+            <div class=" categoryName my-3 "><!-- <span>Category:</span> -->
+              <a>{{product?.categoryId?.name}}</a></div>
+            <div class=" statusName my-3  ms-0"><!-- <span >Status:</span> --> {{product?.status}}
+                <button *ngIf="this.product?.status==='pending'" (click)="changeStatusToActive($event)" name="active" class="btn btn-active mx-1 p-0 px-2 " >Active
+                </button>
+                <button *ngIf="this.product?.status==='active'" (click)="changeStatusToPending($event)" name="pending" class="btn btn-pending mx-1 p-0 px-2 " >Pending
+                </button>
+            </div>
+            <div *ngIf="this.product?.status==='pending'">
+              <label class="message">Pending Message:</label>
+              <br>
+              <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
+              <div>
+                <button (click)="sendPendingMessage()" class="btn btn-pending mx-1 p-0 px-2 my-2">Send
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container my-4 py-4 col-9 ">
-  <ul ngbNav #nav="ngbNav" class="nav-tabs ">
-    <li ngbNavItem>
-      <a ngbNavLink >
-        Description
-      </a>
-      <ng-template ngbNavContent >
-        <div>
-          {{product?.description}}
-        </div>
-      </ng-template>
-    </li>
-    <li ngbNavItem>
-  <a ngbNavLink>Reviews <span>({{product.reviews.length}})</span></a>
-  <ng-template ngbNavContent>
-  <div *ngFor="let review of product.reviews" class="card w-75">
-  <div class="card-body">
-   <div class="d-flex justify-content-start align-items-center">
-    <div class="img-container">
-      <img class="" src="../../../../assets/elmaestro2.JPG"/>
+  <div class="container my-4 py-4 col-9 ">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs ">
+      <li ngbNavItem>
+        <a ngbNavLink >
+          Description
+        </a>
+        <ng-template ngbNavContent >
+          <div>
+            {{product?.description}}
+          </div>
+        </ng-template>
+      </li>
+      <li ngbNavItem>
+    <a ngbNavLink>Reviews <span>({{product.reviews.length}})</span></a>
+    <ng-template ngbNavContent>
+    <div *ngFor="let review of product.reviews" class="card w-75">
+    <div class="card-body">
+     <div class="d-flex justify-content-start align-items-center">
+      <div class="img-container">
+        <img class="" src="../../../../assets/elmaestro2.JPG"/>
+       </div>
+        <p class="mx-3"> {{review?.buyerId.userName}}</p>
      </div>
-      <p class="mx-3"> {{review?.buyerId.userName}}</p>
-   </div>
-    <div >
-      <ngb-rating [rate]="review?.rate"></ngb-rating>
-      <!-- <p>{{comment?.rate}}</p> -->
-<p class=" py-4">{{review?.comments}}</p>
-<span class="text-sm">{{review?.createdAt}}</span>
+      <div >
+        <div class="productRating"><ngb-rating [rate]="review?.rate"></ngb-rating></div>
+  <p class="">{{review?.comments}}</p>
+  <span class="text-sm">{{review?.createdAt}}</span>
+      </div>
+      <hr>
     </div>
-    <hr>
-  </div>
-  </div>
+    </div>
 
-      </ng-template>
-    </li>
-  </ul>
-  <div [ngbNavOutlet]="nav"></div>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+  </div>
 </div>

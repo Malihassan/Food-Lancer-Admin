@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <app-filter-offcanvas class="filter_btn mt-3 mx-2">
   <app-order-search (submitted)="onNewSearch($event)" (pageCount)="onPageChange($event)"
     (newQuery)="onQueryChange($event)" [count]="count" [page]="page">
@@ -23,8 +24,14 @@
   </button> -->
 </div>
 
-<div class="pagination-container mb-3 d-flex justify-content-start">
+<div *ngIf="orders.length !== 0" class="pagination-container mb-3 d-flex justify-content-between">
   <label class="mx-3">{{ ordersCount }} total</label>
-  <ngb-pagination class="mt-2" [collectionSize]="count" [(page)]="page" (pageChange)="refreshPagination()"
-    [pageSize]="pageSize"></ngb-pagination>
+  <ngb-pagination
+    class="mt-2"
+    [collectionSize]="count"
+    [(page)]="page"
+    (pageChange)="refreshPagination()"
+    [pageSize]="pageSize"
+  ></ngb-pagination>
+</div>
 </div>
