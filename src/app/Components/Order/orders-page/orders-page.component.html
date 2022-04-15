@@ -1,25 +1,16 @@
 <div class="container-fluid">
 <app-filter-offcanvas class="filter_btn mt-3 mx-2">
-  <app-order-search
-    (submitted)="onNewSearch($event)"
-    (pageCount)="onPageChange($event)"
-    (newQuery)="onQueryChange($event)"
-    [count]="count"
-    [page]="page"
-  >
+  <app-order-search (submitted)="onNewSearch($event)" (pageCount)="onPageChange($event)"
+    (newQuery)="onQueryChange($event)" [count]="count" [page]="page">
   </app-order-search>
 </app-filter-offcanvas>
 
-<p *ngIf="isEmpty" class="ms-5 mt-5 mb-5 display-2 text-danger">
-  No Orders Found
-</p>
-
-<div class="container-fluid flex-row flex-wrap mt-5 " #ordersPage>
-  <div class="justify-content-start row flex-wrap" >
-    <div
-      class="col-xl-4 col-lg-6 col-md-12 flex-wrap"
-      *ngFor="let order of orders"
-    >
+<div class="empty-container d-flex justify-content-center align-items-center" *ngIf="orders.length === 0 || isEmpty">
+  <app-empty></app-empty>
+</div>
+<div class="container-fluid flex-row flex-wrap mt-5" #ordersPage>
+  <div class="justify-content-start row flex-wrap">
+    <div class="col-xl-4 col-lg-6 col-md-12 flex-wrap" *ngFor="let order of orders">
       <app-order-card [order]="order"></app-order-card>
     </div>
   </div>
@@ -33,7 +24,7 @@
   </button> -->
 </div>
 
-<div class="  d-flex justify-content-between pagination-container">
+<div *ngIf="orders.length !== 0" class="  d-flex justify-content-between pagination-container">
   <label >{{ ordersCount }} total</label>
   <ngb-pagination
     class="mt-2"
@@ -43,4 +34,4 @@
     [pageSize]="pageSize"
   ></ngb-pagination>
 </div>
-</div>>
+</div>

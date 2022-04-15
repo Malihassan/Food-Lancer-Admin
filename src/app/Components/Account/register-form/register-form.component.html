@@ -1,5 +1,6 @@
 <div class="d-flex justify-content-center align-items-center min-vh-100 bg">
-  <div class="card position-relative m-5 w-lg-75 rounded-bubble bg-opacity" style="min-width: 24rem; max-width: 50rem;">
+  <h1 *ngIf="isRegisterd">This Email is Already Regisetred</h1>
+  <div *ngIf="!isRegisterd" class="card position-relative m-5 w-lg-75 rounded-bubble bg-opacity" style="min-width: 24rem; max-width: 50rem;">
     <div class="shadow rounded-circle bg-light position-absolute top-0 start-50 translate-middle mb-5">
       <img src="../../../../assets/admin-avatar.png" class="rounded-circle w-h-10" alt="...">
     </div>
@@ -61,7 +62,7 @@
         <div class="mb-4">
           <div class="input-group border-blue">
             <span class="input-group-text border-blue bg-white bg-input"><i class="fa-solid fa-key me-1"></i></span>
-            <input type="text" formControlName="password" placeholder="Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword1">
+            <input type="password" formControlName="password" placeholder="Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword1">
           </div>
           
           <div class="text-danger" *ngIf="formControls['password'].invalid && formControls['password'].touched">
@@ -76,7 +77,7 @@
         <div class="mb-4">
           <div class="input-group border-blue">
             <span class="input-group-text border-blue bg-white bg-input"><i class="fa-solid fa-key me-1"></i></span>
-            <input type="text" formControlName="confirmPasswordField" placeholder="Confirm Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword2">
+            <input type="password" formControlName="confirmPasswordField" placeholder="Confirm Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword2">
           </div>
           
           <div class="text-danger"
@@ -105,7 +106,7 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="btn bg-white btn-rounded mb-4 col-4">Submit</button>
+      <button type="submit" [disabled]="registerForm.invalid" class="btn bg-white btn-rounded mb-4 col-4">Submit</button>
     </form>
   </div>  
 </div>

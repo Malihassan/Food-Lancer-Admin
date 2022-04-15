@@ -27,7 +27,10 @@ export class NavBarComponent implements OnInit {
   handelLogout() {
     this.serviceLogin.adminLogout().subscribe((res) => {
       console.log('Logout Subscribee');
-      this.cookieService.set('token', '', {
+      this.cookieService.set('adminToken', '', {
+        expires: new Date(new Date().getTime() - 1000 * 60 * 60 * 24),
+      });
+      this.cookieService.set('userName', '', {
         expires: new Date(new Date().getTime() - 1000 * 60 * 60 * 24),
       });
       window.location.reload();

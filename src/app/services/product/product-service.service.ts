@@ -42,21 +42,21 @@ export class ProductServiceService {
   sendPendingMessage(newProductID:any, message: string) {
     this.productID.next(newProductID);
     console.log(newProductID);
-    this.http
+    return this.http
       .patch(`/admin/product/${newProductID}/pending`, {
         pendingMessage: `${message}`,
       })
-      .subscribe(
-        (val) => {
-          console.log('PATCH resault', val);
-        },
-        (response) => {
-          console.log('message error', response.error);
-        },
-        () => {
-          console.log('The PATCH observable is now completed.');
-        }
-      );
+      // .subscribe(
+      //   (val) => {
+      //     console.log('PATCH resault', val);
+      //   },
+      //   (response) => {
+      //     console.log('message error', response.error);
+      //   },
+      //   () => {
+      //     console.log('The PATCH observable is now completed.');
+      //   }
+      // );
   }
   getStatus(status: any) {
     this.newStatus.next(status);

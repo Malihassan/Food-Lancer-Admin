@@ -30,11 +30,12 @@
             <div *ngIf="!this.product.pendingMessage">
               <label class="message">Pending Message:</label>
               <br>
-              <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
+              <textarea (input)="onChangeValue($event)" [value]="inputValue" name="pendingMessage" id="" cols="30" rows="2"></textarea>
               <div>
                 <button (click)="sendPendingMessage()" class="btn btn-pending mx-1 p-0 px-2 my-2">Send
                 </button>
               </div>
+              <label class="text-dark">{{responseInputValue}}</label>
             </div>
             </div>
           </div>
@@ -61,7 +62,7 @@
     <div class="card-body">
      <div class="d-flex justify-content-start align-items-center">
       <div class="img-container">
-        <img class="" src="../../../../assets/elmaestro2.JPG"/>
+        <img class="" [src]="review?.buyerId.image.url"/>
        </div>
         <p class="mx-3"> {{review?.buyerId.userName}}</p>
      </div>

@@ -47,12 +47,12 @@ export class RequestInterceptor implements HttpInterceptor {
               errorMsg = error.message;
               this._router.navigate(['/account/login']);
               break;
-
-            default:
-              errorMsg = error.message;
-              // this._router.navigate(['/notfound']);
-              break;
-          }
+          
+            // default:
+            //   errorMsg = error.message;
+            //   this._router.navigate(['/notfound']);
+            //   break;
+          }     
           return throwError(error);
         })
       )

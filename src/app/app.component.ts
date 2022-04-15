@@ -14,11 +14,12 @@ export class AppComponent {
   pageNotFounded: any;
   userName: string = '';
   authenticated: boolean = this.cookieService.get('adminToken') ? true : false;
+  
   constructor(
     private cookieService: CookieService,
     private loginService: LoginService
   ) {}
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.loginService.getisFoundValue().subscribe((res) => {
       this.pageNotFounded = res;
     });
