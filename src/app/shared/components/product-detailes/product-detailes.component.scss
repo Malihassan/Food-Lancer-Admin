@@ -31,14 +31,8 @@
   font-size: 2rem !important;
 }
 .productRating {
-<<<<<<< HEAD
-  color: $price-color;
-  // color: $warning-color;
-  font-size: 1.5rem !important;
-=======
   color: $warning-color;
  // font-size: 1rem !important;
->>>>>>> c5fdd5e4daee89944591e96d0143beb6f34b226b
   //font-weight: 400;
 }
 
@@ -105,16 +99,6 @@
   border: 1px solid $price-color;
 }
 .btn-active{
-<<<<<<< HEAD
-  color:$product-color;
-  background-color: transparent;
-  border: 1px solid $product-color;
-}
-.btn-active:hover{
-  color:$card-color;
-  background-color: $product-color;
-  border: 1px solid $product-color;
-=======
   color:$navbar-color;
   background-color: transparent;
   border: 1px solid $navbar-color;
@@ -123,7 +107,6 @@
   color:$card-color;
   background-color: $navbar-color;
   border: 1px solid $navbar-color;
->>>>>>> c5fdd5e4daee89944591e96d0143beb6f34b226b
 }
 /* .containeBackGround{
   background-color:$card-color ;

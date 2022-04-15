@@ -3,9 +3,13 @@
   border: none;
 }
 
-ngb-pagination ul li  a {
-  background-color: #7460ee !important;
-  color:#000;
+.pagination-container{
+  border-top: 1px solid #596677;
+  color: #596677;
+  margin-top: 4%;
+  label{
+      align-self: center;
+  }
 }
 
 .empty-container{

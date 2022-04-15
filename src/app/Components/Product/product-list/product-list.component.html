@@ -11,9 +11,10 @@
     </div>
   </div>
 </div>
-<div *ngIf="products.length !== 0" class="d-flex justify-content-between">
+<div *ngIf="products.length !== 0" class="d-flex justify-content-between pagination-container">
   <label>{{ collectionSize }} total</label>
   <ngb-pagination
+  class="mt-2"
     (pageChange)="newPageNumber($event)"
     [collectionSize]="collectionSize"
     [page]="page"

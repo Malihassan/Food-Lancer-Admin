@@ -19,8 +19,7 @@ export class RegisterFormComponent implements OnInit {
       userName: ['', [Validators.required, Validators.pattern('^\\S*$')]],
       password: ['', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')]],
       confirmPasswordField: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern('^01[0-2,5]{1}[0-9]{8}$')]],
-      image: ['', [Validators.required,Validators.pattern(/\.(jpe?g|png|gif|bmp)$/i)]]
+      phone: ['', [Validators.required, Validators.pattern('^01[0-2,5]{1}[0-9]{8}$')]]
     }, { validators: this.checkPassword })
   }
 

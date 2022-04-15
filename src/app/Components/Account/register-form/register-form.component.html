@@ -61,7 +61,7 @@
         <div class="mb-4">
           <div class="input-group border-blue">
             <span class="input-group-text border-blue bg-white bg-input"><i class="fa-solid fa-key me-1"></i></span>
-            <input type="text" formControlName="password" placeholder="Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword1">
+            <input type="password" formControlName="password" placeholder="Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword1">
           </div>
           
           <div class="text-danger" *ngIf="formControls['password'].invalid && formControls['password'].touched">
@@ -76,7 +76,7 @@
         <div class="mb-4">
           <div class="input-group border-blue">
             <span class="input-group-text border-blue bg-white bg-input"><i class="fa-solid fa-key me-1"></i></span>
-            <input type="text" formControlName="confirmPasswordField" placeholder="Confirm Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword2">
+            <input type="password" formControlName="confirmPasswordField" placeholder="Confirm Password" class="form-control border-blue bg-input test-color" id="exampleInputPassword2">
           </div>
           
           <div class="text-danger"
@@ -105,7 +105,7 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="btn bg-white btn-rounded mb-4 col-4">Submit</button>
+      <button type="submit" [disabled]="registerForm.invalid" class="btn bg-white btn-rounded mb-4 col-4">Submit</button>
     </form>
   </div>  
 </div>
