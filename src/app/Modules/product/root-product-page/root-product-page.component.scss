@@ -1,14 +1,14 @@
-@mixin flex-row {
-    display: flex;
-    flex-direction: row;
-}
-@mixin flex-col {
-    display: flex;
-    flex-direction: column;
-}
-.container{
-    @include flex-col();
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-}
+// @mixin flex-row {
+//     display: flex;
+//     flex-direction: row;
+// }
+// @mixin flex-col {
+//     display: flex;
+//     flex-direction: column;
+// }
+// .container{
+//     @include flex-col();
+//     justify-content: space-between;
+//     align-items: flex-end;
+//     width: 100%;
+// }

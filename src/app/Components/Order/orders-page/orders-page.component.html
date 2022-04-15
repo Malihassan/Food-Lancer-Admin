@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <app-filter-offcanvas class="filter_btn mt-3 mx-2">
   <app-order-search
     (submitted)="onNewSearch($event)"
@@ -13,10 +14,10 @@
   No Orders Found
 </p>
 
-<div class="container-fluid flex-row flex-wrap mt-5" #ordersPage>
-  <div class="justify-content-start row flex-wrap">
+<div class="d-flex flex-wrap mt-5 " #ordersPage>
+  <div class="justify-content-center d-flex col-12 flex-wrap" >
     <div
-      class="col-xl-4 col-lg-6 col-md-12 flex-wrap"
+      class="col-xl-4 col-lg-6 col-md-12 d-flex"
       *ngFor="let order of orders"
     >
       <app-order-card [order]="order"></app-order-card>
@@ -42,3 +43,4 @@
     [pageSize]="pageSize"
   ></ngb-pagination>
 </div>
+</div>>
