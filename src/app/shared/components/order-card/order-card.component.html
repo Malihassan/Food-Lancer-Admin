@@ -38,7 +38,7 @@
 
           <div class="d-flex justify-content-between">
             <small class="fw-bold"
-              >{{ product._id?.price | currency: "EGP " }}
+              >{{ product._id?.price.toFixed(2) | currency: "EGP " }}
             </small>
             <small class="fw-bold">Qty: {{ product?.quantity }}</small>
           </div>
@@ -68,7 +68,7 @@
       </div>
       <div class="d-flex flex-column col-3 ps-3">
         <small class="text-secondary pb-2">X2 Items</small>
-        <small class="fw-bold text-center">{{ order?.totalPrice }}</small>
+        <small class="fw-bold text-center">{{ order?.totalPrice.toFixed(2) }}</small>
       </div>
     </div>
   </div>
