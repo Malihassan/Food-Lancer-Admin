@@ -24,7 +24,7 @@ export class LoginFormComponent implements OnInit {
       this.cookieService.set('userName', message.userName, {
         expires: new Date(new Date().getTime() + 1000 * 60 * 60 * 24),
       });
-      this.cookieService.set('token', this.token, {
+      this.cookieService.set('adminToken', this.token, {
         expires: new Date(new Date().getTime() + 1000 * 60 * 60 * 24),
       });
       window.location.reload();

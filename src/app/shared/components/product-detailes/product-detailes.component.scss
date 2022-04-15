@@ -69,14 +69,14 @@ body {
   -o-border-radius: 50%;
 }
 .btn-pending {
-  color: $warning-color;
+  color: $price-color;
   background-color: transparent;
-  border: 1px solid $warning-color;
+  border: 1px solid $price-color;
 }
 .btn-pending:hover{
   color: $product-color;
-  background-color: $warning-color;
-  border: 1px solid $warning-color;
+  background-color: $price-color;
+  border: 1px solid $price-color;
 }
 .btn-active{
   color:$navbar-color;
