@@ -12,18 +12,22 @@
           <div class="card-body containeBackGround px-4">
             <h5 class="card-title productName my-3">{{product?.name}}</h5>
             <ngb-rating class="card-rate productRating" [rate]="product?.avgRate"></ngb-rating>
-            <div class="card-link my-3 userName  ">{{product?.sellerId?.userName}}</div>
+            <div class="card-link my-3 userName  "> <span >Seller Name:</span> {{product?.sellerId?.userName}}</div>
             <h5 class="card-subtitle productPrice  my-3 ">{{product?.price |currency:"EGP":"symbol"}}</h5>
             <!-- <p class="card-text my-3 productDescription">{{product?.description}}</p> -->
-            <div class=" categoryName my-3 "><!-- <span>Category:</span> -->
+            <div class=" categoryName my-3 "> <span>Category:</span>
               <a>{{product?.categoryId?.name}}</a></div>
-            <div class=" statusName my-3  ms-0"><!-- <span >Status:</span> --> {{product?.status}}
+            <div class=" statusName my-3  ms-0"> <span >Status:</span>  {{product?.status}}
                 <button *ngIf="this.product?.status==='pending'" (click)="changeStatusToActive($event)" name="active" class="btn btn-active mx-1 p-0 px-2 " >Active
                 </button>
                 <button *ngIf="this.product?.status==='active'" (click)="changeStatusToPending($event)" name="pending" class="btn btn-pending mx-1 p-0 px-2 " >Pending
                 </button>
             </div>
-            <div *ngIf="this.product?.status==='pending'">
+            <div *ngIf="this.product.pendingMessage" class=" statusName my-3  ms-0"> <span >Pending Message:</span>
+              {{product?.pendingMessage}}
+            </div>
+            <div *ngIf="this.product?.status==='pending'" >
+            <div *ngIf="!this.product.pendingMessage">
               <label class="message">Pending Message:</label>
               <br>
               <textarea (input)="onChangeValue($event)" name="pendingMessage" id="" cols="30" rows="2"></textarea>
@@ -31,6 +35,7 @@
                 <button (click)="sendPendingMessage()" class="btn btn-pending mx-1 p-0 px-2 my-2">Send
                 </button>
               </div>
+            </div>
             </div>
           </div>
         </div>
