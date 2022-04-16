@@ -27,7 +27,7 @@
               {{product?.pendingMessage}}
             </div>
             <div *ngIf="this.product?.status==='pending'" >
-            <div *ngIf="!this.product.pendingMessage">
+            <div>
               <label class="message">Pending Message:</label>
               <br>
               <textarea (input)="onChangeValue($event)" [value]="inputValue" name="pendingMessage" id="" cols="30" rows="2"></textarea>
